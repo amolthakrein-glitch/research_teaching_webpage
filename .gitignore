@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+registrations/registration_log.csv
+registrations/registration_list.csv
+registrations/registration_list.xlsx

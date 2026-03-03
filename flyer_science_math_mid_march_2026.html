@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Science & Math Classes | Mid-March 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --paper: #fdfcf7;
+      --accent: #d1495b;
+      --accent-dark: #8f2230;
+      --deep: #0b3c5d;
+      --teal: #0ea5a6;
+      --gold: #f2b705;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(242, 183, 5, 0.16), transparent 35%),
+        radial-gradient(circle at 85% 15%, rgba(14, 165, 166, 0.14), transparent 30%),
+        linear-gradient(140deg, #f8f7f2 0%, #ffffff 55%, #f6fbff 100%);
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      min-height: 100vh;
+      padding: 28px 14px;
+    }
+
+    .flyer {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid rgba(11, 60, 93, 0.16);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 16px;
+      padding: 28px;
+      background: linear-gradient(130deg, var(--deep), #0c5a81 55%, #0f7c8c);
+      color: #fff;
+      position: relative;
+    }
+
+    .stamp {
+      display: inline-block;
+      background: var(--gold);
+      color: #1f2937;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: "DM Serif Display", serif;
+      margin: 0;
+      line-height: 1.04;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      font-size: 1rem;
+      max-width: 58ch;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero .portrait-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .portrait {
+      width: min(260px, 100%);
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.72);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .band {
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 10px 14px;
+      font-size: 0.95rem;
+    }
+
+    .content {
+      padding: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+      color: var(--deep);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+
+    .name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0 0 6px;
+    }
+
+    .qual {
+      margin: 0;
+      color: #374151;
+      line-height: 1.55;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .cta .left {
+      background: #082f49;
+      color: #e6f6ff;
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .cta .left h2 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 1.15rem;
+    }
+
+    .cta .left p {
+      margin: 6px 0;
+      line-height: 1.5;
+    }
+
+    .cta .right {
+      background: #fff8e1;
+      border: 1px solid rgba(242, 183, 5, 0.5);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .cta .right h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #7a4d00;
+    }
+
+    .contact-line {
+      margin: 8px 0;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .links {
+      margin-top: 10px;
+      font-size: 0.92rem;
+    }
+
+    .links a {
+      color: #0b3c5d;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .links a:hover { text-decoration: underline; }
+
+    .register-btn {
+      display: inline-block;
+      margin-top: 12px;
+      background: #d1495b;
+      color: #fff8f8 !important;
+      font-weight: 800;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .register-btn:hover {
+      background: #8f2230;
+      text-decoration: none !important;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.87rem;
+      padding: 0 24px 22px;
+      color: #475569;
+    }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid, .cta { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #fff;
+      }
+      .flyer {
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: none;
+      }
+      a { text-decoration: none; color: inherit; }
+    }
+  </style>
+</head>
+<body>
+  <article class="flyer">
+    <header class="hero">
+      <div>
+        <span class="stamp">Admissions Open</span>
+        <h1>New Science, Math & JEE/NEET Coaching</h1>
+        <p>Strong fundamentals, exam-ready problem solving, and personal mentoring for school and competitive preparation.</p>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="assets/profile/amol_profile_ghibli.png" alt="Amol Kumar Thakre portrait" />
+      </div>
+    </header>
+
+    <div class="band">Starting Mid-March 2026 | Limited Seats Per Batch</div>
+
+    <section class="content">
+      <div class="card">
+        <p class="name">Dr. Amol Kumar Thakre</p>
+        <p class="qual">Ph.D. (University of Twente), M.S. (IISc Bangalore)</p>
+        <p class="qual">Research and industry experience: Equinor (Norway), GE/BHGE</p>
+        <p class="qual">Teaching focus: concept clarity, mathematical discipline, and timed execution for high scores</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Who Can Join</h2>
+          <ul>
+            <li>School students: Class 8 to 12</li>
+            <li>Foundation batches in Science and Math</li>
+            <li>Dedicated JEE/NEET coaching batches</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>What You Get</h2>
+          <ul>
+            <li>Structured notes and weekly tests</li>
+            <li>Doubt-solving and revision strategy</li>
+            <li>Problem-solving methods for speed and accuracy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="left">
+          <h2>Batch Timing</h2>
+          <p>Weekday and weekend options available.</p>
+          <p>Small-group format for focused attention.</p>
+          <p>First set of batches begins from <strong>mid-March 2026</strong>.</p>
+        </div>
+        <div class="right">
+          <h3>Contact for Enrollment</h3>
+          <p class="contact-line">Phone / WhatsApp: +91-9591233320</p>
+          <p class="contact-line">Email: amolthakre.in@gmail.com</p>
+          <div class="links">
+            Profile: <a href="index.html">research_teaching_webpage</a><br />
+            CV: <a href="assets/docs/CV_Amol_Thakre.pdf">CV_Amol_Thakre.pdf</a><br />
+            <a class="register-btn" href="registration.html">Register Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">For parents and students seeking disciplined, high-impact learning in Science and Mathematics.</p>
+  </article>
+</body>
+</html>
