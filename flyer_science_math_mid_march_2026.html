@@ -3,331 +3,221 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elite JEE/NEET Coaching | Dr. Amol Kumar Thakre</title>
+  <title>JEE/NEET Admissions Open | Dr. Amol Kumar Thakre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --cobalt: #1e3a8a;
-      --electric: #2563eb;
-      --orange: #ff5722;
-      --orange-deep: #e64a19;
-      --white: #ffffff;
-      --light: #f1f5f9;
+      --bg: #ffffff;
+      --brand: #1e3a8a;
+      --accent: #ff5722;
       --text: #0f172a;
+      --subtext: #475569;
+      --card: #f8fafc;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: var(--light);
+      background-color: #e2e8f0;
       color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      padding: 40px 20px;
-      overflow-x: hidden;
+      font-family: 'Lexend', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 0;
     }
 
+    /* Tall vertical layout optimized for mobile screens */
     .flyer {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 40px;
-      box-shadow: 0 60px 100px -20px rgba(30, 58, 138, 0.2);
-      overflow: hidden;
-      border: 2px solid var(--cobalt);
+      max-width: 480px;
+      width: 100%;
+      background: var(--bg);
+      box-shadow: 0 0 50px rgba(0,0,0,0.1);
       position: relative;
-    }
-
-    .flyer::after {
-      content: '';
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: var(--orange);
-      border-radius: 50%;
-      z-index: 0;
-      opacity: 0.1;
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      background: var(--cobalt);
-      color: var(--white);
+      background: var(--brand);
+      color: #fff;
+      padding: 40px 30px;
+      text-align: center;
       position: relative;
-      z-index: 1;
+      overflow: hidden;
     }
 
-    .hero__content {
-      padding: 80px 60px;
-      background: linear-gradient(135deg, var(--cobalt) 0%, var(--electric) 100%);
-      clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-    }
-
-    .hero__media {
-      background: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-    }
-
-    .badge-alert {
+    .live-badge {
       display: inline-block;
-      background: var(--orange);
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: 12px;
+      background: var(--accent);
+      padding: 6px 15px;
+      border-radius: 50px;
       font-weight: 800;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 30px;
-      text-decoration: none;
-      box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
-      animation: wiggle 3s infinite ease-in-out;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
     }
-
-    @keyframes wiggle { 0%, 100% { transform: rotate(0); } 5%, 15% { transform: rotate(-3deg); } 10%, 20% { transform: rotate(3deg); } }
 
     h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      line-height: 0.95;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 15px;
       text-transform: uppercase;
-      margin-bottom: 25px;
     }
 
-    h1 span { color: var(--orange); }
-
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
-      max-width: 400px;
-      font-weight: 500;
+      font-weight: 400;
+    }
+
+    .profile-section {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, var(--brand) 0%, var(--brand) 120px, #fff 120px);
     }
 
     .portrait {
-      width: 100%;
-      max-width: 360px;
-      aspect-ratio: 1;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       object-fit: cover;
-      border-radius: 30px;
-      border: 8px solid var(--light);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      transform: rotate(2deg);
-      transition: all 0.3s ease;
+      margin-bottom: 15px;
     }
-    .portrait:hover { transform: rotate(0) scale(1.02); }
 
-    .location-banner {
-      background: var(--orange);
-      color: var(--white);
-      padding: 15px;
+    .name { font-size: 1.5rem; font-weight: 800; color: var(--brand); }
+    .title { color: var(--accent); font-weight: 700; font-size: 0.95rem; text-transform: uppercase; margin-bottom: 5px; }
+    .qual { font-size: 0.9rem; color: var(--subtext); font-weight: 500; }
+
+    .location-bar {
+      background: #f1f5f9;
+      padding: 12px;
       text-align: center;
       font-weight: 800;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .content { padding: 30px; }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: var(--brand);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-list { list-style: none; margin-bottom: 30px; }
+    .feature-list li {
+      background: var(--card);
+      margin-bottom: 8px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .cta-container {
+      padding: 0 30px 40px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 20px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: 800;
       font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-primary { background: var(--brand); color: #fff !important; box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2); }
+    .btn-secondary { background: #25d366; color: #fff !important; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+    .btn-light { background: #f1f5f9; color: var(--brand) !important; font-size: 0.9rem; padding: 12px; }
+
+    .btn:active { transform: scale(0.98); }
+
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #f8fafc;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
-    .main-grid {
-      padding: 60px;
-      display: grid;
-      gap: 50px;
-    }
-
-    .mentor-section {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 30px;
-      align-items: center;
-      padding-bottom: 30px;
-    }
-
-    .initials {
-      width: 100px;
-      height: 100px;
-      background: var(--cobalt);
-      color: var(--white);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      font-weight: 800;
-      font-family: 'Syne', sans-serif;
-    }
-
-    .mentor-name { font-size: 2.5rem; font-weight: 800; color: var(--cobalt); line-height: 1; }
-    .mentor-qual { font-weight: 700; color: var(--orange); margin-top: 5px; font-size: 1.1rem; }
-
-    .bio-cta-bar {
-      background: var(--light);
-      padding: 20px 30px;
-      border-radius: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-      border: 1px solid var(--cobalt);
-    }
-
-    .bio-cta-bar p { font-weight: 700; color: var(--cobalt); }
-    .bio-btn {
-      background: var(--cobalt);
-      color: #fff !important;
-      padding: 10px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .feature-card {
-      padding: 40px;
-      border-radius: 30px;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .card-blue { background: var(--cobalt); color: var(--white); }
-    .card-orange { background: var(--orange); color: var(--white); }
-
-    .feature-card:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-
-    .feature-card h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase; }
-
-    .feature-card ul { list-style: none; }
-    .feature-card li { margin-bottom: 12px; font-weight: 600; font-size: 1.1rem; display: flex; align-items: center; gap: 10px; }
-    .feature-card li::before { content: '▶'; font-size: 0.8rem; }
-
-    .cta-area {
-      background: var(--light);
-      padding: 50px;
-      border-radius: 30px;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .cta-text h3 { font-family: 'Syne', sans-serif; font-size: 2.2rem; color: var(--cobalt); line-height: 1.1; margin-bottom: 15px; }
-
-    .register-btn {
-      display: block;
-      background: var(--cobalt);
-      color: var(--white) !important;
-      text-align: center;
-      padding: 25px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      box-shadow: 0 15px 30px rgba(30, 58, 138, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .register-btn:hover { background: var(--orange); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 87, 34, 0.3); }
-
-    .bottom-bar { text-align: center; padding: 40px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
-
-    @media (max-width: 850px) {
-      .hero, .feature-grid, .cta-area, .mentor-section, .bio-cta-bar { grid-template-columns: 1fr; flex-direction: column; gap: 20px; }
-      .hero__content { clip-path: none; padding: 60px 30px; text-align: center; }
-      .hero p { margin: 0 auto; }
-      .hero__media { padding: 40px 20px; }
-      .mentor-section { text-align: center; justify-items: center; }
-      .main-grid { padding: 40px 20px; }
-      .cta-area { text-align: center; padding: 30px; }
-      .bio-cta-bar { text-align: center; }
+    /* Styling for the WhatsApp-ready "Image" version */
+    @media screen and (min-width: 481px) {
+      body { padding: 40px 20px; }
+      .flyer { border-radius: 30px; overflow: hidden; }
     }
   </style>
 </head>
 <body>
   <article class="flyer">
     <header class="hero">
-      <div class="hero__content">
-        <a href="registration.html" class="badge-alert">Admissions Open 2026</a>
-        <h1>Crush the<br/><span>JEE & NEET</span><br/>Hierarchy.</h1>
-        <p>A rigorous mentorship program designed by a research scientist for students aiming for AIR Top 100.</p>
-      </div>
-      <div class="hero__media">
-        <img class="portrait" src="assets/profile/amol_profile_enhanced.jpg" alt="Dr. Amol Kumar Thakre" />
-      </div>
+      <div class="live-badge">Admissions Open 2026</div>
+      <h1>JEE & NEET<br/>Elite Coaching</h1>
+      <p>Research-Led Mentorship by Dr. Amol Kumar Thakre</p>
     </header>
 
-    <div class="location-banner">
-      📍 Mahaveer Promenade • Whitefield • Bangalore
+    <div class="location-bar">
+      📍 Mahaveer Promenade, Whitefield
     </div>
 
-    <section class="main-grid">
-      <div class="mentor-section">
-        <div class="initials">AT</div>
-        <div>
-          <h2 class="mentor-name">Dr. Amol Kumar Thakre</h2>
-          <p class="mentor-qual">Ph.D. (Twente) | Masters (IISc Bangalore) | Ex-GE Senior Research Scientist</p>
-        </div>
-      </div>
-
-      <div class="bio-cta-bar">
-        <p>Mentoring since 2020. Providing industrial-grade precision to competitive prep.</p>
-        <a href="index.html" class="bio-btn">🌐 View Official Bio & Webpage</a>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card card-blue">
-          <h2>🎯 Academic Targets</h2>
-          <ul>
-            <li>Intensive <strong>JEE (Physics, Math, Chemistry)</strong></li>
-            <li>Target <strong>NEET (Physics & Chemistry)</strong></li>
-            <li>Class 11-12 Board Excellence</li>
-            <li>Class 8-10 Foundation Rigour</li>
-            <li><strong>Chapter-wise Curated Notes</strong></li>
-          </ul>
-        </div>
-        <div class="feature-card card-orange">
-          <h2>💎 Mentorship Edge</h2>
-          <ul>
-            <li>Industrial R&D Logic Flow</li>
-            <li><strong>In-depth Performance Analysis</strong></li>
-            <li>Hard-Mode Weekly Tests</li>
-            <li>Scientific Error Correction</li>
-            <li><strong>Personal Mentorship (Max 10)</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta-area">
-        <div class="cta-text">
-          <h3>Ready to Lead?</h3>
-          <p>Strict intake policy. We only take students committed to mathematical discipline and logical rigour.</p>
-          <p style="font-weight: 800; font-size: 1.3rem; margin-top: 15px; color: var(--cobalt);">📞 Enquire: +91-9591233320</p>
-        </div>
-        <div>
-          <a class="register-btn" href="registration.html">Apply Now →</a>
-          <div style="margin-top: 20px; text-align: center;">
-            <a href="assets/docs/CV_Amol_Thakre.pdf" style="color: var(--cobalt); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--orange);">📂 Download Full CV</a>
-          </div>
-        </div>
-      </div>
+    <section class="profile-section">
+      <img class="portrait" src="assets/profile/amol_profile_enhanced.jpg" alt="Dr. Amol Kumar Thakre" />
+      <h2 class="name">Dr. Amol Kumar Thakre</h2>
+      <p class="title">Ex-GE Senior Research Scientist</p>
+      <p class="qual">Ph.D. (Netherlands) | Masters (IISc Bangalore)</p>
     </section>
 
-    <div class="bottom-bar">
-      Discipline • Rigour • Excellence | Compiled by Amol Thakre
+    <section class="content">
+      <h3 class="section-title">🚀 Top Tracks</h3>
+      <ul class="feature-list">
+        <li>Intensive <strong>JEE (Physics, Math, Chem)</strong></li>
+        <li>Target <strong>NEET (Physics & Chemistry)</strong></li>
+        <li>Class 11-12 Boards Excellence</li>
+        <li>Class 8-10 Foundation Rigour</li>
+      </ul>
+
+      <h3 class="section-title">💎 The Edge</h3>
+      <ul class="feature-list">
+        <li><strong>In-depth Performance Analysis</strong></li>
+        <li>Industrial R&D Logic Flow</li>
+        <li>Hard-Mode Weekly Mock Tests</li>
+        <li><strong>Personal Mentorship (Max 10)</strong></li>
+      </ul>
+    </section>
+
+    <div class="cta-container">
+      <a href="registration.html" class="btn btn-primary">Apply for Admission →</a>
+      <a href="https://wa.me/919591233320?text=I%20saw%20your%20flyer%20and%20want%20to%20enquire%20about%20JEE%2FNEET%20coaching." class="btn btn-secondary">WhatsApp Enquiry 💬</a>
+      <a href="index.html" class="btn btn-light">View Research & Full Bio 🌐</a>
     </div>
+
+    <footer class="footer">
+      Discipline • Rigour • Excellence
+    </footer>
   </article>
 </body>
 </html>
