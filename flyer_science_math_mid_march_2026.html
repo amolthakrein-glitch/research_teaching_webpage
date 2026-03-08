@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Science & Math Classes | Mid-March 2026</title>
+  <title>JEE/NEET, Science & Math Coaching | Dr. Amol Kumar Thakre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink: #0f172a;
-      --paper: #fdfcf7;
-      --accent: #d1495b;
-      --accent-dark: #8f2230;
-      --deep: #0b3c5d;
-      --teal: #0ea5a6;
-      --gold: #f2b705;
-      --card: #ffffff;
+      --paper: #ffffff;
+      --accent: #f59e0b; /* Vibrant Amber */
+      --accent-hover: #d97706;
+      --primary: #2563eb; /* Electric Blue */
+      --primary-dark: #1e40af;
+      --secondary: #10b981; /* Emerald Green */
+      --danger: #ef4444; /* Vivid Red */
+      --card-bg: #f8fafc;
     }
 
     * { 
@@ -32,69 +33,79 @@
     }
 
     body {
-      background:
-        radial-gradient(circle at 15% 10%, rgba(242, 183, 5, 0.16), transparent 35%),
-        radial-gradient(circle at 85% 15%, rgba(14, 165, 166, 0.14), transparent 30%),
-        linear-gradient(140deg, #f8f7f2 0%, #ffffff 55%, #f6fbff 100%);
+      background: 
+        linear-gradient(135deg, #eff6ff 0%, #f0fdf4 50%, #fff7ed 100%);
       color: var(--ink);
       font-family: "Manrope", sans-serif;
       min-height: 100vh;
-      padding: 28px 14px;
-      line-height: 1.5;
+      padding: 40px 20px;
+      line-height: 1.6;
     }
 
     .flyer {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       background: var(--paper);
-      border: 1px solid rgba(11, 60, 93, 0.16);
-      border-radius: 22px;
+      border-radius: 30px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
-      display: block;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.1);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 16px;
-      padding: 28px;
-      background: linear-gradient(130deg, var(--deep), #0c5a81 55%, #0f7c8c);
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+      padding: 50px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), #3b82f6);
       color: #fff;
       position: relative;
       align-items: center;
     }
 
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm76-26c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1zM44 29c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
     .stamp {
       display: inline-block;
-      background: var(--gold);
-      color: #1f2937 !important;
+      background: var(--accent);
+      color: #000 !important;
       font-weight: 800;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 8px 12px;
-      border-radius: 999px;
-      margin-bottom: 12px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
       text-decoration: none;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      transition: transform 0.2s, background 0.2s;
     }
 
     .stamp:hover {
-      background: #e2a604;
+      background: var(--accent-hover);
+      transform: translateY(-2px);
     }
 
     h1 {
       font-family: "DM Serif Display", serif;
       margin: 0;
-      line-height: 1.04;
-      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     .hero p {
-      margin: 10px 0 0;
-      font-size: 1rem;
-      max-width: 58ch;
-      color: rgba(255, 255, 255, 0.95);
+      margin: 20px 0 0;
+      font-size: 1.2rem;
+      max-width: 50ch;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
     }
 
     .hero .portrait-wrap {
@@ -105,167 +116,194 @@
     }
 
     .portrait {
-      max-width: 260px;
+      max-width: 300px;
       width: 100%;
-      height: auto;
       aspect-ratio: 1 / 1;
-      border-radius: 20px;
+      border-radius: 30px;
       object-fit: cover;
-      border: 4px solid rgba(255, 255, 255, 0.72);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .portrait:hover {
+      transform: scale(1.02);
     }
 
     .band {
-      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-      color: #fff;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+      background: #1e293b;
+      color: #cbd5e1;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       text-align: center;
-      padding: 10px 14px;
-      font-size: 0.95rem;
+      padding: 15px;
+      font-size: 0.9rem;
+      border-bottom: 4px solid var(--secondary);
     }
 
     .content {
-      padding: 24px;
+      padding: 40px;
       display: grid;
-      gap: 14px;
+      gap: 30px;
+    }
+
+    .bio-card {
+      background: #fff;
+      border-left: 8px solid var(--primary);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .name {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .qual {
+      margin: 5px 0;
+      color: #475569;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qual::before {
+      content: '🎓';
+      font-size: 1.1rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 14px;
+      gap: 20px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      border-radius: 16px;
-      padding: 16px;
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      border-color: var(--primary);
     }
 
     .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-      color: var(--deep);
+      margin: 0 0 15px;
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     ul {
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.6;
+      list-style: none;
     }
 
-    .name {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin: 0 0 6px;
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
     }
 
-    .qual {
-      margin: 0;
-      color: #374151;
-      line-height: 1.55;
+    ul li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
     }
 
     .cta {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
-      gap: 14px;
-      align-items: stretch;
+      gap: 20px;
     }
 
-    .cta .left {
-      background: #082f49;
-      color: #e6f6ff;
-      border-radius: 16px;
-      padding: 16px;
+    .cta-box {
+      border-radius: 20px;
+      padding: 30px;
     }
 
-    .cta .left h2 {
-      margin: 0 0 8px;
+    .cta-left {
+      background: var(--primary-dark);
       color: #fff;
-      font-size: 1.15rem;
     }
 
-    .cta .left p {
-      margin: 6px 0;
-      line-height: 1.5;
-    }
+    .cta-left h2 { color: var(--accent); margin-bottom: 15px; }
 
-    .cta .right {
-      background: #fff8e1;
-      border: 1px solid rgba(242, 183, 5, 0.5);
-      border-radius: 16px;
-      padding: 16px;
-    }
-
-    .cta .right h3 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      color: #7a4d00;
+    .cta-right {
+      background: #fff;
+      border: 2px dashed var(--accent);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-line {
-      margin: 8px 0;
-      font-weight: 700;
-      word-break: break-word;
+      margin: 10px 0;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--ink);
     }
-
-    .links {
-      margin-top: 10px;
-      font-size: 0.92rem;
-    }
-
-    .links a {
-      color: #0b3c5d;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .links a:hover { text-decoration: underline; }
 
     .register-btn {
-      display: inline-block;
-      margin-top: 12px;
-      background: #d1495b;
-      color: #fff8f8 !important;
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      background: var(--danger);
+      color: #fff !important;
       font-weight: 800;
-      padding: 10px 14px;
-      border-radius: 10px;
+      padding: 18px;
+      border-radius: 12px;
       text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+      transition: all 0.3s;
     }
 
     .register-btn:hover {
-      background: #8f2230;
-      text-decoration: none !important;
+      background: #dc2626;
+      transform: scale(1.02);
+      box-shadow: 0 15px 25px rgba(239, 68, 68, 0.4);
+    }
+
+    .profile-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+    }
+
+    .profile-link:hover {
+      border-color: var(--primary);
     }
 
     .footer-note {
       text-align: center;
-      font-size: 0.87rem;
-      padding: 0 24px 22px;
-      color: #475569;
+      font-size: 1rem;
+      padding: 0 40px 40px;
+      color: #64748b;
+      font-style: italic;
     }
 
-    @media (max-width: 760px) {
-      .hero { grid-template-columns: 1fr; }
-      .grid, .cta { grid-template-columns: 1fr; }
-    }
-
-    @media print {
-      body {
-        padding: 0;
-        background: #fff;
-      }
-      .flyer {
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
-        max-width: none;
-      }
-      a { text-decoration: none; color: inherit; }
+    @media (max-width: 850px) {
+      .hero, .cta { grid-template-columns: 1fr; }
+      .hero { text-align: center; padding: 40px 20px; }
+      .hero p { margin: 20px auto 0; }
     }
   </style>
 </head>
@@ -273,66 +311,64 @@
   <article class="flyer">
     <header class="hero">
       <div>
-        <a href="registration.html" class="stamp">Admissions Open</a>
+        <a href="registration.html" class="stamp">Admissions Open 2026</a>
         <h1>New JEE/NEET, Science & Math Coaching</h1>
-        <p>Strong fundamentals, exam-ready problem solving, and personal mentoring for school and competitive preparation.</p>
+        <p>Master fundamentals, crush competitive exams, and build a research-grade analytical mindset.</p>
       </div>
       <div class="portrait-wrap">
-        <img class="portrait" src="assets/profile/amol_profile_enhanced.jpg" alt="Amol Kumar Thakre portrait" />
+        <img class="portrait" src="assets/profile/amol_profile_enhanced.jpg" alt="Dr. Amol Kumar Thakre" />
       </div>
     </header>
 
-    <div class="band">Starting Mid-March 2026 | June 2026 Batch Also Open | Limited Seats Per Batch</div>
+    <div class="band">⚡ Batch starts Mid-March 2026 | Limited Seats for Elite Mentorship</div>
 
     <section class="content">
-      <div class="card">
+      <div class="bio-card">
         <p class="name">Dr. Amol Kumar Thakre</p>
-        <p class="qual">Ph.D. (University of Twente), Masters (Chemical Engg.) (IISc Bangalore)</p>
-        <p class="qual">Research and industry experience: Equinor (Norway), GE/BHGE</p>
-        <p class="qual">Teaching focus: concept clarity, mathematical discipline, and timed execution for high scores</p>
+        <p class="qual">Ph.D. (University of Twente, Netherlands)</p>
+        <p class="qual">Masters (Chemical Engg.) (IISc Bangalore)</p>
+        <p class="qual">Global experience: Equinor (Norway), GE/BHGE Research</p>
       </div>
 
       <div class="grid">
         <div class="card">
-          <h2>Who Can Join</h2>
+          <h2>🚀 Target Batches</h2>
           <ul>
-            <li>School students: Class 8 to 12</li>
-            <li>Foundation batches in Science and Math</li>
-            <li>Dedicated JEE/NEET coaching batches</li>
+            <li>Class 8-10 Foundation (Science & Math)</li>
+            <li>Class 11-12 Board Excellence</li>
+            <li>Intensive JEE Main & Advanced</li>
+            <li>Target NEET (Physics & Chemistry)</li>
           </ul>
         </div>
         <div class="card">
-          <h2>What You Get</h2>
+          <h2>💎 The Advantage</h2>
           <ul>
-            <li>Structured notes and weekly tests</li>
-            <li>Doubt-solving and revision strategy</li>
-            <li>Problem-solving methods for speed and accuracy</li>
+            <li>Taught by an Industrial R&D Scientist</li>
+            <li>Mathematical Discipline & Logic</li>
+            <li>Customized Weekly Test Series</li>
+            <li>Personal Progress Tracking</li>
           </ul>
         </div>
       </div>
 
       <div class="cta">
-        <div class="left">
-          <h2>Batch Timing</h2>
-          <p>Weekday and weekend options available.</p>
-          <p>Small-group format for focused attention.</p>
-          <p>First set of batches begins from <strong>mid-March 2026</strong>.</p>
-          <p>Additional intake available from <strong>June 2026</strong>.</p>
+        <div class="cta-box cta-left">
+          <h2>Batch Details</h2>
+          <p>📍 Location: [Your Center/Online]</p>
+          <p>📅 Schedule: Weekday / Weekend Batches</p>
+          <p>💡 Methodology: Concept First $\to$ Problem Solving $\to$ Speed Execution</p>
+          <a href="index.html" class="profile-link" style="color: var(--accent);">← Visit Main Webpage</a>
         </div>
-        <div class="right">
-          <h3>Contact for Enrollment</h3>
-          <p class="contact-line">Phone / WhatsApp: +91-9591233320</p>
-          <p class="contact-line">Email: amolthakre.in@gmail.com</p>
-          <div class="links">
-            Profile: <a href="index.html">research_teaching_webpage</a><br />
-            CV: <a href="assets/docs/CV_Amol_Thakre.pdf">CV_Amol_Thakre.pdf</a><br />
-            <a class="register-btn" href="registration.html">Claim Your Seat Now</a>
-          </div>
+        <div class="cta-box cta-right">
+          <h3>Enroll Today</h3>
+          <p class="contact-line">📞 +91-9591233320</p>
+          <p class="contact-line">📧 amolthakre.in@gmail.com</p>
+          <a class="register-btn" href="registration.html">Claim Your Seat Now</a>
         </div>
       </div>
     </section>
 
-    <p class="footer-note">For parents and students seeking disciplined, high-impact learning in Science and Mathematics.</p>
+    <p class="footer-note">Providing high-impact learning for students who aim for the top. Join the journey of excellence.</p>
   </article>
 </body>
 </html>
