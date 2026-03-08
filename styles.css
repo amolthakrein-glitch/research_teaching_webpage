@@ -42,14 +42,20 @@ body {
 }
 .hero__media {
   justify-self: end;
+  padding: .5rem;
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(248, 252, 255, .92), rgba(232, 244, 252, .78));
+  box-shadow: 0 10px 22px rgba(16, 32, 48, .12);
 }
 .hero__media img {
   width: min(240px, 100%);
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center 22%;
   border-radius: 18px;
-  border: 3px solid rgba(255,255,255,.9);
-  box-shadow: 0 12px 26px rgba(16, 32, 48, .2);
+  border: 3px solid rgba(255, 250, 240, .95);
+  box-shadow: 0 10px 22px rgba(16, 32, 48, .2);
+  filter: brightness(1.04) contrast(1.08) saturate(1.03);
 }
 .hero__accent {
   position: absolute;
@@ -104,19 +110,51 @@ h1 {
 }
 .contact a { color: var(--accent); text-decoration: none; }
 .contact a:hover { text-decoration: underline; }
+.contact .register-link {
+  background: #d1495b;
+  color: #fff;
+  padding: .36rem .62rem;
+  border-radius: 999px;
+  border: 1px solid #8f2230;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(209, 73, 91, .28);
+}
+.contact .register-link:hover {
+  background: #8f2230;
+  color: #fff;
+  text-decoration: none;
+}
+.teaching-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: .55rem;
+}
+.teaching-highlights span {
+  display: inline-block;
+  padding: .2rem .46rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e3a8a;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .01em;
+}
 .action-link {
   display: inline-block;
   margin-top: .25rem;
-  padding: .34rem .56rem;
-  border: 1px solid #93c5fd;
+  padding: .42rem .72rem;
+  border: 1px solid #8f2230;
   border-radius: 8px;
-  background: #dbeafe;
-  color: #1e3a8a;
-  font-weight: 700;
+  background: #d1495b;
+  color: #fff;
+  font-weight: 800;
   text-decoration: none;
+  box-shadow: 0 5px 12px rgba(209, 73, 91, .25);
 }
 .action-link:hover {
-  background: #bfdbfe;
+  background: #8f2230;
 }
 
 .container {
@@ -367,6 +405,7 @@ ul { margin: .25rem 0 .15rem .98rem; }
   h3 { font-size: 1.02rem; }
   .lede { font-size: .96rem; }
   .badges span { font-size: 0.76rem; }
+  .teaching-highlights span { font-size: 0.72rem; }
   .card p { font-size: .92rem; }
   .tag { font-size: 0.72rem; }
   .chip { font-size: 0.74rem; }

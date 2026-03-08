@@ -135,7 +135,7 @@
       <div class="top-links">
         <a href="index.html">Profile Page</a>
         <a href="flyer_science_math_mid_march_2026.html">Flyer</a>
-        <a href="assets/docs/CV_Amol_Thakre.pdf">CV</a>
+        <a href="join-now.html">Join Mid-March Batch</a>
       </div>
     </header>
 
@@ -163,6 +163,7 @@
           <span class="pill">Option 4</span>
           <h3>Online Form Registration</h3>
           <p>Fill the form below. This records an entry in the registration log file and opens a prefilled WhatsApp notification message.</p>
+          <p><strong>Additional batch starts in June 2026.</strong></p>
         </article>
       </div>
 
@@ -246,10 +247,28 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      statusEl.textContent = "Submitting...";
+      statusEl.textContent = "Processing registration...";
 
       const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
+
+      // Define WhatsApp notification logic
+      const triggerWhatsApp = () => {
+        const notifyMessage =
+          "*New Registration for Coaching*%0A" +
+          "*Student:* " + encodeURIComponent(payload.student_name || "N/A") + "%0A" +
+          "*Parent:* " + encodeURIComponent(payload.parent_name || "N/A") + "%0A" +
+          "*Mobile:* " + encodeURIComponent(payload.mobile || "N/A") + "%0A" +
+          "*Email:* " + encodeURIComponent(payload.email || "N/A") + "%0A" +
+          "*Class/Exam:* " + encodeURIComponent(payload.class_mix || "N/A") + "%0A" +
+          "*Mode:* " + encodeURIComponent(payload.mode || "N/A") + "%0A" +
+          "*Timing:* " + encodeURIComponent(payload.timing || "N/A") + "%0A" +
+          "*City:* " + encodeURIComponent(payload.city || "N/A") + "%0A" +
+          "*Notes:* " + encodeURIComponent(payload.notes || "None");
+        
+        const waUrl = "https://wa.me/919591233320?text=" + notifyMessage;
+        window.open(waUrl, "_blank", "noopener");
+      };
 
       try {
         const response = await fetch("/api/register", {
@@ -257,27 +276,18 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
-        const data = await response.json();
-        if (!response.ok) {
-          throw new Error(data.error || "Registration failed");
+        
+        if (response.ok) {
+          statusEl.textContent = "Registration logged successfully. Opening WhatsApp...";
+        } else {
+          console.warn("Server logging failed, but proceeding with WhatsApp.");
         }
-        statusEl.textContent = "Registration submitted successfully. Opening WhatsApp notification...";
-        const notifyMessage =
-          "New Registration%0A" +
-          "Student: " + encodeURIComponent(payload.student_name || "") + "%0A" +
-          "Parent: " + encodeURIComponent(payload.parent_name || "") + "%0A" +
-          "Mobile: " + encodeURIComponent(payload.mobile || "") + "%0A" +
-          "Email: " + encodeURIComponent(payload.email || "") + "%0A" +
-          "Class/Exam: " + encodeURIComponent(payload.class_mix || "") + "%0A" +
-          "Mode: " + encodeURIComponent(payload.mode || "") + "%0A" +
-          "Timing: " + encodeURIComponent(payload.timing || "") + "%0A" +
-          "City: " + encodeURIComponent(payload.city || "") + "%0A" +
-          "Notes: " + encodeURIComponent(payload.notes || "");
-        const waUrl = "https://wa.me/919591233320?text=" + notifyMessage;
-        window.open(waUrl, "_blank", "noopener");
-        form.reset();
       } catch (error) {
-        statusEl.textContent = "Unable to log registration. Use WhatsApp/Call/Email option or run the local server.";
+        console.warn("No server detected (static host). Proceeding with WhatsApp.");
+      } finally {
+        triggerWhatsApp();
+        statusEl.textContent = "Success! Please send the pre-filled WhatsApp message to confirm.";
+        form.reset();
       }
     });
   </script>
