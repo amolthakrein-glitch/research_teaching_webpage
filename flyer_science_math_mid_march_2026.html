@@ -68,7 +68,7 @@
     .stamp {
       display: inline-block;
       background: var(--gold);
-      color: #1f2937;
+      color: #1f2937 !important;
       font-weight: 800;
       font-size: 0.82rem;
       letter-spacing: 0.06em;
@@ -76,6 +76,11 @@
       padding: 8px 12px;
       border-radius: 999px;
       margin-bottom: 12px;
+      text-decoration: none;
+    }
+
+    .stamp:hover {
+      background: #e2a604;
     }
 
     h1 {
@@ -268,8 +273,8 @@
   <article class="flyer">
     <header class="hero">
       <div>
-        <span class="stamp">Admissions Open</span>
-        <h1>New Science, Math & JEE/NEET Coaching</h1>
+        <a href="registration.html" class="stamp">Admissions Open</a>
+        <h1>New JEE/NEET, Science & Math Coaching</h1>
         <p>Strong fundamentals, exam-ready problem solving, and personal mentoring for school and competitive preparation.</p>
       </div>
       <div class="portrait-wrap">
