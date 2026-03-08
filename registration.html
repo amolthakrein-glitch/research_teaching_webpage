@@ -16,229 +16,217 @@
       --accent: #d1495b;
       --paper: #fcfffe;
       --line: #cbd5e1;
+      --wa-green: #25d366;
+      --call-blue: #3b82f6;
+      --email-amber: #f59e0b;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Manrope", sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(209, 73, 91, 0.09), transparent 32%),
-        radial-gradient(circle at 88% 6%, rgba(11, 60, 93, 0.12), transparent 28%),
-        #f8fafc;
-      padding: 22px 12px;
+      background: #f8fafc;
+      padding: 40px 20px;
     }
     .page {
-      max-width: 980px;
+      max-width: 1000px;
       margin: 0 auto;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
     }
     .hero {
-      background: linear-gradient(140deg, #0b3c5d, #115f7b 65%, #178f8f);
+      background: linear-gradient(140deg, #0b3c5d, #1e3a8a 100%);
       color: #fff;
-      padding: 22px;
+      padding: 40px;
+      text-align: center;
     }
     .hero h1 {
       margin: 0;
       font-family: "DM Serif Display", serif;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1.06;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.1;
     }
-    .hero p { margin: 8px 0 0; max-width: 66ch; color: rgba(255,255,255,.94); }
-    .hero .top-links { margin-top: 10px; font-weight: 700; }
-    .hero .top-links a { color: #fff8cc; text-decoration: none; margin-right: 14px; }
-    .hero .top-links a:hover { text-decoration: underline; }
-    .content { padding: 18px; display: grid; gap: 14px; }
-    .grid {
+    .hero p { margin: 15px auto 0; max-width: 600px; color: rgba(255,255,255,.9); font-size: 1.1rem; }
+    
+    .top-nav {
+      background: #f1f5f9;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+    .top-nav a { color: var(--brand); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .top-nav a:hover { color: var(--accent); }
+
+    .content { padding: 40px; display: grid; gap: 30px; }
+    
+    .registration-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
+    
     .card {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: #fff;
-      padding: 14px;
+      border-radius: 20px;
+      padding: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid transparent;
     }
-    .card h2, .card h3 { margin: 0 0 8px; color: var(--brand); }
-    .card p { margin: 6px 0; color: #334155; }
-    .card a { color: #0a4d7a; font-weight: 700; text-decoration: none; }
-    .card a:hover { text-decoration: underline; }
-    .pill {
-      display: inline-block;
-      padding: 4px 9px;
-      border-radius: 999px;
-      font-size: 0.76rem;
+    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    
+    .card-wa { background: #f0fdf4; border-color: #bbf7d0; }
+    .card-call { background: #eff6ff; border-color: #bfdbfe; }
+    .card-email { background: #fffbeb; border-color: #fef3c7; }
+    
+    .card h3 { 
+      margin: 0 0 15px; 
+      font-size: 1.4rem; 
       font-weight: 800;
-      color: #7a1d2b;
-      background: #ffe2e7;
-      border: 1px solid #f9a8b4;
-      margin-bottom: 8px;
-    }
-    form {
-      display: grid;
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+    .card-wa h3 { color: #166534; }
+    .card-call h3 { color: #1e40af; }
+    .card-email h3 { color: #92400e; }
+    
+    .card p { margin: 0; color: #475569; line-height: 1.5; font-size: 0.95rem; }
+    .card .action-label { 
+      margin-top: auto; 
+      padding-top: 20px; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
     }
-    label {
-      display: grid;
-      gap: 4px;
-      font-size: 0.93rem;
-      font-weight: 700;
-      color: #1e293b;
+    .card-wa .action-label { color: var(--wa-green); }
+    .card-call .action-label { color: var(--call-blue); }
+    .card-email .action-label { color: var(--email-amber); }
+
+    .form-section {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px;
     }
+    .form-section h2 { margin: 0 0 25px; font-family: "DM Serif Display", serif; font-size: 2rem; color: var(--brand); }
+
+    form { display: grid; gap: 15px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    label { display: grid; gap: 6px; font-size: 0.95rem; font-weight: 700; color: #1e293b; }
     input, select, textarea {
       width: 100%;
       border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 10px;
+      border-radius: 12px;
+      padding: 12px;
       font: inherit;
-      color: #0f172a;
       background: #fff;
     }
-    textarea { min-height: 92px; resize: vertical; }
-    .btn {
-      border: 0;
-      border-radius: 10px;
-      background: var(--accent);
+    textarea { min-height: 100px; resize: vertical; }
+    
+    .submit-btn {
+      background: var(--brand);
       color: #fff;
-      padding: 10px 14px;
+      padding: 15px 30px;
+      border: 0;
+      border-radius: 12px;
       font-weight: 800;
+      font-size: 1.1rem;
       cursor: pointer;
       width: fit-content;
+      transition: all 0.2s;
     }
-    .btn:hover { background: #8f2230; }
-    .status { font-size: 0.92rem; min-height: 1.2em; color: var(--muted); }
-    .footer-note {
-      padding: 0 18px 18px;
-      font-size: 0.88rem;
-      color: #64748b;
-    }
-    @media (max-width: 760px) {
-      .grid, .row { grid-template-columns: 1fr; }
+    .submit-btn:hover { background: var(--ink); transform: scale(1.02); }
+    
+    .status { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin-top: 10px; }
+
+    .footer-note { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid var(--line); }
+
+    @media (max-width: 850px) {
+      .registration-grid, .row { grid-template-columns: 1fr; }
+      .content { padding: 30px 20px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="hero">
-      <h1>Registration: Science, Math & JEE/NEET</h1>
-      <p>Choose any registration method below. Online form submissions are automatically logged to a registration log file.</p>
-      <div class="top-links">
-        <a href="index.html">Profile Page</a>
-        <a href="flyer_science_math_mid_march_2026.html">Flyer</a>
-        <a href="join-now.html">Join Mid-March Batch</a>
-      </div>
+      <h1>Secure Your Enrollment</h1>
+      <p>Select your preferred registration channel below. Online form submissions will trigger a WhatsApp confirmation.</p>
     </header>
 
+    <nav class="top-nav">
+      <a href="index.html">🌐 Bio & Research</a>
+      <a href="flyer_science_math_mid_march_2026.html">📄 Program Flyer</a>
+    </nav>
+
     <section class="content">
-      <div class="grid">
-        <article class="card">
-          <span class="pill">Option 1</span>
-          <h3>WhatsApp Registration</h3>
-          <p>Fastest way for batch details and seat confirmation.</p>
-          <p><a href="https://wa.me/919591233320?text=Hello%20Dr.%20Amol%2C%20I%20want%20to%20register%20for%20Science%2FMath%2FJEE-NEET%20classes." target="_blank" rel="noopener">Open WhatsApp Chat</a></p>
-        </article>
-        <article class="card">
-          <span class="pill">Option 2</span>
-          <h3>Call Registration</h3>
-          <p>Direct discussion for class level, schedule, and mode.</p>
-          <p><a href="tel:+919591233320">+91-9591233320</a></p>
-        </article>
-        <article class="card">
-          <span class="pill">Option 3</span>
-          <h3>Email Registration</h3>
-          <p>Share student details and preferred class mix by email.</p>
-          <p><a href="mailto:amolthakre.in@gmail.com?subject=Registration%20for%20Science%2FMath%2FJEE-NEET%20Classes">amolthakre.in@gmail.com</a></p>
-        </article>
-        <article class="card">
-          <span class="pill">Option 4</span>
-          <h3>Online Form Registration</h3>
-          <p>Fill the form below. This records an entry in the registration log file and opens a prefilled WhatsApp notification message.</p>
-          <p><strong>Additional batch starts in June 2026.</strong></p>
-        </article>
+      <div class="registration-grid">
+        <a href="https://wa.me/919591233320?text=Hello%20Dr.%20Amol%2C%20I%20want%20to%20register%20for%20JEE%2FNEET%2FCoaching%20classes." class="card card-wa" target="_blank" rel="noopener">
+          <h3>💬 WhatsApp</h3>
+          <p>Instant support for batch availability, fees, and quick seat blocking. Recommended for urgent enquiries.</p>
+          <span class="action-label">Send Message →</span>
+        </a>
+
+        <a href="tel:+919591233320" class="card card-call">
+          <h3>📞 Direct Call</h3>
+          <p>Talk directly to Dr. Amol regarding student's current level, specific needs, and personalized roadmaps.</p>
+          <span class="action-label">Call +91-9591233320 →</span>
+        </a>
+
+        <a href="mailto:amolthakre.in@gmail.com?subject=Registration%20Enquiry%20JEE/NEET" class="card card-email">
+          <h3>✉️ Email</h3>
+          <p>Send detailed requirements, school board info, and past academic records for a thorough review.</p>
+          <span class="action-label">Send Email →</span>
+        </a>
       </div>
 
-      <article class="card">
+      <div class="form-section">
         <h2>Online Registration Form</h2>
         <form id="registrationForm">
           <div class="row">
-            <label>
-              Student Name
-              <input type="text" name="student_name" required />
-            </label>
-            <label>
-              Parent Name
-              <input type="text" name="parent_name" />
-            </label>
+            <label>Student Name <input type="text" name="student_name" required /></label>
+            <label>Parent Name <input type="text" name="parent_name" /></label>
           </div>
           <div class="row">
-            <label>
-              Mobile Number
-              <input type="tel" name="mobile" required />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" />
-            </label>
+            <label>Mobile Number <input type="tel" name="mobile" required /></label>
+            <label>Email Address <input type="email" name="email" /></label>
           </div>
           <div class="row">
-            <label>
-              Class/Exam Target
+            <label>Class/Exam Target
               <select name="class_mix" required>
-                <option value="">Select</option>
-                <option>Class 8-10 Science + Math Foundation</option>
-                <option>Class 11-12 Science + Math</option>
-                <option>JEE Main/Advanced Coaching</option>
-                <option>NEET Coaching (Physics/Chemistry)</option>
-                <option>Integrated JEE/NEET Foundation</option>
+                <option value="">Select Target</option>
+                <option>JEE Main & Advanced</option>
+                <option>NEET (Physics/Chemistry)</option>
+                <option>Class 11-12 Boards (PC/PCM)</option>
+                <option>Class 8-10 Foundation</option>
               </select>
             </label>
-            <label>
-              Preferred Mode
-              <select name="mode" required>
-                <option value="">Select</option>
-                <option>Offline Classroom</option>
-                <option>Online Live</option>
-                <option>Hybrid</option>
-              </select>
-            </label>
-          </div>
-          <div class="row">
-            <label>
-              Preferred Batch Timing
+            <label>Preferred Batch
               <select name="timing" required>
-                <option value="">Select</option>
-                <option>Weekday Evening</option>
-                <option>Weekday Morning</option>
-                <option>Weekend Morning</option>
-                <option>Weekend Evening</option>
+                <option value="">Select Timing</option>
+                <option>Weekday Batches</option>
+                <option>Weekend Intensive</option>
               </select>
             </label>
-            <label>
-              City
-              <input type="text" name="city" />
-            </label>
           </div>
-          <label>
-            Additional Notes
-            <textarea name="notes" placeholder="Topics to focus, current grade level, board/exam, etc."></textarea>
-          </label>
-          <button class="btn" type="submit">Submit Registration</button>
+          <label>Additional Notes <textarea name="notes" placeholder="Current grade, board, specific topics of interest, etc."></textarea></label>
+          <button class="submit-btn" type="submit">Submit & Notify via WhatsApp</button>
           <p id="status" class="status"></p>
         </form>
-      </article>
+      </div>
     </section>
 
-    <p class="footer-note">If this page is opened as <code>file://</code>, form logging may not work. Use the provided local server script for logging support.</p>
+    <footer class="footer-note">
+      Mahaveer Promenade, Whitefield, Bangalore | &copy; 2026 Dr. Amol Kumar Thakre
+    </footer>
   </main>
 
   <script>
@@ -247,46 +235,35 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      statusEl.textContent = "Processing registration...";
+      statusEl.textContent = "Processing... Please wait.";
 
       const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
 
-      // Define WhatsApp notification logic
       const triggerWhatsApp = () => {
         const notifyMessage =
-          "*New Registration for Coaching*%0A" +
+          "*New JEE/NEET Registration*%0A" +
           "*Student:* " + encodeURIComponent(payload.student_name || "N/A") + "%0A" +
           "*Parent:* " + encodeURIComponent(payload.parent_name || "N/A") + "%0A" +
           "*Mobile:* " + encodeURIComponent(payload.mobile || "N/A") + "%0A" +
-          "*Email:* " + encodeURIComponent(payload.email || "N/A") + "%0A" +
-          "*Class/Exam:* " + encodeURIComponent(payload.class_mix || "N/A") + "%0A" +
-          "*Mode:* " + encodeURIComponent(payload.mode || "N/A") + "%0A" +
-          "*Timing:* " + encodeURIComponent(payload.timing || "N/A") + "%0A" +
-          "*City:* " + encodeURIComponent(payload.city || "N/A") + "%0A" +
+          "*Target:* " + encodeURIComponent(payload.class_mix || "N/A") + "%0A" +
+          "*Batch:* " + encodeURIComponent(payload.timing || "N/A") + "%0A" +
           "*Notes:* " + encodeURIComponent(payload.notes || "None");
         
-        const waUrl = "https://wa.me/919591233320?text=" + notifyMessage;
-        window.open(waUrl, "_blank", "noopener");
+        window.open("https://wa.me/919591233320?text=" + notifyMessage, "_blank", "noopener");
       };
 
       try {
-        const response = await fetch("/api/register", {
+        await fetch("/api/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
         });
-        
-        if (response.ok) {
-          statusEl.textContent = "Registration logged successfully. Opening WhatsApp...";
-        } else {
-          console.warn("Server logging failed, but proceeding with WhatsApp.");
-        }
-      } catch (error) {
-        console.warn("No server detected (static host). Proceeding with WhatsApp.");
+      } catch (e) {
+        console.warn("Static host - redirecting to WhatsApp.");
       } finally {
         triggerWhatsApp();
-        statusEl.textContent = "Success! Please send the pre-filled WhatsApp message to confirm.";
+        statusEl.textContent = "Success! Opening WhatsApp notification...";
         form.reset();
       }
     });
