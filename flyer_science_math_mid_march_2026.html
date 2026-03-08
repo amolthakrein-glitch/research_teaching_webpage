@@ -39,7 +39,6 @@
       position: relative;
     }
 
-    /* Bold Decorative Accents */
     .flyer::after {
       content: '';
       position: absolute;
@@ -146,8 +145,7 @@
       grid-template-columns: auto 1fr;
       gap: 30px;
       align-items: center;
-      border-bottom: 4px solid var(--light);
-      padding-bottom: 40px;
+      padding-bottom: 30px;
     }
 
     .initials {
@@ -165,7 +163,30 @@
     }
 
     .mentor-name { font-size: 2.5rem; font-weight: 800; color: var(--cobalt); line-height: 1; }
-    .mentor-qual { font-weight: 700; color: var(--orange); margin-top: 5px; }
+    .mentor-qual { font-weight: 700; color: var(--orange); margin-top: 5px; font-size: 1.1rem; }
+
+    .bio-cta-bar {
+      background: var(--light);
+      padding: 20px 30px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      border: 1px solid var(--cobalt);
+    }
+
+    .bio-cta-bar p { font-weight: 700; color: var(--cobalt); }
+    .bio-btn {
+      background: var(--cobalt);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
 
     .feature-grid {
       display: grid;
@@ -221,19 +242,17 @@
 
     .register-btn:hover { background: var(--orange); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(255, 87, 34, 0.3); }
 
-    .footer-links { margin-top: 25px; display: flex; gap: 20px; justify-content: center; }
-    .footer-links a { color: var(--cobalt); font-weight: 800; text-decoration: none; border-bottom: 3px solid var(--orange); }
-
     .bottom-bar { text-align: center; padding: 40px; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; }
 
     @media (max-width: 850px) {
-      .hero, .feature-grid, .cta-area, .mentor-section { grid-template-columns: 1fr; }
+      .hero, .feature-grid, .cta-area, .mentor-section, .bio-cta-bar { grid-template-columns: 1fr; flex-direction: column; gap: 20px; }
       .hero__content { clip-path: none; padding: 60px 30px; text-align: center; }
       .hero p { margin: 0 auto; }
       .hero__media { padding: 40px 20px; }
       .mentor-section { text-align: center; justify-items: center; }
       .main-grid { padding: 40px 20px; }
       .cta-area { text-align: center; padding: 30px; }
+      .bio-cta-bar { text-align: center; }
     }
   </style>
 </head>
@@ -243,7 +262,7 @@
       <div class="hero__content">
         <a href="registration.html" class="badge-alert">Admissions Open 2026</a>
         <h1>Crush the<br/><span>JEE & NEET</span><br/>Hierarchy.</h1>
-        <p>A rigorous mentorship program designed by a research scientist for students aiming for nothing less than AIR Top 100.</p>
+        <p>A rigorous mentorship program designed by a research scientist for students aiming for AIR Top 100.</p>
       </div>
       <div class="hero__media">
         <img class="portrait" src="assets/profile/amol_profile_enhanced.jpg" alt="Dr. Amol Kumar Thakre" />
@@ -259,27 +278,32 @@
         <div class="initials">AT</div>
         <div>
           <h2 class="mentor-name">Dr. Amol Kumar Thakre</h2>
-          <p class="mentor-qual">Ph.D. (Twente) | Masters (IISc Bangalore) | Mentoring since 2020</p>
+          <p class="mentor-qual">Ph.D. (Twente) | Masters (IISc Bangalore) | Ex-GE Senior Research Scientist</p>
         </div>
+      </div>
+
+      <div class="bio-cta-bar">
+        <p>Mentoring since 2020. Providing industrial-grade precision to competitive prep.</p>
+        <a href="index.html" class="bio-btn">🌐 View Official Bio & Webpage</a>
       </div>
 
       <div class="feature-grid">
         <div class="feature-card card-blue">
           <h2>🎯 Academic Targets</h2>
           <ul>
-            <li>Intensive JEE Main & Advanced</li>
-            <li>NEET Physics & Chemistry Focus</li>
-            <li>Class 11-12 Board Mastery</li>
+            <li>Intensive <strong>JEE (Physics, Math, Chemistry)</strong></li>
+            <li>Target <strong>NEET (Physics & Chemistry)</strong></li>
+            <li>Class 11-12 Board Excellence</li>
             <li>Class 8-10 Foundation Rigour</li>
             <li><strong>Chapter-wise Curated Notes</strong></li>
           </ul>
         </div>
         <div class="feature-card card-orange">
-          <h2>💎 The Advantage</h2>
+          <h2>💎 Mentorship Edge</h2>
           <ul>
             <li>Industrial R&D Logic Flow</li>
-            <li><strong>Hard-Mode Weekly Tests</strong></li>
-            <li>Real-time Performance Analytics</li>
+            <li><strong>In-depth Performance Analysis</strong></li>
+            <li>Hard-Mode Weekly Tests</li>
             <li>Scientific Error Correction</li>
             <li><strong>Personal Mentorship (Max 10)</strong></li>
           </ul>
@@ -294,9 +318,8 @@
         </div>
         <div>
           <a class="register-btn" href="registration.html">Apply Now →</a>
-          <div class="footer-links">
-            <a href="index.html">View Bio ↗</a>
-            <a href="assets/docs/CV_Amol_Thakre.pdf">Full CV ↓</a>
+          <div style="margin-top: 20px; text-align: center;">
+            <a href="assets/docs/CV_Amol_Thakre.pdf" style="color: var(--cobalt); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--orange);">📂 Download Full CV</a>
           </div>
         </div>
       </div>
