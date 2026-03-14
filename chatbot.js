@@ -38,18 +38,23 @@
         const type = document.getElementById('typing');
 
         const knowledge = {
-            "admission": "Admissions are currently in a high-probability state! We have batches in March/April and June. Mid-session entry depends on the current 'student density' (seat availability).",
-            "fees": "To calculate the tuition variables, I need to link your coordinates to Amol Sir. Let's start with your name?",
-            "mentor": "Sir is a Ph.D. from Twente and an IISc alumnus. He has spent years in the labs of GE and Equinor. He doesn't just teach Science; he simulates success.",
-            "batch": "Main academic cycles: \n1. Spring Equinox (March/April)\n2. Summer Solstice (June)\nRolling admissions occur if the vacuum of a seat exists!",
-            "contact": "You can reach the Lab HQ at +91-9591233320 or amolthakre.in@gmail.com."
+            "admission": "Admissions are in a high-probability state! Main batches: March/April and June. Mid-session entry depends on current 'student density' (seat availability). Please contact Dr. Amol Thakre for a specific enquiry.",
+            "fees": "To calculate the tuition variables for your specific track, I need to link your coordinates to Dr. Amol Thakre. Let's start with your name?",
+            "mentor": "Dr. Amol Thakre is a Ph.D. from the University of Twente (Netherlands) and an IISc Bangalore alumnus. With a rich background in R&D at GE and Equinor (Norway), he brings industrial-grade analytical depth to JEE/NEET mentoring.",
+            "batch": "Our academic cycles are synchronized with the seasons: \n1. Spring Batch (March/April)\n2. Summer Batch (June)\nRolling admissions are possible if a 'vacuum' (available seat) exists in the current batch.",
+            "contact": "You can reach the Lab HQ at +91-9591233320 or email amolthakre.in@gmail.com. Dr. Amol Thakre usually responds once the simulations are stabilized.",
+            "subjects": "We specialize in the high-energy triad: Physics, Chemistry, and Mathematics for Classes 8 to 12, with dedicated tracks for JEE and NEET.",
+            "method": "Our methodology uses 'Concept-to-Competition' pipelines: concept-first intuition, multi-level problem sets, and timed solving frameworks to minimize exam-day entropy.",
+            "results": "We track performance with high fidelity: weekly tests, chapter-wise analytics, and error-log based remediation to ensure continuous improvement.",
+            "location": "For specific details on the lab's physical coordinates or online meeting links, please contact Dr. Amol Thakre at +91-9591233320."
         };
 
         const witticisms = [
             "Analyzing your query with 99.9% precision...",
-            "Consulting the laws of thermodynamics for that answer...",
-            "Wait, Sir is currently optimizing a digital twin. I'll handle this!",
-            "Did you know? Entropy increases, but your marks shouldn't. Let's talk admissions."
+            "Consulting the second law of thermodynamics for that answer...",
+            "Wait, Dr. Amol Thakre is currently optimizing a digital twin. I'll handle this!",
+            "Did you know? Entropy increases, but your marks shouldn't. Let's talk logic.",
+            "Calibrating response parameters... ready!"
         ];
 
         function addMsg(text, type, options = null) {
@@ -84,42 +89,42 @@
             setTimeout(() => {
                 type.style.display = 'none';
                 respond(v.toLowerCase());
-            }, 1200);
+            }, 1000);
         }
 
         function respond(q) {
-            // State Machine for Leads
             if (state.lead === 'name') {
                 state.name = q;
                 state.lead = 'phone';
-                addMsg(`Excellent coordinates, ${q}! Now, what's your mobile number so we can beam the fee structure to you?`, 'bot');
+                addMsg(`Excellent coordinates, ${q}! Now, what's your mobile number so Dr. Amol Thakre can beam the fee structure to you?`, 'bot');
                 return;
             }
             if (state.lead === 'phone') {
                 state.lead = 'none';
-                addMsg(`Data received! Sir will reach out to you before the next batch cycle. Anything else on your mind?`, 'bot');
+                addMsg(`Data received! Dr. Amol Thakre will reach out to you shortly. Anything else on your mind?`, 'bot');
                 return;
             }
 
-            // Logic
             if (q.includes('fee') || q.includes('cost') || q.includes('price')) {
                 state.lead = 'name';
                 addMsg(knowledge.fees, 'bot');
                 return;
             }
 
-            let found = false;
-            for (let k in knowledge) {
+            let bestMatch = null;
+            let keywords = Object.keys(knowledge);
+            for (let k of keywords) {
                 if (q.includes(k)) {
-                    if (Math.random() > 0.7) addMsg(witticisms[Math.floor(Math.random()*witticisms.length)], 'bot');
-                    addMsg(knowledge[k], 'bot');
-                    found = true;
+                    bestMatch = k;
                     break;
                 }
             }
 
-            if (!found) {
-                addMsg("My sensors are confused by that input. Should we focus on Admissions, Fees, or Mentor info?", 'bot', ["Admissions", "Fees", "Mentor Info"]);
+            if (bestMatch) {
+                if (Math.random() > 0.6) addMsg(witticisms[Math.floor(Math.random()*witticisms.length)], 'bot');
+                addMsg(knowledge[bestMatch], 'bot');
+            } else {
+                addMsg("My sensors are experiencing interference. Should we focus on Admissions, Fees, Subjects, or Mentor Info?", 'bot', ["Admissions", "Fees", "Subjects", "Mentor Info"]);
             }
         }
 
@@ -128,7 +133,7 @@
             win.style.display = show ? 'flex' : 'none';
             if (show && msgs.children.length === 0) {
                 setTimeout(() => {
-                    addMsg("Greetings! I am the Lab Assistant. Sir is currently busy with high-fidelity simulations, but I can help you minimize the entropy of your admission process.", 'bot', ["Admissions", "Fees", "Mentor Info"]);
+                    addMsg("Greetings! I am the Lab Assistant. Dr. Amol Thakre is currently refining a high-fidelity simulation, but I can help you minimize the entropy of your academic journey.", 'bot', ["Admissions", "Fees", "Mentor Info", "Subjects"]);
                 }, 500);
             }
         };
