@@ -31,20 +31,22 @@
         const send = document.getElementById('chatbot-send');
 
         const responses = {
-            "admission": "We have two main batches: one starting in March/April and another in June. We also offer rolling admissions depending on seat availability. Would you like to know more about a specific batch?",
+            "admission": "We have two main batches: March/April and June. Mid-session admission is possible only if seats are available. Please contact for specific enquiry.",
             "batch": `Our main batches are:
 1. Mid-March/April Batch: Focused on early starters.
-2. June Batch: Aligned with the start of the academic year.
-Rolling admissions are also available.`,
-            "march": "The Mid-March/April batch is currently open for registration. You can join via the registration link on the main page.",
-            "april": "The Mid-March/April batch is currently open for registration. You can join via the registration link on the main page.",
-            "june": "The June batch starts in the first week of June. It's ideal for students looking to start with the new academic session.",
-            "rolling": "Rolling admissions allow you to join our ongoing batches at any time, provided there is space and your fundamentals are aligned.",
-            "mentor": "Your mentor is Amol Kumar Thakre, Ph.D. from the University of Twente and Masters from IISc Bangalore. He has extensive experience in Energy Research (Equinor, Norway) and GE Research, and has been mentoring JEE/NEET aspirants since 2020.",
-            "amol": "Amol Kumar Thakre is a scientist, engineer, and educator. He specializes in multiphase flows and computational modeling, and brings that analytical depth to teaching Science and Math for JEE/NEET.",
-            "contact": "You can reach out at amolthakre.in@gmail.com or call +91-9591233320.",
-            "fees": "For details on fees and scheduling, please fill out the registration form or contact us directly at +91-9591233320.",
-            "default": "I'm sorry, I didn't quite get that. You can ask about admissions, batches (March/April or June), or the mentor Amol Thakre."
+2. June Batch: Aligned with academic sessions.
+Mid-session entry is seat-dependent.`,
+            "march": "The Mid-March/April batch is currently open. Mid-session entry is only possible if seats are available.",
+            "april": "The Mid-March/April batch is currently open. Mid-session entry is only possible if seats are available.",
+            "june": "The June batch starts in the first week of June. For mid-session admission, please contact us to check seat availability.",
+            "rolling": "Mid-session admission is possible only if seats are available. Please contact us directly for an enquiry.",
+            "mentor": "Your mentor is Amol Kumar Thakre, Ph.D. (Twente) and Masters (IISc). He has extensive research experience at Equinor and GE. Please contact him for any specific admission or fee enquiries.",
+            "amol": "Amol Kumar Thakre is a scientist and educator specializing in multiphase flows. He brings deep analytical expertise to JEE/NEET mentoring.",
+            "contact": "For any enquiries, you can reach out at amolthakre.in@gmail.com or call/WhatsApp +91-9591233320.",
+            "fees": "For a detailed fee enquiry, please contact the mentors directly at +91-9591233320.",
+            "enquiry": "For detailed enquiries regarding fees or mid-session admissions, please contact the mentors at +91-9591233320.",
+            "seats": "Mid-session admission is strictly subject to seat availability. Please contact us to check the current status.",
+            "default": "I can help with admissions, batches, or mentor info. For detailed fee enquiries or mid-session seat availability, please contact the mentors at +91-9591233320."
         };
 
         function addMessage(text, sender) {
@@ -60,7 +62,7 @@ Rolling admissions are also available.`,
                 addMessage("Hello, how can I help you?", 'bot');
                 const optionsDiv = document.createElement('div');
                 optionsDiv.className = 'chatbot-options';
-                const options = ["Admissions", "Mentor info", "March Batch", "June Batch"];
+                const options = ["Admissions", "Fees", "Mentor info", "Contact"];
                 options.forEach(opt => {
                     const optBtn = document.createElement('button');
                     optBtn.className = 'chatbot-option';
