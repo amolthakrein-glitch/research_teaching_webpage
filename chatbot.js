@@ -1,5 +1,5 @@
 (function() {
-    let state = { lead: 'none', name: '', goal: '' };
+    let state = { phase: 'idle', name: '', phone: '' };
 
     function initChatbot() {
         if (document.getElementById('chatbot-container')) return;
@@ -7,25 +7,25 @@
         const container = document.createElement('div');
         container.id = 'chatbot-container';
         container.innerHTML = `
-            <button id="chatbot-button">🔬</button>
+            <button id="chatbot-button">🧪</button>
             <div id="chatbot-window">
                 <div id="chatbot-header">
                     <div class="bot-info">
-                        <div class="bot-avatar">👨‍🔬</div>
+                        <div class="bot-avatar">🤖</div>
                         <div>
-                            <div style="font-weight:800; color:#1e293b; font-size:15px;">Lab Assistant</div>
-                            <div style="font-size:11px; color:#64748b;"><span class="bot-dot" style="width:6px; height:6px; background:#22c55e; border-radius:50%; display:inline-block; margin-right:4px;"></span>Online</div>
+                            <div style="font-weight:800; color:#1e293b; font-size:15px;">Lab Sidekick</div>
+                            <div style="font-size:11px; color:#22c55e;">● Online & Hyper</div>
                         </div>
                     </div>
-                    <span id="chatbot-close" style="cursor:pointer; font-size:24px; color:#94a3b8;">&times;</span>
+                    <span id="chatbot-close" style="cursor:pointer; font-size:24px;">&times;</span>
                 </div>
                 <div id="chatbot-messages"></div>
                 <div class="typing-indicator" id="typing">
                     <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                 </div>
                 <div id="chatbot-input-container">
-                    <input type="text" id="chatbot-input" placeholder="Initiate query...">
-                    <button id="chatbot-send">Send</button>
+                    <input type="text" id="chatbot-input" placeholder="Type something cool...">
+                    <button id="chatbot-send">Go!</button>
                 </div>
             </div>
         `;
@@ -38,28 +38,26 @@
         const type = document.getElementById('typing');
 
         const knowledge = {
-            "admission": "Admissions are in a high-probability state! Main batches: March/April and June. Mid-session entry depends on current 'student density' (seat availability). Please contact Dr. Amol Thakre for a specific enquiry.",
-            "fees": "To calculate the tuition variables for your specific track, I need to link your coordinates to Dr. Amol Thakre. Let's start with your name?",
-            "mentor": "Dr. Amol Thakre is a Ph.D. from the University of Twente (Netherlands) and an IISc Bangalore alumnus. With a rich background in R&D at GE and Equinor (Norway), he brings industrial-grade analytical depth to JEE/NEET mentoring.",
-            "batch": "Our academic cycles are synchronized with the seasons: \n1. Spring Batch (March/April)\n2. Summer Batch (June)\nRolling admissions are possible if a 'vacuum' (available seat) exists in the current batch.",
-            "contact": "You can reach the Lab HQ at +91-9591233320 or email amolthakre.in@gmail.com. Dr. Amol Thakre usually responds once the simulations are stabilized.",
-            "subjects": "We specialize in the high-energy triad: Physics, Chemistry, and Mathematics for Classes 8 to 12, with dedicated tracks for JEE and NEET.",
-            "method": "Our methodology uses 'Concept-to-Competition' pipelines: concept-first intuition, multi-level problem sets, and timed solving frameworks to minimize exam-day entropy.",
-            "results": "We track performance with high fidelity: weekly tests, chapter-wise analytics, and error-log based remediation to ensure continuous improvement.",
-            "location": "For specific details on the lab's physical coordinates or online meeting links, please contact Dr. Amol Thakre at +91-9591233320."
+            "admission": "Good news! We have batches in March/April and June. If you're late, don't panic—rolling admissions exist if there's a free chair in the lab! 🪑",
+            "fees": "I don't actually have a pocket, so I don't carry the price list. But Dr. Amol Thakre does! What's your name? I'll introduce you.",
+            "mentor": "That's Dr. Amol Thakre! He's a Ph.D. from the Netherlands, worked at GE and Equinor, and basically knows how to build digital twins. He's the Boss. 👨‍🔬",
+            "subjects": "We do Physics, Chemistry, and Math. The 'Big Three'! From Class 8 to 12, including JEE and NEET. 📚",
+            "method": "The Boss uses a 'Concept-to-Competition' method. No boring rote learning here—just pure logic and timed practice to make you an exam ninja. 🥷",
+            "contact": "Call us at +91-9591233320! Or email amolthakre.in@gmail.com. We usually reply faster than a speed of light! (Okay, maybe a bit slower).",
+            "march": "The Spring batch! Starts March/April. Perfect for early birds who want to beat the stress. 🐣",
+            "june": "The Summer batch! Starts in June. It's when the real heat begins! ☀️"
         };
 
-        const witticisms = [
-            "Analyzing your query with 99.9% precision...",
-            "Consulting the second law of thermodynamics for that answer...",
-            "Wait, Dr. Amol Thakre is currently optimizing a digital twin. I'll handle this!",
-            "Did you know? Entropy increases, but your marks shouldn't. Let's talk logic.",
-            "Calibrating response parameters... ready!"
+        const randomGags = [
+            "Boop! Brain cells activated.",
+            "Just checked my internal database... 💾",
+            "Easier than balancing a chemical equation!",
+            "Warning: Highly intelligent response incoming... ⚡"
         ];
 
-        function addMsg(text, type, options = null) {
+        function addMsg(text, sender, options = null) {
             const d = document.createElement('div');
-            d.className = `chat-message ${type}-message`;
+            d.className = `chat-message ${sender}-message`;
             d.innerText = text;
             msgs.appendChild(d);
             
@@ -93,38 +91,36 @@
         }
 
         function respond(q) {
-            if (state.lead === 'name') {
+            if (state.phase === 'get_name') {
                 state.name = q;
-                state.lead = 'phone';
-                addMsg(`Excellent coordinates, ${q}! Now, what's your mobile number so Dr. Amol Thakre can beam the fee structure to you?`, 'bot');
+                state.phase = 'get_phone';
+                addMsg(`Nice to meet you, ${q}! Now give me your phone number so Dr. Amol Thakre can send you the fee details. I promise not to prank call you! 📱`, 'bot');
                 return;
             }
-            if (state.lead === 'phone') {
-                state.lead = 'none';
-                addMsg(`Data received! Dr. Amol Thakre will reach out to you shortly. Anything else on your mind?`, 'bot');
+            if (state.phase === 'get_phone') {
+                state.phase = 'idle';
+                addMsg(`Got it! I've beamed your info to the Boss. He'll get back to you soon. What else can I help with?`, 'bot');
                 return;
             }
 
-            if (q.includes('fee') || q.includes('cost') || q.includes('price')) {
-                state.lead = 'name';
+            // Fuzzy matching for fees
+            if (q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('money') || q.includes('pay')) {
+                state.phase = 'get_name';
                 addMsg(knowledge.fees, 'bot');
                 return;
             }
 
-            let bestMatch = null;
-            let keywords = Object.keys(knowledge);
-            for (let k of keywords) {
-                if (q.includes(k)) {
-                    bestMatch = k;
-                    break;
-                }
+            if (q.includes('boss') || q.includes('who is')) {
+                addMsg(knowledge.mentor, 'bot');
+                return;
             }
 
-            if (bestMatch) {
-                if (Math.random() > 0.6) addMsg(witticisms[Math.floor(Math.random()*witticisms.length)], 'bot');
-                addMsg(knowledge[bestMatch], 'bot');
+            let match = Object.keys(knowledge).find(k => q.includes(k));
+            if (match) {
+                if (Math.random() > 0.5) addMsg(randomGags[Math.floor(Math.random()*randomGags.length)], 'bot');
+                addMsg(knowledge[match], 'bot');
             } else {
-                addMsg("My sensors are experiencing interference. Should we focus on Admissions, Fees, Subjects, or Mentor Info?", 'bot', ["Admissions", "Fees", "Subjects", "Mentor Info"]);
+                addMsg("I'm just a sidekick, and that question was too big for my circuits! Try asking about Admissions, the Boss (Dr. Amol), or Fees.", 'bot', ["Admissions", "Fees", "The Boss", "Subjects"]);
             }
         }
 
@@ -133,7 +129,7 @@
             win.style.display = show ? 'flex' : 'none';
             if (show && msgs.children.length === 0) {
                 setTimeout(() => {
-                    addMsg("Greetings! I am the Lab Assistant. Dr. Amol Thakre is currently refining a high-fidelity simulation, but I can help you minimize the entropy of your academic journey.", 'bot', ["Admissions", "Fees", "Mentor Info", "Subjects"]);
+                    addMsg("Hi! I'm the Lab Sidekick. 🤖 Dr. Amol Thakre is busy doing science stuff, so I'm here to help you join the lab. What's on your mind?", 'bot', ["Admissions", "Fees", "Who is Dr. Amol?"]);
                 }, 500);
             }
         };
