@@ -1,6 +1,5 @@
 (function() {
-    let leadState = 'none'; // 'none', 'awaiting_name', 'awaiting_phone'
-    let userData = { name: '', phone: '' };
+    let state = { lead: 'none', name: '', goal: '' };
 
     function initChatbot() {
         if (document.getElementById('chatbot-container')) return;
@@ -8,142 +7,140 @@
         const container = document.createElement('div');
         container.id = 'chatbot-container';
         container.innerHTML = `
-            <button id="chatbot-button">💬</button>
+            <button id="chatbot-button">🔬</button>
             <div id="chatbot-window">
                 <div id="chatbot-header">
-                    <div class="bot-profile">
-                        <div class="bot-dot"></div>
-                        <span>Admission Assistant</span>
+                    <div class="bot-info">
+                        <div class="bot-avatar">👨‍🔬</div>
+                        <div>
+                            <div style="font-weight:800; color:#1e293b; font-size:15px;">Lab Assistant</div>
+                            <div style="font-size:11px; color:#64748b;"><span class="bot-dot" style="width:6px; height:6px; background:#22c55e; border-radius:50%; display:inline-block; margin-right:4px;"></span>Online</div>
+                        </div>
                     </div>
-                    <span id="chatbot-close" style="cursor:pointer; font-size:24px;">&times;</span>
+                    <span id="chatbot-close" style="cursor:pointer; font-size:24px; color:#94a3b8;">&times;</span>
                 </div>
                 <div id="chatbot-messages"></div>
-                <div class="chat-message bot-message typing-indicator" id="typing">
+                <div class="typing-indicator" id="typing">
                     <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                 </div>
                 <div id="chatbot-input-container">
-                    <input type="text" id="chatbot-input" placeholder="Ask about admissions...">
+                    <input type="text" id="chatbot-input" placeholder="Initiate query...">
                     <button id="chatbot-send">Send</button>
                 </div>
             </div>
         `;
         document.body.appendChild(container);
 
-        const messages = document.getElementById('chatbot-messages');
+        const msgs = document.getElementById('chatbot-messages');
         const input = document.getElementById('chatbot-input');
         const send = document.getElementById('chatbot-send');
-        const chatWindow = document.getElementById('chatbot-window');
-        const typing = document.getElementById('typing');
+        const win = document.getElementById('chatbot-window');
+        const type = document.getElementById('typing');
 
         const knowledge = {
-            "admission": { score: 10, msg: "We have two main batches: March/April and June. Mid-session admission is possible only if seats are available." },
-            "batch": { score: 8, msg: "Main batches: 1. March Early Starters 2. June Academic Session. Rolling admission available if seats exist." },
-            "fees": { score: 15, msg: "I can definitely help with fee details. Could you please tell me your name first?" },
-            "mentor": { score: 10, msg: "Your mentor is Amol Kumar Thakre, Ph.D. (Twente) and Masters (IISc). He has deep R&D experience at GE and Equinor." },
-            "contact": { score: 5, msg: "You can reach us at +91-9591233320 or amolthakre.in@gmail.com." }
+            "admission": "Admissions are currently in a high-probability state! We have batches in March/April and June. Mid-session entry depends on the current 'student density' (seat availability).",
+            "fees": "To calculate the tuition variables, I need to link your coordinates to Amol Sir. Let's start with your name?",
+            "mentor": "Sir is a Ph.D. from Twente and an IISc alumnus. He has spent years in the labs of GE and Equinor. He doesn't just teach Science; he simulates success.",
+            "batch": "Main academic cycles: \n1. Spring Equinox (March/April)\n2. Summer Solstice (June)\nRolling admissions occur if the vacuum of a seat exists!",
+            "contact": "You can reach the Lab HQ at +91-9591233320 or amolthakre.in@gmail.com."
         };
 
-        function addMessage(text, sender, isOptions = false) {
-            if (isOptions) {
-                const optDiv = document.createElement('div');
-                optDiv.className = 'chatbot-options';
-                text.forEach(opt => {
-                    const btn = document.createElement('button');
-                    btn.className = 'chatbot-option';
-                    btn.innerText = opt;
-                    btn.onclick = () => { input.value = opt; handleInput(); };
-                    optDiv.appendChild(btn);
+        const witticisms = [
+            "Analyzing your query with 99.9% precision...",
+            "Consulting the laws of thermodynamics for that answer...",
+            "Wait, Sir is currently optimizing a digital twin. I'll handle this!",
+            "Did you know? Entropy increases, but your marks shouldn't. Let's talk admissions."
+        ];
+
+        function addMsg(text, type, options = null) {
+            const d = document.createElement('div');
+            d.className = `chat-message ${type}-message`;
+            d.innerText = text;
+            msgs.appendChild(d);
+            
+            if (options) {
+                const g = document.createElement('div');
+                g.className = 'options-grid';
+                options.forEach(o => {
+                    const b = document.createElement('button');
+                    b.className = 'opt-btn';
+                    b.innerText = o;
+                    b.onclick = () => { input.value = o; handleIn(); };
+                    g.appendChild(b);
                 });
-                messages.appendChild(optDiv);
-            } else {
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `chat-message ${sender}-message`;
-                msgDiv.innerText = text;
-                messages.appendChild(msgDiv);
+                msgs.appendChild(g);
             }
-            messages.scrollTop = messages.scrollHeight;
+            msgs.scrollTop = msgs.scrollHeight;
         }
 
-        function showTyping(show) {
-            typing.style.display = show ? 'block' : 'none';
-            messages.scrollTop = messages.scrollHeight;
-        }
-
-        function handleInput() {
-            const val = input.value.trim();
-            if (!val) return;
-            addMessage(val, 'user');
+        function handleIn() {
+            const v = input.value.trim();
+            if (!v) return;
+            addMsg(v, 'user');
             input.value = '';
+            type.style.display = 'block';
+            msgs.scrollTop = msgs.scrollHeight;
 
-            showTyping(true);
             setTimeout(() => {
-                showTyping(false);
-                processLogic(val.toLowerCase());
-            }, 1000);
+                type.style.display = 'none';
+                respond(v.toLowerCase());
+            }, 1200);
         }
 
-        function processLogic(query) {
-            // Lead collection state machine
-            if (leadState === 'awaiting_name') {
-                userData.name = query;
-                leadState = 'awaiting_phone';
-                addMessage(`Nice to meet you, ${query}! What is your phone number so the mentor can share the fee structure?`, 'bot');
+        function respond(q) {
+            // State Machine for Leads
+            if (state.lead === 'name') {
+                state.name = q;
+                state.lead = 'phone';
+                addMsg(`Excellent coordinates, ${q}! Now, what's your mobile number so we can beam the fee structure to you?`, 'bot');
                 return;
             }
-            if (leadState === 'awaiting_phone') {
-                userData.phone = query;
-                leadState = 'none';
-                addMessage(`Thank you! I've shared your details with Amol sir. He will reach out shortly. Anything else?`, 'bot');
-                console.log("Lead Collected:", userData); // In a real app, send to server
+            if (state.lead === 'phone') {
+                state.lead = 'none';
+                addMsg(`Data received! Sir will reach out to you before the next batch cycle. Anything else on your mind?`, 'bot');
                 return;
             }
 
-            // Keyword scoring
-            let bestKey = null;
-            let maxScore = 0;
-            for (let key in knowledge) {
-                if (query.includes(key)) {
-                    if (knowledge[key].score > maxScore) {
-                        maxScore = knowledge[key].score;
-                        bestKey = key;
-                    }
+            // Logic
+            if (q.includes('fee') || q.includes('cost') || q.includes('price')) {
+                state.lead = 'name';
+                addMsg(knowledge.fees, 'bot');
+                return;
+            }
+
+            let found = false;
+            for (let k in knowledge) {
+                if (q.includes(k)) {
+                    if (Math.random() > 0.7) addMsg(witticisms[Math.floor(Math.random()*witticisms.length)], 'bot');
+                    addMsg(knowledge[k], 'bot');
+                    found = true;
+                    break;
                 }
             }
 
-            if (bestKey === 'fees') {
-                leadState = 'awaiting_name';
-                addMessage(knowledge.fees.msg, 'bot');
-            } else if (bestKey) {
-                addMessage(knowledge[bestKey].msg, 'bot');
-            } else {
-                addMessage("I'm not sure about that. Would you like to check admissions or speak to the mentor?", 'bot');
-                addMessage(["Admissions", "Mentor Info", "Contact"], 'bot', true);
+            if (!found) {
+                addMsg("My sensors are confused by that input. Should we focus on Admissions, Fees, or Mentor info?", 'bot', ["Admissions", "Fees", "Mentor Info"]);
             }
         }
 
         document.getElementById('chatbot-button').onclick = () => {
-            const isVisible = chatWindow.style.display === 'flex';
-            chatWindow.style.display = isVisible ? 'none' : 'flex';
-            if (!isVisible && messages.children.length === 0) {
-                showTyping(true);
+            const show = win.style.display !== 'flex';
+            win.style.display = show ? 'flex' : 'none';
+            if (show && msgs.children.length === 0) {
                 setTimeout(() => {
-                    showTyping(false);
-                    addMessage("Hello! I'm Amol sir's assistant. How can I help you today?", 'bot');
-                    addMessage(["Admissions", "Fees", "Mentor info"], 'bot', true);
-                }, 800);
+                    addMsg("Greetings! I am the Lab Assistant. Sir is currently busy with high-fidelity simulations, but I can help you minimize the entropy of your admission process.", 'bot', ["Admissions", "Fees", "Mentor Info"]);
+                }, 500);
             }
         };
 
-        document.getElementById('chatbot-close').onclick = () => chatWindow.style.display = 'none';
-        send.onclick = handleInput;
-        input.onkeypress = (e) => { if (e.key === 'Enter') handleInput(); };
+        document.getElementById('chatbot-close').onclick = () => win.style.display = 'none';
+        send.onclick = handleIn;
+        input.onkeypress = (e) => { if (e.key === 'Enter') handleIn(); };
 
-        // Auto-open greeting
         setTimeout(() => {
-            if (chatWindow.style.display !== 'flex') document.getElementById('chatbot-button').click();
+            if (win.style.display !== 'flex') document.getElementById('chatbot-button').click();
         }, 2000);
     }
 
-    if (document.readyState === 'complete') initChatbot();
-    else window.addEventListener('load', initChatbot);
+    initChatbot();
 })();
