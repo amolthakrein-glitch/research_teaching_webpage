@@ -290,6 +290,7 @@ ul { margin: .25rem 0 .15rem .98rem; }
 .education-section .logo-twente::before { background-image: url("assets/buildings/wm_twente_rect.jpg"); }
 .education-section .logo-iisc::before { background-image: url("assets/buildings/wm_iisc_rect.jpg"); }
 .education-section .logo-mit::before { background-image: url("assets/buildings/wm_mit_rect.jpg"); }
+.education-section .logo-mits::before { background-image: url("assets/buildings/mits_building.jpg"); }
 .card > * {
   position: relative;
   z-index: 1;
