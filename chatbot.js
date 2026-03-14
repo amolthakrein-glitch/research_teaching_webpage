@@ -1,5 +1,5 @@
 (function() {
-    let state = { phase: 'idle', name: '', phone: '' };
+    let state = { lead: 'none', data: { name: '', goal: '', phone: '' } };
 
     function initChatbot() {
         if (document.getElementById('chatbot-container')) return;
@@ -7,25 +7,26 @@
         const container = document.createElement('div');
         container.id = 'chatbot-container';
         container.innerHTML = `
-            <button id="chatbot-button">🧪</button>
+            <button id="chatbot-button">✉️</button>
             <div id="chatbot-window">
                 <div id="chatbot-header">
-                    <div class="bot-info">
-                        <div class="bot-avatar">🤖</div>
+                    <div class="counselor-profile">
+                        <div style="position:relative;">
+                            <div style="width:40px; height:40px; background:#f1f5f9; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px;">🎓</div>
+                            <div class="status-indicator" style="position:absolute; bottom:-2px; right:-2px;"></div>
+                        </div>
                         <div>
-                            <div style="font-weight:800; color:#1e293b; font-size:15px;">Lab Sidekick</div>
-                            <div style="font-size:11px; color:#22c55e;">● Online & Hyper</div>
+                            <div style="font-weight:700; color:#1e293b; font-size:14px;">Admissions and Enquiry Assistant</div>
+                            <div style="font-size:11px; color:#64748b;">Dr. Amol Thakre's Office</div>
                         </div>
                     </div>
-                    <span id="chatbot-close" style="cursor:pointer; font-size:24px;">&times;</span>
+                    <span id="chatbot-close" style="cursor:pointer; font-size:20px; color:#94a3b8;">&times;</span>
                 </div>
                 <div id="chatbot-messages"></div>
-                <div class="typing-indicator" id="typing">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                </div>
+                <div class="typing-indicator" id="typing">Counselor is typing...</div>
                 <div id="chatbot-input-container">
-                    <input type="text" id="chatbot-input" placeholder="Type something cool...">
-                    <button id="chatbot-send">Go!</button>
+                    <input type="text" id="chatbot-input" placeholder="Type your message...">
+                    <button id="chatbot-send">Send</button>
                 </div>
             </div>
         `;
@@ -38,40 +39,30 @@
         const type = document.getElementById('typing');
 
         const knowledge = {
-            "admission": "Good news! We have batches in March/April and June. If you're late, don't panic—rolling admissions exist if there's a free chair in the lab! 🪑",
-            "fees": "I don't actually have a pocket, so I don't carry the price list. But Dr. Amol Thakre does! What's your name? I'll introduce you.",
-            "mentor": "That's Dr. Amol Thakre! He's a Ph.D. from the Netherlands, worked at GE and Equinor, and basically knows how to build digital twins. He's the Boss. 👨‍🔬",
-            "subjects": "We do Physics, Chemistry, and Math. The 'Big Three'! From Class 8 to 12, including JEE and NEET. 📚",
-            "method": "The Boss uses a 'Concept-to-Competition' method. No boring rote learning here—just pure logic and timed practice to make you an exam ninja. 🥷",
-            "contact": "Call us at +91-9591233320! Or email amolthakre.in@gmail.com. We usually reply faster than a speed of light! (Okay, maybe a bit slower).",
-            "march": "The Spring batch! Starts March/April. Perfect for early birds who want to beat the stress. 🐣",
-            "june": "The Summer batch! Starts in June. It's when the real heat begins! ☀️"
+            "admission": "Our admission process is designed for clarity and efficiency. We offer two primary intake cycles:\n\n1. **Early Starter Batch (March/April)**: Ideal for students aiming for a competitive edge.\n2. **Academic Batch (June)**: Aligned with the standard school calendar.\n\n**Rolling Admissions**: If seats are available, mid-session entry is possible. Would you like to check current seat availability?",
+            "mentor": "**Dr. Amol Thakre** leads all mentoring sessions. His credentials include:\n\n• **Ph.D.** from University of Twente, Netherlands.\n• **Masters** from IISc Bangalore.\n• **Industrial R&D**: GE Research & Equinor (Norway).\n\nHe specializes in providing analytical depth to Science and Mathematics coaching.",
+            "method": "Dr. Thakre's **'Concept-to-Competition'** pipeline involves:\n\n1. **Concept Intuition**: Visual and equation-based fundamentals.\n2. **Problem Sets**: Multi-level difficulty mapping.\n3. **Timed Frameworks**: To improve exam selection and speed.\n4. **Analytics**: Weekly tests with chapter-wise error logs.",
+            "fees": "Fee structures are customized based on the specific track (JEE, NEET, or School Boards). To provide an accurate quote, may I start by noting your **Full Name**?",
+            "contact": "For immediate assistance, you may contact the office at **+91-9591233320** or email **amolthakre.in@gmail.com**."
         };
-
-        const randomGags = [
-            "Boop! Brain cells activated.",
-            "Just checked my internal database... 💾",
-            "Easier than balancing a chemical equation!",
-            "Warning: Highly intelligent response incoming... ⚡"
-        ];
 
         function addMsg(text, sender, options = null) {
             const d = document.createElement('div');
             d.className = `chat-message ${sender}-message`;
-            d.innerText = text;
+            d.innerHTML = text.replace(/\n/g, '<br>');
             msgs.appendChild(d);
             
             if (options) {
-                const g = document.createElement('div');
-                g.className = 'options-grid';
+                const c = document.createElement('div');
+                c.className = 'opt-container';
                 options.forEach(o => {
                     const b = document.createElement('button');
                     b.className = 'opt-btn';
                     b.innerText = o;
                     b.onclick = () => { input.value = o; handleIn(); };
-                    g.appendChild(b);
+                    c.appendChild(b);
                 });
-                msgs.appendChild(g);
+                msgs.appendChild(c);
             }
             msgs.scrollTop = msgs.scrollHeight;
         }
@@ -86,42 +77,53 @@
 
             setTimeout(() => {
                 type.style.display = 'none';
-                respond(v.toLowerCase());
+                process(v);
             }, 1000);
         }
 
-        function respond(q) {
-            if (state.phase === 'get_name') {
-                state.name = q;
-                state.phase = 'get_phone';
-                addMsg(`Nice to meet you, ${q}! Now give me your phone number so Dr. Amol Thakre can send you the fee details. I promise not to prank call you! 📱`, 'bot');
+        function process(q) {
+            const query = q.toLowerCase();
+
+            // Lead Collection States
+            if (state.lead === 'name') {
+                state.data.name = q;
+                state.lead = 'goal';
+                addMsg(`Thank you, ${q}. Are you inquiring for **JEE**, **NEET**, or **Foundation (8th-10th)**?`, 'bot', ["JEE", "NEET", "Foundation"]);
                 return;
             }
-            if (state.phase === 'get_phone') {
-                state.phase = 'idle';
-                addMsg(`Got it! I've beamed your info to the Boss. He'll get back to you soon. What else can I help with?`, 'bot');
+            if (state.lead === 'goal') {
+                state.data.goal = q;
+                state.lead = 'phone';
+                addMsg(`Understood. Lastly, please provide your **Phone Number** so Dr. Amol Thakre can share the detailed syllabus and fee structure.`, 'bot');
+                return;
+            }
+            if (state.lead === 'phone') {
+                state.data.phone = q;
+                state.lead = 'none';
+                addMsg(`Information received. A counselor will reach out to you within 24 hours to finalize your registration. Is there anything else I can clarify?`, 'bot');
                 return;
             }
 
-            // Fuzzy matching for fees
-            if (q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('money') || q.includes('pay')) {
-                state.phase = 'get_name';
+            // Intent Matching
+            if (query.includes('fee') || query.includes('cost') || query.includes('price') || query.includes('join')) {
+                state.lead = 'name';
                 addMsg(knowledge.fees, 'bot');
                 return;
             }
-
-            if (q.includes('boss') || q.includes('who is')) {
+            if (query.includes('who') || query.includes('mentor') || query.includes('background') || query.includes('amol')) {
                 addMsg(knowledge.mentor, 'bot');
                 return;
             }
-
-            let match = Object.keys(knowledge).find(k => q.includes(k));
-            if (match) {
-                if (Math.random() > 0.5) addMsg(randomGags[Math.floor(Math.random()*randomGags.length)], 'bot');
-                addMsg(knowledge[match], 'bot');
-            } else {
-                addMsg("I'm just a sidekick, and that question was too big for my circuits! Try asking about Admissions, the Boss (Dr. Amol), or Fees.", 'bot', ["Admissions", "Fees", "The Boss", "Subjects"]);
+            if (query.includes('batch') || query.includes('admission') || query.includes('start')) {
+                addMsg(knowledge.admission, 'bot');
+                return;
             }
+            if (query.includes('how') || query.includes('teach') || query.includes('method')) {
+                addMsg(knowledge.method, 'bot');
+                return;
+            }
+
+            addMsg("I'm here to provide detailed information regarding admissions and Dr. Thakre's mentoring program. Please select a topic below or type your query.", 'bot', ["Batches & Admissions", "Dr. Amol's Background", "Teaching Methodology", "Enquire about Fees"]);
         }
 
         document.getElementById('chatbot-button').onclick = () => {
@@ -129,7 +131,7 @@
             win.style.display = show ? 'flex' : 'none';
             if (show && msgs.children.length === 0) {
                 setTimeout(() => {
-                    addMsg("Hi! I'm the Lab Sidekick. 🤖 Dr. Amol Thakre is busy doing science stuff, so I'm here to help you join the lab. What's on your mind?", 'bot', ["Admissions", "Fees", "Who is Dr. Amol?"]);
+                    addMsg("Welcome to Dr. Amol Thakre's Admissions Office. I am here to provide you with clear and detailed information regarding our mentoring programs. How may I assist you today?", 'bot', ["Check Admissions", "Mentor Information", "Fee Structure"]);
                 }, 500);
             }
         };
