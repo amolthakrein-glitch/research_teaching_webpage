@@ -22,4 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (phnText) {
         phnText.textContent = `${p_country}-${p_main}`;
     }
+
+    // Visit Logging Tracking
+    async function logVisit() {
+        try {
+            await fetch('/api/log_visit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    page: window.location.pathname,
+                    referrer: document.referrer
+                })
+            });
+        } catch (e) {
+            // Silently fail if server is not reachable
+        }
+    }
+    logVisit();
 });
