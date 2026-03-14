@@ -33,7 +33,7 @@
         }
     };
 
-    let state = { stage: 'idle', context: {} };
+    let state = { stage: 'idle', context: { student_name: '', class_mix: '', mobile: '', mode: 'Offline', timing: 'Weekday' } };
 
     function initChatbot() {
         if (document.getElementById('chatbot-container')) return;
@@ -92,6 +92,31 @@
             msgs.scrollTop = msgs.scrollHeight;
         }
 
+        function validatePhone(phone) {
+            const re = /^[0-9]{10}$/;
+            return re.test(phone.replace(/\s/g, '').replace('+91', ''));
+        }
+
+        async function logEnquiry(data) {
+            console.log("Attempting to log enquiry:", data);
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                return await response.json();
+            } catch (e) {
+                console.error("Local logging failed (likely static host):", e);
+                return null;
+            }
+        }
+
+        function forwardToWhatsApp(data) {
+            const msg = `*New Chatbot Enquiry*%0A*Name:* ${encodeURIComponent(data.student_name)}%0A*Target:* ${encodeURIComponent(data.class_mix)}%0A*Phone:* ${encodeURIComponent(data.mobile)}%0A*Source:* Website Chatbot`;
+            window.open(`https://wa.me/919591233320?text=${msg}`, '_blank');
+        }
+
         function handleIn() {
             const v = input.value.trim();
             if (!v) return;
@@ -111,21 +136,31 @@
 
             // Lead State Machine
             if (state.stage === 'awaiting_name') {
-                state.context.name = text;
+                state.context.student_name = text;
                 state.stage = 'awaiting_goal';
                 addMsg(`Pleasure to meet you, ${text}! Which program are you interested in? (JEE, NEET, or Foundation?)`, 'bot', ["JEE", "NEET", "Class 8-10 Foundation"]);
                 return;
             }
             if (state.stage === 'awaiting_goal') {
-                state.context.goal = text;
+                state.context.class_mix = text;
                 state.stage = 'awaiting_phone';
-                addMsg(`Great choice. Lastly, please share your contact number. Dr. Amol will personally review your profile and share the fee structure.`, 'bot');
+                addMsg(`Great choice. Lastly, please share your **10-digit mobile number** so Dr. Amol can share the detailed syllabus and fee structure.`, 'bot');
                 return;
             }
             if (state.stage === 'awaiting_phone') {
-                state.context.phone = text;
-                state.stage = 'idle';
-                addMsg(`Perfect. I've sent your request to Dr. Amol Thakre's desk. He usually gets back once his research simulations are done! Anything else?`, 'bot');
+                if (validatePhone(text)) {
+                    state.context.mobile = text;
+                    state.stage = 'idle';
+                    addMsg(`Authenticity verified. I am now forwarding your details to Dr. Amol Thakre via WhatsApp for immediate priority.`, 'bot');
+                    
+                    // Final Actions: Log and Forward
+                    logEnquiry(state.context);
+                    forwardToWhatsApp(state.context);
+                    
+                    addMsg(`A WhatsApp confirmation window should have opened. If not, please click the WhatsApp button on our registration page. Anything else I can help with?`, 'bot');
+                } else {
+                    addMsg("That doesn't look like a valid 10-digit mobile number. Could you please check and type it again?", 'bot');
+                }
                 return;
             }
 
@@ -158,11 +193,6 @@
 
             if (q.includes('location') || q.includes('where') || q.includes('address')) {
                 addMsg(`We are located at **${knowledgeBase.location.address}**. It's a focused learning environment designed for deep work and rigour.`, 'bot');
-                return;
-            }
-
-            if (q.includes('form') || q.includes('how to') || q.includes('process')) {
-                addMsg(`The enrollment process is simple:\n1. Fill out the **Online Registration Form**.\n2. Submission triggers a **WhatsApp alert** to Dr. Amol.\n3. We will contact you for a **level-assessment call**.`, 'bot', ["Go to Form", "Contact Support"]);
                 return;
             }
 
