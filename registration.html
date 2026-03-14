@@ -171,19 +171,19 @@
 
     <section class="content">
       <div class="registration-grid">
-        <a href="https://wa.me/919591233320?text=Hello%20Dr.%20Amol%2C%20I%20want%20to%20register%20for%20JEE%2FNEET%2FCoaching%20classes." class="card card-wa" target="_blank" rel="noopener">
+        <a href="#" id="wa-card-link" class="card card-wa" target="_blank" rel="noopener">
           <h3>💬 WhatsApp</h3>
           <p>Instant support for batch availability, fees, and quick seat blocking. Recommended for urgent enquiries.</p>
           <span class="action-label">Send Message →</span>
         </a>
 
-        <a href="tel:+919591233320" class="card card-call">
+        <a href="#" id="call-card-link" class="card card-call">
           <h3>📞 Direct Call</h3>
           <p>Talk directly to Dr. Amol regarding student's current level, specific needs, and personalized roadmaps.</p>
-          <span class="action-label">Call +91-9591233320 →</span>
+          <span id="call-text" class="action-label">Call...</span>
         </a>
 
-        <a href="mailto:amolthakre.in@gmail.com?subject=Registration%20Enquiry%20JEE/NEET" class="card card-email">
+        <a href="#" id="eml-card-link" class="card card-email">
           <h3>✉️ Email</h3>
           <p>Send detailed requirements, school board info, and past academic records for a thorough review.</p>
           <span class="action-label">Send Email →</span>
@@ -232,6 +232,25 @@
   </main>
 
   <script>
+    // Contact Obfuscation Protection
+    const e_user = "amolthakre.in";
+    const e_domain = "gmail.com";
+    const p_full = "919591233320";
+    const p_disp = "+91-9591233320";
+
+    const waLink = document.getElementById('wa-card-link');
+    const callLink = document.getElementById('call-card-link');
+    const callText = document.getElementById('call-text');
+    const emlLink = document.getElementById('eml-card-link');
+
+    if (waLink) {
+      const waMsg = encodeURIComponent("Hello Dr. Amol, I want to register for JEE/NEET/Coaching classes.");
+      waLink.href = `https://wa.me/${p_full}?text=${waMsg}`;
+    }
+    if (callLink) callLink.href = `tel:+${p_full}`;
+    if (callText) callText.textContent = `Call ${p_disp} →`;
+    if (emlLink) emlLink.href = `mailto:${e_user}@${e_domain}?subject=Registration Enquiry JEE/NEET`;
+
     const form = document.getElementById("registrationForm");
     const statusEl = document.getElementById("status");
 

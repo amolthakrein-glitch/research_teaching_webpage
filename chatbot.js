@@ -1,5 +1,10 @@
 (function() {
-    // Knowledge Base synthesized from CV, Webpage, and Flyer
+    // Obfuscated Contact Data
+    const c_e_u = "amolthakre.in";
+    const c_e_d = "gmail.com";
+    const c_p_f = "919591233320";
+    const c_p_d = "+91-9591233320";
+
     const knowledgeBase = {
         mentor: {
             name: "Dr. Amol Kumar Thakre",
@@ -20,16 +25,6 @@
         location: {
             address: "Mahaveer Promenade, Whitefield, Bangalore.",
             type: "Offline intensive sessions and potentially hybrid/online support."
-        },
-        contact: {
-            phone: "+91-9591233320",
-            email: "amolthakre.in@gmail.com",
-            web: "https://amolthakre.in"
-        },
-        registration: {
-            process: "You can register using the online form on the Enrollment page. Submission will trigger a WhatsApp notification to Dr. Amol for confirmation.",
-            channels: ["WhatsApp", "Direct Call", "Email", "Online Form"],
-            urgency: "For urgent enquiries and quick seat blocking, WhatsApp or Direct Call is recommended."
         }
     };
 
@@ -98,23 +93,18 @@
         }
 
         async function logEnquiry(data) {
-            console.log("Attempting to log enquiry:", data);
             try {
-                const response = await fetch('/api/register', {
+                await fetch('/api/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-                return await response.json();
-            } catch (e) {
-                console.error("Local logging failed (likely static host):", e);
-                return null;
-            }
+            } catch (e) {}
         }
 
         function forwardToWhatsApp(data) {
             const msg = `*New Chatbot Enquiry*%0A*Name:* ${encodeURIComponent(data.student_name)}%0A*Target:* ${encodeURIComponent(data.class_mix)}%0A*Phone:* ${encodeURIComponent(data.mobile)}%0A*Source:* Website Chatbot`;
-            window.open(`https://wa.me/919591233320?text=${msg}`, '_blank');
+            window.open(`https://wa.me/${c_p_f}?text=${msg}`, '_blank');
         }
 
         function handleIn() {
@@ -134,7 +124,6 @@
         function processInput(text) {
             const q = text.toLowerCase();
 
-            // Lead State Machine
             if (state.stage === 'awaiting_name') {
                 state.context.student_name = text;
                 state.stage = 'awaiting_goal';
@@ -152,21 +141,17 @@
                     state.context.mobile = text;
                     state.stage = 'idle';
                     addMsg(`Authenticity verified. I am now forwarding your details to Dr. Amol Thakre via WhatsApp for immediate priority.`, 'bot');
-                    
-                    // Final Actions: Log and Forward
                     logEnquiry(state.context);
                     forwardToWhatsApp(state.context);
-                    
-                    addMsg(`A WhatsApp confirmation window should have opened. If not, please click the WhatsApp button on our registration page. Anything else I can help with?`, 'bot');
+                    return;
                 } else {
                     addMsg("That doesn't look like a valid 10-digit mobile number. Could you please check and type it again?", 'bot');
+                    return;
                 }
-                return;
             }
 
-            // Keyword Mapping
             if (q.includes('who') || q.includes('mentor') || q.includes('amol') || q.includes('background') || q.includes('credentials')) {
-                addMsg(`**${knowledgeBase.mentor.name}** is an **Ex-GE Senior Scientist** with a Ph.D. from the **University of Twente** and a Masters from **IISc Bangalore**. He specializes in bridging the gap between deep industrial R&D logic and competitive exam preparation.`, 'bot');
+                addMsg(`**${knowledgeBase.mentor.name}** is an **Ex-GE Senior Scientist** with a Ph.D. from the **University of Twente** and a Masters from **IISc Bangalore**.`, 'bot');
                 return;
             }
 
@@ -176,28 +161,22 @@
                 return;
             }
 
+            if (q.includes('contact') || q.includes('call') || q.includes('email') || q.includes('phone') || q.includes('number')) {
+                addMsg(`You can reach the Lab HQ at **${c_p_d}** or email **${c_e_u}@${c_e_d}**.`, 'bot');
+                return;
+            }
+
             if (q.includes('batch') || q.includes('start') || q.includes('date') || q.includes('admission')) {
-                addMsg(`We have two primary intakes at our **Whitefield (Mahaveer Promenade)** center:\n• **Spring Batch**: Mid-March/April\n• **Summer Batch**: June\n\n**Note**: Each batch is strictly capped at **10 seats** to ensure high-quality personal attention. Rolling admissions depend on seat availability.`, 'bot', ["Check Availability", "Location Details"]);
+                addMsg(`We have two primary intakes at Whitefield:\n• **Spring Batch**: Mid-March/April\n• **Summer Batch**: June\n\nEach batch is capped at **10 seats**. Rolling admissions depend on availability.`, 'bot', ["Check Availability", "Location Details"]);
                 return;
             }
 
             if (q.includes('teach') || q.includes('method') || q.includes('how') || q.includes('logic')) {
-                addMsg(`Our methodology is unique: **'Concept-to-Competition'**. It involves:\n1. **Industrial Logic**: Understanding 'why' behind equations.\n2. **Hard-Mode Tests**: Weekly rigorous assessments.\n3. **Analytics**: Chapter-wise performance tracking.\n4. **Error Correction**: Scientific remediation of mistakes.`, 'bot');
+                addMsg(`Our methodology is unique: **'Concept-to-Competition'**. It involves industrial logic, weekly hard-mode tests, and scientific error correction.`, 'bot');
                 return;
             }
 
-            if (q.includes('subject') || q.includes('physic') || q.includes('chem') || q.includes('math')) {
-                addMsg(`We offer expert coaching in the core triad: **Physics, Chemistry, and Mathematics** for Classes 8-12, specifically tailored for **JEE (Main/Adv)** and **NEET**.`, 'bot');
-                return;
-            }
-
-            if (q.includes('location') || q.includes('where') || q.includes('address')) {
-                addMsg(`We are located at **${knowledgeBase.location.address}**. It's a focused learning environment designed for deep work and rigour.`, 'bot');
-                return;
-            }
-
-            // Default
-            addMsg("I'm trained on Dr. Amol's full research and teaching profile. Ask me about his credentials, teaching methods, batch dates, or fee enquiries!", 'bot', ["Dr. Amol's Credentials", "Batch Timings", "Teaching Method", "Fees & Registration"]);
+            addMsg("I'm trained on Dr. Amol's full research and teaching profile. Ask me about credentials, teaching methods, batch dates, or contact details!", 'bot', ["Dr. Amol's Credentials", "Batch Timings", "Contact Details", "Fees & Registration"]);
         }
 
         document.getElementById('chatbot-button').onclick = () => {
@@ -205,7 +184,7 @@
             win.style.display = isVisible ? 'none' : 'flex';
             if (!isVisible && msgs.children.length === 0) {
                 setTimeout(() => {
-                    addMsg("Greetings! I am the Admissions Assistant. I have full access to Dr. Amol Thakre's research and teaching archives. How can I help you navigate your academic journey today?", 'bot', ["Batches & Admissions", "Enrollment Process", "Teaching Methodology"]);
+                    addMsg("Greetings! I am the Admissions Assistant. How can I help you navigate your academic journey today?", 'bot', ["Batches & Admissions", "Enrollment Process", "Teaching Methodology"]);
                 }, 500);
             }
         };
