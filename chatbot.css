@@ -102,3 +102,5 @@
     font-size: 13px; font-weight: 600; cursor: pointer; transition: 0.3s;
 }
 .opt-btn:hover { background: var(--bot-accent); color: white; }
+
+.chat-message b { font-weight: 800 !important; color: #0f172a; }
