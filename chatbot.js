@@ -25,7 +25,7 @@
         programs: {
             tracks: ["JEE Main & Advanced", "NEET Physics & Chemistry", "Class 11-12 Boards (PCM/PCB)", "Class 8-10 Foundation"],
             batches: {
-                spring: "Early Starter Batch: Mid-March / April.",
+                spring: "New batch 2026: Mid-March / April enrollment open.",
                 summer: "Academic Session Batch: June.",
                 rolling: "Mid-session admission possible only if seats are available (maximum 10 seats per batch for quality)."
             },
@@ -168,7 +168,7 @@
                 return;
             }
             if (detectedIntent === 'batches') {
-                addMsg(`<b>Academic Intake (Whitefield Center):</b>\n• <b>Spring Batch:</b> Mid-March/April\n• <b>Summer Batch:</b> June\n\nEach batch is strictly limited to <b>10 seats</b> for quality control.`, 'bot', ["Check Availability", "Location Details"]);
+                addMsg(`<b>Academic Intake (Whitefield Center):</b>\n• <b>New batch 2026:</b> Mid-March/April (Enrollment Live)\n• <b>Summer Batch:</b> June\n\nEach batch is strictly limited to <b>10 seats</b> for quality control.`, 'bot', ["Check Availability", "Location Details"]);
                 return;
             }
             if (detectedIntent === 'methodology') {
