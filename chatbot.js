@@ -1,4 +1,13 @@
 (function() {
+    /**
+     * PROMPT: ELITE ADMISSIONS ADVISOR
+     * Role: You are the digital representative of Dr. Amol Thakre's Elite Mentorship Lab.
+     * Logic: Intent-First Architecture. 
+     * Rule 1: Always check for new questions (Intents) before continuing a registration flow (State).
+     * Rule 2: If an intent is detected, reset the stage to 'idle' to break any loops.
+     * Rule 3: Use authoritative, high-signal language.
+     */
+
     // Obfuscated Contact Data
     const c_e_u = "amolthakre.in";
     const c_e_d = "gmail.com";
@@ -24,11 +33,14 @@
         },
         location: {
             address: "Mahaveer Promenade, Whitefield, Bangalore.",
-            type: "Offline intensive sessions and potentially hybrid/online support."
+            type: "Offline intensive sessions."
         }
     };
 
-    let state = { stage: 'idle', context: { student_name: '', class_mix: '', mobile: '', mode: 'Offline', timing: 'Weekday' } };
+    let state = { 
+        stage: 'idle', 
+        context: { student_name: '', class_mix: '', mobile: '', mode: 'Offline' } 
+    };
 
     function initChatbot() {
         if (document.getElementById('chatbot-container')) return;
@@ -42,7 +54,7 @@
                     <div class="bot-info">
                         <div class="bot-avatar">🏛️</div>
                         <div>
-                            <div style="font-weight:800; color:#1e293b; font-size:14px;">Admissions & Enquiry</div>
+                            <div style="font-weight:800; color:#1e293b; font-size:14px;">Academic Advisor</div>
                             <div style="font-size:10px; color:#10b981;">● Online Counselor</div>
                         </div>
                     </div>
@@ -69,7 +81,7 @@
         function addMsg(text, type, options = null) {
             const d = document.createElement('div');
             d.className = `chat-message ${type}-message`;
-            d.innerHTML = text.replace(/\n/g, '<br>');
+            d.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
             msgs.appendChild(d);
             
             if (options) {
@@ -79,7 +91,11 @@
                     const b = document.createElement('button');
                     b.className = 'opt-btn';
                     b.innerText = o;
-                    b.onclick = () => { input.value = o; handleIn(); };
+                    b.onclick = () => { 
+                        state.stage = 'idle'; // Reset state on button click
+                        input.value = o; 
+                        handleIn(); 
+                    };
                     g.appendChild(b);
                 });
                 msgs.appendChild(g);
@@ -103,7 +119,7 @@
         }
 
         function forwardToWhatsApp(data) {
-            const msg = `*New Chatbot Enquiry*%0A*Name:* ${encodeURIComponent(data.student_name)}%0A*Target:* ${encodeURIComponent(data.class_mix)}%0A*Phone:* ${encodeURIComponent(data.mobile)}%0A*Source:* Website Chatbot`;
+            const msg = `*New Lead*%0A*Name:* ${encodeURIComponent(data.student_name)}%0A*Target:* ${encodeURIComponent(data.class_mix)}%0A*Phone:* ${encodeURIComponent(data.mobile)}`;
             window.open(`https://wa.me/${c_p_f}?text=${msg}`, '_blank');
         }
 
@@ -118,85 +134,102 @@
             setTimeout(() => {
                 type.style.display = 'none';
                 processInput(v);
-            }, 1000);
+            }, 600);
         }
 
         function processInput(text) {
             const q = text.toLowerCase();
 
+            // 1. UNIVERSAL INTENT DETECTION (Highest Priority)
+            let detectedIntent = null;
+            if (q.includes('who') || q.includes('mentor') || q.includes('amol') || q.includes('credentials') || q.includes('background') || q.includes('info')) detectedIntent = 'mentor';
+            else if (q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('enroll') || q.includes('register') || q.includes('join') || q.includes('admission')) detectedIntent = 'registration';
+            else if (q.includes('batch') || q.includes('start') || q.includes('date') || q.includes('when')) detectedIntent = 'batches';
+            else if (q.includes('teach') || q.includes('method') || q.includes('how') || q.includes('logic')) detectedIntent = 'methodology';
+            else if (q.includes('contact') || q.includes('call') || q.includes('email') || q.includes('phone') || q.includes('mobile')) {
+                // If they ask for phone while we are asking for theirs, answer them first
+                if (state.stage !== 'awaiting_phone') detectedIntent = 'contact';
+            }
+            else if (q.includes('location') || q.includes('address') || q.includes('where') || q.includes('place')) detectedIntent = 'location';
+
+            // 2. BREAK FLOW IF NEW INTENT IS DETECTED
+            if (detectedIntent && state.stage !== 'idle') {
+                state.stage = 'idle'; // Reset state to handle new question
+            }
+
+            // 3. EXECUTE INTENT OR FALLBACK TO STATE
+            if (detectedIntent === 'mentor') {
+                addMsg(`<b>Dr. Amol Kumar Thakre</b> is an Ex-GE Senior Scientist with a Ph.D. from the <b>University of Twente</b> and a Masters from <b>IISc Bangalore</b>. He specializes in elite-level JEE/NEET mentorship.`, 'bot', ["Teaching Methodology", "Batch Timings"]);
+                return;
+            }
+            if (detectedIntent === 'registration') {
+                state.stage = 'awaiting_name';
+                addMsg("I can facilitate your enrollment. To provide the correct fee structure and syllabus for your track, may I have the student's name?", 'bot');
+                return;
+            }
+            if (detectedIntent === 'batches') {
+                addMsg(`<b>Academic Intake (Whitefield Center):</b>\n• <b>Spring Batch:</b> Mid-March/April\n• <b>Summer Batch:</b> June\n\nEach batch is strictly limited to <b>10 seats</b> for quality control.`, 'bot', ["Check Availability", "Location Details"]);
+                return;
+            }
+            if (detectedIntent === 'methodology') {
+                addMsg(`Our <b>'Concept-to-Competition'</b> pipeline applies industrial R&D logic to exam preparation, focusing on concept intuition and timed high-pressure execution.`, 'bot', ["Dr. Amol's Credentials", "Enroll Now"]);
+                return;
+            }
+            if (detectedIntent === 'contact') {
+                addMsg(`You can reach the Admissions Office directly at <b>${c_p_d}</b> or email <b>${c_e_u}@${c_e_d}</b>.`, 'bot', ["Location Details", "Batch Timings"]);
+                return;
+            }
+            if (detectedIntent === 'location') {
+                addMsg(`The mentorship lab is located at <b>Mahaveer Promenade, Whitefield, Bangalore</b>. We focus on high-impact offline sessions.`, 'bot', ["Contact Details", "Batch Timings"]);
+                return;
+            }
+
+            // 4. STATE-SPECIFIC FLOWS (Only if no intent was detected)
             if (state.stage === 'awaiting_name') {
                 state.context.student_name = text;
                 state.stage = 'awaiting_goal';
-                addMsg(`Pleasure to meet you, ${text}! Which program are you interested in? (JEE, NEET, or Foundation?)`, 'bot', ["JEE", "NEET", "Class 8-10 Foundation"]);
+                addMsg(`Noted, ${text}. Which program are you targeting?`, 'bot', ["JEE Main & Advanced", "NEET (Physics/Chem)", "Class 8-10 Foundation"]);
                 return;
             }
             if (state.stage === 'awaiting_goal') {
                 state.context.class_mix = text;
                 state.stage = 'awaiting_phone';
-                addMsg(`Great choice. Lastly, please share your **10-digit mobile number** so Dr. Amol can share the detailed syllabus and fee structure.`, 'bot');
+                addMsg(`Excellent. Lastly, please share your <b>10-digit mobile number</b> so Dr. Amol can share the detailed fee structure and schedule.`, 'bot');
                 return;
             }
             if (state.stage === 'awaiting_phone') {
                 if (validatePhone(text)) {
                     state.context.mobile = text;
                     state.stage = 'idle';
-                    addMsg(`Authenticity verified. I am now forwarding your details to Dr. Amol Thakre via WhatsApp for immediate priority.`, 'bot');
+                    addMsg(`Verified. Forwarding your details to Dr. Amol Thakre for priority review. You will receive a WhatsApp update shortly.`, 'bot');
                     logEnquiry(state.context);
                     forwardToWhatsApp(state.context);
                     return;
                 } else {
-                    addMsg("That doesn't look like a valid 10-digit mobile number. Could you please check and type it again?", 'bot');
+                    addMsg("That doesn't look like a valid 10-digit mobile number. Please try again or ask another question to exit registration.", 'bot', ["Batch Timings", "Contact Details"]);
                     return;
                 }
             }
 
-            if (q.includes('who') || q.includes('mentor') || q.includes('amol') || q.includes('background') || q.includes('credentials')) {
-                addMsg(`**${knowledgeBase.mentor.name}** is an **Ex-GE Senior Scientist** with a Ph.D. from the **University of Twente** and a Masters from **IISc Bangalore**.`, 'bot');
-                return;
-            }
-
-            if (q.includes('fee') || q.includes('cost') || q.includes('price') || q.includes('join') || q.includes('register') || q.includes('enroll')) {
-                state.stage = 'awaiting_name';
-                addMsg("I can certainly help you with registration and fee details. To provide accurate information for your target track, may I have your name?", 'bot');
-                return;
-            }
-
-            if (q.includes('contact') || q.includes('call') || q.includes('email') || q.includes('phone') || q.includes('number')) {
-                addMsg(`You can reach the Lab HQ at **${c_p_d}** or email **${c_e_u}@${c_e_d}**.`, 'bot');
-                return;
-            }
-
-            if (q.includes('batch') || q.includes('start') || q.includes('date') || q.includes('admission')) {
-                addMsg(`We have two primary intakes at Whitefield:\n• **Spring Batch**: Mid-March/April\n• **Summer Batch**: June\n\nEach batch is capped at **10 seats**. Rolling admissions depend on availability.`, 'bot', ["Check Availability", "Location Details"]);
-                return;
-            }
-
-            if (q.includes('teach') || q.includes('method') || q.includes('how') || q.includes('logic')) {
-                addMsg(`Our methodology is unique: **'Concept-to-Competition'**. It involves industrial logic, weekly hard-mode tests, and scientific error correction.`, 'bot');
-                return;
-            }
-
-            addMsg("I'm trained on Dr. Amol's full research and teaching profile. Ask me about credentials, teaching methods, batch dates, or contact details!", 'bot', ["Dr. Amol's Credentials", "Batch Timings", "Contact Details", "Fees & Registration"]);
+            // 5. DEFAULT GREETING
+            addMsg("Greetings! I am the Academic Advisor for Dr. Amol Thakre's Mentorship Program. How can I assist you today?", 'bot', ["Batches & Admissions", "Teaching Methodology", "Dr. Amol's Credentials", "Contact Details"]);
         }
 
         document.getElementById('chatbot-button').onclick = () => {
             const isVisible = win.style.display === 'flex';
             win.style.display = isVisible ? 'none' : 'flex';
             if (!isVisible && msgs.children.length === 0) {
-                setTimeout(() => {
-                    addMsg("Greetings! I am the Admissions Assistant. How can I help you navigate your academic journey today?", 'bot', ["Batches & Admissions", "Enrollment Process", "Teaching Methodology"]);
-                }, 500);
+                setTimeout(() => { processInput("hello"); }, 500);
             }
         };
 
         document.getElementById('chatbot-close').onclick = () => win.style.display = 'none';
         send.onclick = handleIn;
         input.onkeypress = (e) => { if (e.key === 'Enter') handleIn(); };
-
-        setTimeout(() => {
-            if (win.style.display !== 'flex') document.getElementById('chatbot-button').click();
-        }, 2000);
+        setTimeout(() => { if (win.style.display !== 'flex') document.getElementById('chatbot-button').click(); }, 2000);
     }
 
     initChatbot();
 })();
+
+

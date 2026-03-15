@@ -1,0 +1,238 @@
+/* Summer School: Vedic Math & AI Mastery - V2 PRO */
+:root {
+    --ss-bg: #020617;
+    --ss-card: #0f172a;
+    --ss-cyan: #22d3ee;
+    --ss-gold: #f59e0b;
+    --ss-text: #f8fafc;
+    --ss-slate: #94a3b8;
+}
+
+body.ss-body {
+    margin: 0;
+    background-color: var(--ss-bg);
+    color: var(--ss-text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.ss-hero {
+    padding: 160px 20px;
+    text-align: center;
+    background: radial-gradient(circle at top, #1e293b 0%, #020617 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.ss-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid var(--ss-cyan);
+    color: var(--ss-cyan);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.ss-hero h1 {
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #fff, var(--ss-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ss-hero p {
+    font-size: 1.5rem;
+    color: var(--ss-slate);
+    max-width: 850px;
+    margin: 0 auto 50px;
+}
+
+.ss-cta-main {
+    display: inline-block;
+    padding: 24px 60px;
+    background: var(--ss-cyan);
+    color: var(--ss-bg);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.4rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+}
+
+.ss-cta-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(34, 211, 238, 0.5);
+    background: #fff;
+}
+
+.ss-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+/* Bento Grid with Images */
+.ss-bento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 120px;
+}
+
+.ss-card {
+    background: var(--ss-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 36px;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ss-card-img .card-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.4;
+    transition: transform 0.6s ease;
+}
+
+.ss-card:hover .card-bg {
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+.ss-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+}
+
+.ss-card-large { grid-column: span 2; }
+
+.ss-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: 800;
+}
+
+.ss-card p {
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
+.ss-module-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Schedule Section */
+.ss-schedule-section {
+    margin: 150px 0;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.schedule-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.schedule-list li {
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    margin-bottom: 15px;
+    border-radius: 16px;
+    border-left: 4px solid var(--ss-cyan);
+    font-size: 1.2rem;
+}
+
+.schedule-list li strong {
+    color: var(--ss-cyan);
+    margin-right: 10px;
+}
+
+/* Highlight Cards */
+.ss-highlights {
+    margin-top: 100px;
+}
+
+.ss-card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.ss-highlight-card {
+    text-align: center;
+}
+
+.ss-highlight-card img {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ss-highlight-card h4 {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+.ss-footer {
+    padding: 120px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #000;
+}
+
+.back-btn {
+    color: var(--ss-slate);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    border: 1px solid var(--ss-slate);
+    padding: 15px 35px;
+    border-radius: 999px;
+}
+
+.back-btn:hover { 
+    color: var(--ss-cyan); 
+    border-color: var(--ss-cyan);
+    background: rgba(34, 211, 238, 0.05);
+}
+
+@media (max-width: 1000px) {
+    .ss-bento { grid-template-columns: 1fr; }
+    .ss-card-large { grid-column: span 1; }
+    .schedule-grid { grid-template-columns: 1fr; gap: 40px; }
+    .ss-card-row { grid-template-columns: 1fr; }
+}

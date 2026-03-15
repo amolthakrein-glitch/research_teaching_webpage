@@ -124,6 +124,35 @@ h1 {
   color: #fff;
   text-decoration: none;
 }
+.cta-banner-row {
+  display: flex;
+  gap: .8rem;
+  flex-wrap: wrap;
+  margin-top: .75rem;
+}
+.cta-banner-row .register-link {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  padding: .75rem 1.2rem;
+  font-size: 1rem;
+  box-shadow: 0 10px 20px rgba(209, 73, 91, .15);
+  transition: transform 0.3s ease;
+}
+.cta-banner-row .register-link:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+.cta-banner-row .summer-link {
+  background: #0f172a; /* Deep Slate */
+  border-color: #22d3ee; /* Cyan */
+  color: #22d3ee;
+  box-shadow: 0 10px 20px rgba(34, 211, 238, .1);
+}
+.cta-banner-row .summer-link:hover {
+  background: #22d3ee;
+  color: #0f172a;
+}
 .teaching-highlights {
   display: flex;
   flex-wrap: wrap;

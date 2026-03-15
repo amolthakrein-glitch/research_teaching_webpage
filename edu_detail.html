@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education Architecture | Dr. Amol Thakre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index_elite.css" />
+    <style>
+        .detail-hero { padding: 100px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
+        .back-nav { margin-bottom: 30px; }
+        .detail-section { margin-bottom: 80px; }
+        .detail-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 40px; margin-bottom: 40px; position: relative; overflow: visible; }
+        .detail-card h3 { color: var(--cyan); margin-bottom: 15px; font-size: 1.8rem; }
+        .detail-card p { color: var(--slate); font-size: 1.1rem; }
+        .logo-overlay { 
+            position: absolute; 
+            width: 50px; 
+            height: 50px; 
+            object-fit: contain; 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(8px);
+            padding: 6px; 
+            border-radius: 10px; 
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+            z-index: 10; 
+            border: 1px solid rgba(255,255,255,0.2); 
+        }
+    </style>
+</head>
+<body class="elite-body">
+    <main class="elite-container">
+        <nav class="back-nav">
+            <a href="index_elite.html" class="chip" style="text-decoration:none; color:var(--cyan); border-color:var(--cyan);">← Back to Portfolio</a>
+        </nav>
+
+        <header class="detail-hero">
+            <span class="bento-tag">Academic Architecture</span>
+            <h1 style="font-size:3.5rem; font-weight:800; background:linear-gradient(to right, #fff, var(--cyan)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Advanced Education</h1>
+            <p class="lede">Authentic milestones from the Indian Institute of Science and the University of Twente.</p>
+        </header>
+
+        <section class="detail-section">
+            <!-- Twente PhD Section -->
+            <div class="detail-card" style="display:grid; grid-template-columns: 1fr 1.5fr; gap:40px; align-items:center;">
+                <div style="position:relative;">
+                    <img src="assets/buildings/wm_twente_rect.jpg" alt="University of Twente" style="width:100%; height:280px; object-fit:cover; border-radius:24px; border:1px solid var(--border);">
+                    <img src="assets/logos/twente.png" alt="Twente Logo" class="logo-overlay" style="bottom:-10px; right:-10px;">
+                </div>
+                <div>
+                    <span class="bento-tag">Doctoral Degree</span>
+                    <h3>University of Twente, Netherlands</h3>
+                    <p><strong>Ph.D. (2008)</strong>: Research into <em>Phase separation in complex fluids: A molecular viewpoint</em>. Conducted in the prestigious physics labs of the Netherlands, focusing on statistical mechanics and molecular-scale fluid dynamics.</p>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:20px;">
+                        <img src="https://images.unsplash.com/photo-1532187863486-abf51ad9f69d?q=80&w=400&auto=format&fit=crop" alt="Molecular" style="width:100%; height:100px; object-fit:cover; border-radius:12px;">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=400&auto=format&fit=crop" alt="Physics" style="width:100%; height:100px; object-fit:cover; border-radius:12px;">
+                    </div>
+                    <p style="margin-top:20px;"><a href="https://ris.utwente.nl/ws/files/6069426/thesis_Thakre.pdf" target="_blank" style="color:var(--cyan); text-decoration:none; font-weight:700;">View Doctoral Thesis →</a></p>
+                </div>
+            </div>
+
+            <!-- IISc Masters Section -->
+            <div class="detail-card" style="display:grid; grid-template-columns: 1.5fr 1fr; gap:40px; align-items:center;">
+                <div>
+                    <span class="bento-tag">Postgraduate Degree</span>
+                    <h3>Indian Institute of Science (IISc), Bangalore</h3>
+                    <p><strong>Masters (Chemical Engg.) (2003)</strong>: Thesis on <em>Phase inversion in liquid-liquid dispersions</em>. This foundational work in multiphase systems at India's premier research institute provided the analytical base for future industrial CFD applications.</p>
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-top:20px;">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3250bb8b?q=80&w=400&auto=format&fit=crop" alt="Lab" style="width:100%; height:100px; object-fit:cover; border-radius:12px;">
+                        <img src="https://images.unsplash.com/photo-1532634896-26909d0d4b89?q=80&w=400&auto=format&fit=crop" alt="Research" style="width:100%; height:100px; object-fit:cover; border-radius:12px;">
+                    </div>
+                </div>
+                <div style="position:relative;">
+                    <img src="assets/buildings/wm_iisc_rect.jpg" alt="IISc Bangalore" style="width:100%; height:300px; object-fit:cover; border-radius:24px; border:1px solid var(--border);">
+                    <img src="assets/logos/iisc.png" alt="IISc Logo" class="logo-overlay" style="bottom:-10px; left:-10px;">
+                </div>
+            </div>
+
+            <!-- Executive Certifications Section -->
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:30px;">
+                <div class="detail-card" style="padding:30px;">
+                    <div style="position:relative; margin-bottom:20px;">
+                        <img src="assets/buildings/wm_mit_rect.jpg" alt="MIT Sloan" style="width:100%; height:180px; object-fit:cover; border-radius:16px;">
+                        <img src="assets/logos/mit.png" alt="MIT" style="position:absolute; top:10px; right:10px; width:40px; height:40px; background:white; padding:5px; border-radius:8px;">
+                    </div>
+                    <h3>MIT Sloan</h3>
+                    <p>Digital Business Strategy (2018): Focused on AI and network-effect dynamics.</p>
+                </div>
+                <div class="detail-card" style="padding:30px;">
+                    <div style="position:relative; margin-bottom:20px;">
+                        <img src="assets/buildings/wm_isb_rect.jpg" alt="ISB Hyderabad" style="width:100%; height:180px; object-fit:cover; border-radius:16px;">
+                        <img src="assets/logos/isb.png" alt="ISB" style="position:absolute; top:10px; right:10px; width:40px; height:40px; background:white; padding:5px; border-radius:8px;">
+                    </div>
+                    <h3>ISB Hyderabad</h3>
+                    <p>Digital Business Transformation (2019): Specialization in industrial innovation.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="elite-footer">
+            <p style="opacity:0.4;">Whitefield Mentorship Lab | Dr. Amol Kumar Thakre</p>
+        </footer>
+    </main>
+</body>
+</html>

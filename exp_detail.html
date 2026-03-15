@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Industrial R&D Deep-Dive | Dr. Amol Thakre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index_elite.css" />
+    <style>
+        .detail-hero { padding: 100px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
+        .back-nav { margin-bottom: 30px; }
+        .detail-section { margin-bottom: 80px; }
+        .detail-card { background: var(--card); border: 1px solid var(--border); border-radius: 24px; margin-bottom: 40px; position: relative; overflow: hidden; display: grid; }
+        .detail-card-content { padding: 40px; }
+        .detail-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.8rem; }
+        .detail-card p { color: var(--slate); font-size: 1.1rem; line-height: 1.7; }
+        .tag-gold { border-color: var(--gold); color: var(--gold); background: rgba(245, 158, 11, 0.1); }
+        .full-img { width: 100%; height: 100%; object-fit: cover; }
+        .logo-box { width: 100px; height: 100px; background: white; border-radius: 20px; padding: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 1px solid var(--border); }
+        .logo-box img { width: 100%; height: 100%; object-fit: contain; }
+    </style>
+</head>
+<body class="elite-body">
+    <main class="elite-container">
+        <nav class="back-nav">
+            <a href="index_elite.html" class="chip">← Back to Portfolio</a>
+        </nav>
+
+        <header class="detail-hero" style="border-color: rgba(245, 158, 11, 0.3);">
+            <span class="bento-tag tag-gold">Industrial R&D Execution</span>
+            <h1 style="font-size:3.5rem; font-weight:800; background:linear-gradient(to right, #fff, var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Industry Experience</h1>
+            <p class="lede">High-fidelity computational research for global energy leaders.</p>
+        </header>
+
+        <section class="detail-section">
+            <!-- GE Section: Full Layout -->
+            <div class="detail-card" style="grid-template-columns: 1.2fr 1fr;">
+                <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" alt="GE Digital Twin" class="full-img">
+                    <div class="logo-box" style="position:absolute; top:20px; right:20px; width:80px; height:80px;"><img src="assets/logos/ge.png" alt="GE"></div>
+                </div>
+                <div class="detail-card-content">
+                    <span class="bento-tag tag-gold">Global R&D Lead</span>
+                    <h3>GE / BHGE (2013 onwards)</h3>
+                    <p>Architecture for <b>Digital Twin</b> systems. I led the development of slug-risk prediction modules using high-fidelity CFD models, allowing for real-time production optimization across multi-well assets.</p>
+                    <p style="margin-top:20px;"><a href="https://www.youtube.com/watch?v=EtzMLN5nVfM" target="_blank" style="color:var(--gold); font-weight:700;">Digital Twin Strategy →</a></p>
+                </div>
+            </div>
+
+            <!-- Equinor Section: Full Space -->
+            <div class="detail-card" style="grid-template-columns: 1fr 1.2fr;">
+                <div class="detail-card-content">
+                    <span class="bento-tag tag-gold">Energy Research Scientist</span>
+                    <h3>Equinor, Norway (2009-2013)</h3>
+                    <p>Designed and supervised large-scale <b>Heavy-Oil Rig Experiments</b>. My research provided the field-facing design recommendations for offshore subsea separators and electrostatic coalescers used in Peregrino and Bressay.</p>
+                    <p style="margin-top:20px;"><a href="https://www.youtube.com/watch?v=YFNOw70k3UU" target="_blank" style="color:var(--gold); font-weight:700;">Technology Showcase →</a></p>
+                </div>
+                <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=1000" alt="Offshore Ops" class="full-img">
+                    <div class="logo-box" style="position:absolute; bottom:20px; left:20px;"><img src="assets/logos/equinor.png" alt="Equinor"></div>
+                </div>
+            </div>
+
+            <!-- SINTEF Section: Full Space -->
+            <div class="detail-card" style="grid-template-columns: 1.2fr 1fr;">
+                <div style="position:relative;">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1000&auto=format&fit=crop" alt="Advanced Lab" class="full-img">
+                    <div style="position:absolute; bottom:20px; right:20px; display:flex; gap:10px;">
+                        <div class="logo-box" style="width:70px; height:70px;"><img src="assets/logos/nofima.png" alt="Nofima"></div>
+                        <div class="logo-box" style="width:70px; height:70px;"><img src="assets/logos/sintef.png" alt="SINTEF"></div>
+                    </div>
+                </div>
+                <div class="detail-card-content">
+                    <span class="bento-tag tag-gold">Process Modeling Lead</span>
+                    <h3>Nofima & SINTEF, Norway</h3>
+                    <p>Specialized in <b>Thermal Intensification</b> via microwave and RF heating studies. Developed computational transport models to optimize energy efficiency in industrial processing systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="elite-footer">
+            <p style="opacity:0.4;">Whitefield Mentorship Lab | Dr. Amol Kumar Thakre</p>
+        </footer>
+    </main>
+</body>
+</html>
