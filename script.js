@@ -3,24 +3,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Contact Obfuscation Protection
-    // Genuine users will see the info rendered via JS, basic scrapers will see placeholders
-    const e_user = "amolthakre.in";
-    const e_domain = "gmail.com";
-    const p_country = "+91";
-    const p_main = "9591233320";
+    // Contact Obfuscation Protection (Enhanced)
+    const data = {
+        e_u: "amolthakre.in",
+        e_d: "gmail.com",
+        p_c: "+91",
+        p_m: "9591233320"
+    };
+
+    // Multiple Check Validation (Surity Check)
+    function verifyContact() {
+        const emailValid = data.e_u.includes(".") && data.e_d.includes(".");
+        const phoneValid = data.p_m.length === 10;
+        return emailValid && phoneValid;
+    }
 
     const emlLink = document.getElementById('eml-link');
     const phnText = document.getElementById('phn-text');
 
-    if (emlLink) {
-        const fullEmail = `${e_user}@${e_domain}`;
-        emlLink.href = `mailto:${fullEmail}`;
-        emlLink.textContent = fullEmail;
-    }
+    if (emlLink && phnText && verifyContact()) {
+        const fullE = `${data.e_u}@${data.e_d}`;
+        const fullP = `${data.p_c}-${data.p_m}`;
 
-    if (phnText) {
-        phnText.textContent = `${p_country}-${p_main}`;
+        // Initial Masked State
+        emlLink.textContent = `a...e@${data.e_d.split('.')[0]}...m`;
+        phnText.textContent = `${data.p_c}-9...20`;
+
+        // Click to Reveal & Activate
+        emlLink.addEventListener('mouseenter', () => {
+            emlLink.textContent = fullE;
+            emlLink.href = `mailto:${fullE}`;
+        });
+
+        phnText.style.cursor = 'pointer';
+        phnText.addEventListener('click', () => {
+            phnText.textContent = fullP;
+        });
+
+        // Fail-safe check
+        if (!verifyContact()) {
+            console.error("Contact data integrity check failed.");
+            emlLink.textContent = "Contact Admin (Security Check Required)";
+        }
     }
 
     // Visit Logging Tracking
