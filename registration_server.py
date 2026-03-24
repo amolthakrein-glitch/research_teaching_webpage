@@ -13,9 +13,11 @@ ROOT = Path(__file__).resolve().parent
 LOG_DIR = ROOT / "registrations"
 REG_FILE = LOG_DIR / "registration_log.csv"
 VISIT_FILE = LOG_DIR / "visit_log.csv"
+CHAT_FILE = LOG_DIR / "chat_request_log.csv"
 
 REG_HEADERS = ["timestamp", "student_name", "parent_name", "mobile", "email", "class_mix", "mode", "timing", "city", "notes", "ip", "user_agent"]
 VISIT_HEADERS = ["timestamp", "ip", "page", "country", "region", "continent", "org", "suspicious", "user_agent"]
+CHAT_HEADERS = ["timestamp", "ip", "page", "intent", "message", "student_name", "class_mix", "mobile", "user_agent"]
 
 def ensure_logs() -> None:
     LOG_DIR.mkdir(parents=True, exist_ok=True)
@@ -25,6 +27,9 @@ def ensure_logs() -> None:
     if not VISIT_FILE.exists():
         with VISIT_FILE.open("w", newline="", encoding="utf-8") as fh:
             csv.writer(fh).writerow(VISIT_HEADERS)
+    if not CHAT_FILE.exists():
+        with CHAT_FILE.open("w", newline="", encoding="utf-8") as fh:
+            csv.writer(fh).writerow(CHAT_HEADERS)
 
 def get_geo_info(ip: str):
     try:
@@ -54,6 +59,8 @@ class UnifiedHandler(SimpleHTTPRequestHandler):
             self.handle_registration()
         elif self.path == "/api/log_visit":
             self.handle_visit_log()
+        elif self.path == "/api/log_chat_request":
+            self.handle_chat_request_log()
         else:
             self.send_error(HTTPStatus.NOT_FOUND)
 
@@ -75,6 +82,24 @@ class UnifiedHandler(SimpleHTTPRequestHandler):
             csv.writer(fh).writerow(row)
         self._send_json({"status": "ok"})
 
+    def handle_chat_request_log(self):
+        payload = self._get_payload()
+        if not payload: return
+        row = [
+            datetime.now(timezone.utc).isoformat(),
+            self.client_address[0],
+            payload.get("page", "unknown"),
+            payload.get("intent", "general"),
+            payload.get("message", "")[:1000],
+            payload.get("student_name", ""),
+            payload.get("class_mix", ""),
+            payload.get("mobile", ""),
+            self.headers.get("User-Agent", "")
+        ]
+        with CHAT_FILE.open("a", newline="", encoding="utf-8") as fh:
+            csv.writer(fh).writerow(row)
+        self._send_json({"status": "ok"})
+
     def handle_admin(self):
         visits = []
         if VISIT_FILE.exists():
@@ -85,6 +110,11 @@ class UnifiedHandler(SimpleHTTPRequestHandler):
         if REG_FILE.exists():
             with REG_FILE.open("r", encoding="utf-8") as fh:
                 regs = list(csv.DictReader(fh))
+
+        chats = []
+        if CHAT_FILE.exists():
+            with CHAT_FILE.open("r", encoding="utf-8") as fh:
+                chats = list(csv.DictReader(fh))
 
         country_data = Counter([v['country'] for v in visits])
         page_data = Counter([v['page'].split('/')[-1] or 'home' for v in visits])
@@ -125,8 +155,8 @@ class UnifiedHandler(SimpleHTTPRequestHandler):
         <div class="stats-grid">
             <div class="stat-card"><h3>Total Visits</h3><p>{len(visits)}</p></div>
             <div class="stat-card"><h3>Total Enquiries</h3><p>{len(regs)}</p></div>
+            <div class="stat-card"><h3>Chat Requests</h3><p>{len(chats)}</p></div>
             <div class="stat-card"><h3>Security Flags</h3><p class="suspicious-text">{suspicious_count}</p></div>
-            <div class="stat-card"><h3>Conversion</h3><p>{(len(regs)/len(visits)*100 if visits else 0):.1f}%</p></div>
         </div>
 
         <div class="charts-grid">
@@ -146,6 +176,16 @@ class UnifiedHandler(SimpleHTTPRequestHandler):
                 <thead><tr><th>Time</th><th>Student Name</th><th>Target Exam</th><th>Contact</th><th>Status</th></tr></thead>
                 <tbody>
                     {"".join([f"<tr><td>{r['timestamp'][:16]}</td><td style='font-weight:600;'>{r['student_name']}</td><td>{r['class_mix']}</td><td>{r['mobile']}</td><td><span style='color:#10b981;'>● Active</span></td></tr>" for r in regs[::-1][:10]])}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h2 style="font-size:18px; font-weight:700;">Recent Chat Requests</h2>
+            <table>
+                <thead><tr><th>Time</th><th>Intent</th><th>Message</th><th>Name</th><th>Program</th><th>Mobile</th></tr></thead>
+                <tbody>
+                    {"".join([f"<tr><td>{c['timestamp'][:16]}</td><td><strong>{c['intent']}</strong></td><td>{c['message'][:120]}</td><td>{c['student_name']}</td><td>{c['class_mix']}</td><td>{c['mobile']}</td></tr>" for c in chats[::-1][:12]])}
                 </tbody>
             </table>
         </div>
