@@ -54,7 +54,7 @@
 
   .header {
     background: linear-gradient(90deg, #9a6e18 0%, var(--gold) 35%, var(--gold2) 65%, #9a6e18 100%);
-    padding: 18px;
+    padding: 12px;
     text-align: center;
     z-index: 10;
   }
@@ -62,13 +62,13 @@
   .header-text {
     color: var(--navy);
     font-weight: 900;
-    font-size: 24px;
-    letter-spacing: 4px;
+    font-size: 20px;
+    letter-spacing: 3px;
     text-transform: uppercase;
   }
 
   .hero {
-    padding: 60px 20px 40px;
+    padding: 40px 20px 25px;
     text-align: center;
     z-index: 10;
   }
@@ -76,20 +76,20 @@
   .admissions-open {
     color: var(--gold);
     font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 6px;
+    font-size: 15px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     display: block;
   }
 
   .hero-title {
     font-family: 'Lora', serif;
-    font-size: 88px;
+    font-size: 82px;
     font-weight: 700;
     line-height: 0.9;
     color: var(--white);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: -3px;
   }
 
@@ -100,18 +100,18 @@
 
   .hero-subtitle {
     font-family: 'Lora', serif;
-    font-size: 28px;
+    font-size: 24px;
     font-style: italic;
     color: var(--muted);
     letter-spacing: 1px;
-    margin-top: 20px;
+    margin-top: 15px;
   }
 
   .location-bar {
     background: rgba(201,168,76,0.2);
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    margin: 15px 0;
+    margin: 10px 0;
     border-top: 1px solid var(--gold);
     border-bottom: 1px solid var(--gold);
     z-index: 10;
@@ -120,20 +120,20 @@
   .location-text {
     color: var(--gold2);
     font-weight: 800;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 1px;
   }
 
   .section-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
     color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 5px;
-    margin: 45px 25px 20px;
+    letter-spacing: 4px;
+    margin: 30px 25px 15px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
     z-index: 10;
   }
 
@@ -147,7 +147,7 @@
   .mentor-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(201,168,76,0.25);
-    padding: 30px;
+    padding: 25px;
     margin: 0 25px;
     border-radius: 4px;
     z-index: 10;
@@ -155,10 +155,10 @@
 
   .mentor-name {
     font-family: 'Lora', serif;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     color: var(--white);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .mentor-creds {
@@ -166,12 +166,12 @@
   }
 
   .mentor-creds li {
-    font-size: 21px;
-    margin-bottom: 14px;
+    font-size: 19px;
+    margin-bottom: 10px;
     color: var(--cream);
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 12px;
     line-height: 1.4;
   }
 
@@ -181,25 +181,7 @@
     font-weight: bold;
   }
 
-  .tracks-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 0 25px;
-    z-index: 10;
-  }
-
-  .track-item {
-    font-size: 21px;
-    font-weight: 700;
-    padding: 18px;
-    background: rgba(74,111,165,0.15);
-    border-left: 5px solid var(--accent);
-    color: var(--white);
-    text-align: center;
-  }
-
-  .edge-grid {
+  .grid-2col {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
@@ -207,32 +189,43 @@
     z-index: 10;
   }
 
-  .edge-item {
+  .grid-item {
     font-size: 18px;
-    font-weight: 600;
-    padding: 15px;
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
-    color: var(--gold2);
+    font-weight: 700;
+    padding: 15px 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 4px;
+  }
+
+  .track-item {
+    background: rgba(74,111,165,0.15);
+    border-left: 4px solid var(--accent);
+    color: var(--white);
+  }
+
+  .edge-item {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold2);
+    font-weight: 600;
   }
 
   .cta-area {
-    padding: 50px 25px;
+    padding: 40px 25px;
     text-align: center;
     background: rgba(0,0,0,0.4);
-    margin-top: 40px;
+    margin-top: 30px;
     z-index: 10;
   }
 
   .cta-title {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 8px;
-    margin-bottom: 35px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
     color: var(--white);
     text-transform: uppercase;
   }
@@ -240,19 +233,19 @@
   .btn-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
   .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px;
-    font-size: 24px;
+    padding: 22px;
+    font-size: 22px;
     font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     border-radius: 8px;
     transition: all 0.3s;
   }
@@ -262,12 +255,12 @@
   .btn-webpage { background: transparent; color: var(--accent); border: 3px solid var(--accent); }
 
   .footer {
-    padding: 50px 25px;
+    padding: 40px 25px;
     text-align: center;
     border-top: 1px solid rgba(201,168,76,0.3);
     font-family: 'Lora', serif;
-    font-size: 22px;
-    letter-spacing: 12px;
+    font-size: 20px;
+    letter-spacing: 10px;
     text-transform: uppercase;
     color: var(--gold);
     opacity: 0.9;
@@ -275,9 +268,10 @@
   }
 
   @media (max-width: 480px) {
-    .hero-title { font-size: 72px; }
-    .btn { font-size: 22px; padding: 22px; }
-    .edge-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: 68px; }
+    .btn { font-size: 20px; padding: 20px; }
+    .grid-2col { grid-template-columns: 1fr 1fr; } /* Force 2-column even on small mobile for compactness */
+    .grid-item { font-size: 15px; padding: 12px 5px; }
   }
 </style>
 </head>
@@ -310,21 +304,21 @@
   </div>
 
   <h2 class="section-title">Top Tracks</h2>
-  <div class="tracks-grid">
-    <div class="track-item">JEE Advanced</div>
-    <div class="track-item">NEET (UG)</div>
-    <div class="track-item">Class 11–12</div>
-    <div class="track-item">Foundations</div>
+  <div class="grid-2col">
+    <div class="grid-item track-item">JEE Advanced</div>
+    <div class="grid-item track-item">NEET (UG)</div>
+    <div class="grid-item track-item">Class 11–12</div>
+    <div class="grid-item track-item">Foundations</div>
   </div>
 
   <h2 class="section-title">The Mentorship Edge</h2>
-  <div class="edge-grid">
-    <div class="edge-item">R&D Logic Flow</div>
-    <div class="edge-item">Performance Analytics</div>
-    <div class="edge-item">Weekly Hard Tests</div>
-    <div class="edge-item">Scientific Error Fixes</div>
-    <div class="edge-item">1-on-1 Mentorship</div>
-    <div class="edge-item">Limited Batches</div>
+  <div class="grid-2col">
+    <div class="grid-item edge-item">R&D Logic Flow</div>
+    <div class="grid-item edge-item">Performance Analytics</div>
+    <div class="grid-item edge-item">Weekly Hard Tests</div>
+    <div class="grid-item edge-item">Scientific Error Fixes</div>
+    <div class="grid-item edge-item">1-on-1 Mentorship</div>
+    <div class="grid-item edge-item">Limited Batches</div>
   </div>
 
   <div class="cta-area">
