@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Elite JEE & NEET Coaching — Dr. Amol Kumar Thakre</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400&family=Lexend:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy:    #050810;
-    --gold:    #d4af37;
-    --gold2:   #f9e2af;
-    --cream:   #ffffff;
-    --accent:  #5882c1;
+    --navy:    #0a0e1a;
+    --navy2:   #0f1528;
+    --gold:    #c9a84c;
+    --gold2:   #e8c96a;
+    --cream:   #f5f0e8;
+    --muted:   #a0a5b8;
+    --white:   #ffffff;
+    --accent:  #4a6fa5;
     --green:   #25D366;
   }
 
@@ -19,7 +22,7 @@
 
   body {
     background: #000;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--cream);
     display: flex;
     justify-content: center;
@@ -31,32 +34,60 @@
     max-width: 600px;
     background: var(--navy);
     position: relative;
-    border: 2px solid var(--gold);
+    overflow: hidden;
+    border: 2px solid rgba(201,168,76,0.3);
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* Decorative Background Elements */
+  .flyer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(circle at 80% 10%, rgba(201,168,76,0.12) 0%, transparent 50%),
+      radial-gradient(circle at 20% 90%, rgba(74,111,165,0.12) 0%, transparent 50%);
+    pointer-events: none;
   }
 
   .header {
-    background: linear-gradient(90deg, #9a6e18, var(--gold), #9a6e18);
+    background: linear-gradient(90deg, #9a6e18 0%, var(--gold) 35%, var(--gold2) 65%, #9a6e18 100%);
     padding: 15px;
     text-align: center;
-    color: #000;
-    font-weight: 900;
-    font-size: 24px;
-    letter-spacing: 2px;
+    z-index: 10;
+  }
+
+  .header-text {
+    color: var(--navy);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 3px;
     text-transform: uppercase;
   }
 
   .hero {
-    padding: 40px 20px;
+    padding: 50px 20px 30px;
     text-align: center;
-    background: radial-gradient(circle at center, #101a30 0%, var(--navy) 100%);
+    z-index: 10;
+  }
+
+  .admissions-open {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
   }
 
   .hero-title {
-    font-size: 80px;
-    font-weight: 900;
-    line-height: 0.9;
+    font-family: 'Lora', serif;
+    font-size: 82px;
+    font-weight: 700;
+    line-height: 0.95;
     color: var(--white);
     margin-bottom: 10px;
     letter-spacing: -2px;
@@ -64,174 +95,231 @@
 
   .hero-title span {
     color: var(--gold);
-    display: block;
-    font-size: 40px;
-    letter-spacing: 10px;
-    margin-top: 10px;
+    font-style: italic;
   }
 
   .hero-subtitle {
     font-family: 'Lora', serif;
     font-size: 26px;
     font-style: italic;
-    color: var(--gold2);
-    margin-top: 20px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 15px;
   }
 
-  .mentor-box {
-    padding: 30px 20px;
-    border-top: 1px solid rgba(212,175,55,0.3);
-    background: rgba(255,255,255,0.02);
+  .location-bar {
+    background: rgba(201,168,76,0.15);
+    padding: 18px;
+    text-align: center;
+    margin: 10px 0;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    z-index: 10;
+  }
+
+  .location-text {
+    color: var(--gold2);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 35px 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,168,76,0.3);
+  }
+
+  .mentor-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 25px;
+    margin: 0 20px;
+    border-radius: 4px;
+    z-index: 10;
   }
 
   .mentor-name {
     font-family: 'Lora', serif;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 10px;
+    color: var(--white);
+    margin-bottom: 15px;
   }
 
   .mentor-creds {
-    font-size: 22px;
-    line-height: 1.4;
-    color: #cbd5e0;
+    list-style: none;
   }
 
-  .section-label {
-    background: rgba(212,175,55,0.15);
-    color: var(--gold2);
-    padding: 8px 20px;
-    font-weight: 900;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    border-bottom: 1px solid var(--gold);
+  .mentor-creds li {
+    font-size: 19px;
+    margin-bottom: 12px;
+    color: var(--cream);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.4;
+  }
+
+  .mentor-creds li::before {
+    content: '•';
+    color: var(--gold);
+    font-weight: bold;
   }
 
   .tracks-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    padding: 20px;
+    padding: 0 20px;
+    z-index: 10;
   }
 
   .track-item {
-    background: rgba(88,130,193,0.15);
+    font-size: 19px;
+    font-weight: 600;
     padding: 15px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 20px;
+    background: rgba(74,111,165,0.12);
+    border-left: 4px solid var(--accent);
+    color: var(--white);
     text-align: center;
-    border: 1px solid var(--accent);
   }
 
   .edge-list {
-    padding: 25px 20px;
+    padding: 0 20px;
     list-style: none;
-    background: rgba(255,255,255,0.03);
+    z-index: 10;
   }
 
   .edge-list li {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 500;
     margin-bottom: 12px;
+    padding: 15px;
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--gold2);
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #e2e8f0;
   }
 
   .edge-list li::before {
     content: '◈';
     color: var(--gold);
-    font-size: 18px;
-  }
-
-  .location {
-    padding: 20px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--navy);
-    background: var(--gold2);
   }
 
   .cta-area {
-    padding: 40px 20px;
+    padding: 45px 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    margin-top: 30px;
+    z-index: 10;
+  }
+
+  .cta-title {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .btn-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background: #000;
+    gap: 18px;
   }
 
   .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 25px;
-    font-size: 26px;
-    font-weight: 900;
+    padding: 22px;
+    font-size: 22px;
+    font-weight: 800;
     text-decoration: none;
     text-transform: uppercase;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    border-radius: 8px;
+    transition: all 0.3s;
   }
 
-  .btn-admission { background: var(--gold); color: #000; }
-  .btn-whatsapp { background: var(--green); color: #fff; }
-  .btn-webpage { background: #1a202c; color: var(--accent); border: 2px solid var(--accent); }
+  .btn-admission { background: var(--gold); color: var(--navy); box-shadow: 0 4px 15px rgba(201,168,76,0.3); }
+  .btn-whatsapp { background: var(--green); color: var(--white); box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+  .btn-webpage { background: transparent; color: var(--accent); border: 2.5px solid var(--accent); }
 
   .footer {
-    padding: 30px;
+    padding: 40px 20px;
     text-align: center;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: 4px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
     color: var(--gold);
-    opacity: 0.6;
-    border-top: 1px solid rgba(212,175,55,0.3);
+    opacity: 0.8;
+    z-index: 10;
   }
 
   @media (max-width: 480px) {
-    .hero-title { font-size: 65px; }
-    .btn { font-size: 22px; padding: 20px; }
+    .hero-title { font-size: 68px; }
+    .btn { font-size: 20px; padding: 20px; }
   }
 </style>
 </head>
 <body>
 
 <div class="flyer">
-  <div class="header">ADMISSIONS OPEN 2026</div>
+  <div class="header">
+    <div class="header-text">Admissions Open 2026</div>
+  </div>
 
   <div class="hero">
-    <h1 class="hero-title">JEE <span>& NEET</span></h1>
+    <span class="admissions-open">✦ Elite Competitive Prep ✦</span>
+    <h1 class="hero-title">JEE <span>&</span> NEET</h1>
     <p class="hero-subtitle">Research-Led Mentorship</p>
   </div>
 
-  <div class="location">
-    📍 Whitefield, Bangalore
+  <div class="location-bar">
+    <div class="location-text">📍 Whitefield, Bangalore</div>
   </div>
 
-  <div class="section-label">The Mentor</div>
-  <div class="mentor-box">
-    <div class="mentor-name">Dr. Amol Kumar Thakre</div>
-    <div class="mentor-creds">
-      Ph.D. (Twente) • Masters (IISc)<br>
-      Ex-Senior Scientist, GE Research
-    </div>
+  <h2 class="section-title">The Mentor</h2>
+  <div class="mentor-card">
+    <h3 class="mentor-name">Dr. Amol Kumar Thakre</h3>
+    <ul class="mentor-creds">
+      <li><strong>Ex-GE Senior Research Scientist</strong></li>
+      <li><strong>Ph.D.</strong> — University of Twente, Netherlands</li>
+      <li><strong>Masters</strong> — IISc Bangalore</li>
+      <li>Mentoring since 2020</li>
+    </ul>
   </div>
 
-  <div class="section-label">Top Tracks</div>
+  <h2 class="section-title">Top Tracks</h2>
   <div class="tracks-grid">
-    <div class="track-item">JEE Adv.</div>
-    <div class="track-item">NEET</div>
-    <div class="track-item">Class 11-12</div>
-    <div class="track-item">Found.</div>
+    <div class="track-item">JEE Advanced</div>
+    <div class="track-item">NEET (UG)</div>
+    <div class="track-item">Class 11–12</div>
+    <div class="track-item">Foundations</div>
   </div>
 
-  <div class="section-label">The Mentorship Edge</div>
+  <h2 class="section-title">The Mentorship Edge</h2>
   <ul class="edge-list">
     <li>Industrial R&D Logic Flow</li>
     <li>In-depth Performance Analysis</li>
@@ -242,15 +330,18 @@
   </ul>
 
   <div class="cta-area">
-    <a href="https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html" class="btn btn-admission">
-      Apply Now
-    </a>
-    <a href="https://wa.me/919591233320?text=I%20want%20to%20enquire%20about%20JEE/NEET%20coaching" class="btn btn-whatsapp">
-      WhatsApp
-    </a>
-    <a href="https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html" class="btn btn-webpage">
-      Bio & Webpage
-    </a>
+    <h2 class="cta-title">Register Now</h2>
+    <div class="btn-container">
+      <a href="https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html" class="btn btn-admission">
+        Apply for Admission
+      </a>
+      <a href="https://wa.me/919591233320?text=I%20want%20to%20enquire%20about%20JEE/NEET%20coaching" class="btn btn-whatsapp">
+        Chat on WhatsApp
+      </a>
+      <a href="https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html" class="btn btn-webpage">
+        Official Bio & Webpage
+      </a>
+    </div>
   </div>
 
   <div class="footer">
