@@ -17,6 +17,12 @@ body.elite-body {
     line-height: 1.6;
 }
 
+:where(a, button, [role="button"]):focus-visible {
+    outline: 3px solid rgba(34, 211, 238, 0.7);
+    outline-offset: 4px;
+    border-radius: 14px;
+}
+
 .elite-container {
     max-width: 1300px;
     margin: 0 auto;

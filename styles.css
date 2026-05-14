@@ -17,9 +17,15 @@ body {
     radial-gradient(circle at 12% 10%, #eff6ff 0, transparent 33%),
     radial-gradient(circle at 90% 2%, #f0f9ff 0, transparent 28%),
     var(--bg);
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
   line-height: 1.48;
   font-size: 16px;
+}
+
+:where(a, button, [role="button"]):focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.55);
+  outline-offset: 3px;
+  border-radius: 10px;
 }
 
 .hero {

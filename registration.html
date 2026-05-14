@@ -155,6 +155,17 @@
       .content { padding: 30px 20px; }
     }
   </style>
+  <meta name="author" content="Amol Kumar Thakre" />
+  <link rel="canonical" href="https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Registration | Science, Math, JEE/NEET" />
+  <meta property="og:description" content="Registration options for Science, Math and JEE/NEET coaching." />
+  <meta property="og:url" content="https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html" />
+  <meta property="og:image" content="https://amolthakrein-glitch.github.io/research_teaching_webpage/assets/flyer_preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Registration | Science, Math, JEE/NEET" />
+  <meta name="twitter:description" content="Registration options for Science, Math and JEE/NEET coaching." />
+  <meta name="twitter:image" content="https://amolthakrein-glitch.github.io/research_teaching_webpage/assets/flyer_preview.png" />
 </head>
 <body>
   <main class="page">
@@ -166,7 +177,7 @@
     <nav class="top-nav">
       <a href="index.html">🌐 Bio & Research</a>
       <a href="flyer_science_math_mid_march_2026.html">📄 Web Flyer</a>
-      <a href="assets/docs/Clickable_Flyer_JEE_NEET.pdf" target="_blank" style="color: var(--accent);">📥 Download Clickable PDF</a>
+      <a href="assets/docs/Clickable_Flyer_JEE_NEET.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">📥 Download Clickable PDF</a>
     </nav>
 
     <section class="content">
@@ -256,13 +267,12 @@
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      statusEl.textContent = "Processing... Please wait.";
+      statusEl.textContent = "Opening WhatsApp... Please wait.";
 
       const formData = new FormData(form);
       const payload = Object.fromEntries(formData.entries());
 
-      const triggerWhatsApp = () => {
-        const notifyMessage =
+      const notifyMessage =
           "*New JEE/NEET Registration*%0A" +
           "*Student:* " + encodeURIComponent(payload.student_name || "N/A") + "%0A" +
           "*Parent:* " + encodeURIComponent(payload.parent_name || "N/A") + "%0A" +
@@ -270,23 +280,24 @@
           "*Target:* " + encodeURIComponent(payload.class_mix || "N/A") + "%0A" +
           "*Batch:* " + encodeURIComponent(payload.timing || "N/A") + "%0A" +
           "*Notes:* " + encodeURIComponent(payload.notes || "None");
-        
-        window.open("https://wa.me/919591233320?text=" + notifyMessage, "_blank", "noopener");
-      };
+      const waUrl = "https://wa.me/919591233320?text=" + notifyMessage;
 
       try {
-        await fetch("/api/register", {
+        fetch("/api/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
-        });
+        }).catch(() => {});
       } catch (e) {
         console.warn("Static host - redirecting to WhatsApp.");
-      } finally {
-        triggerWhatsApp();
-        statusEl.textContent = "Success! Opening WhatsApp notification...";
-        form.reset();
       }
+
+      // Trigger WhatsApp synchronously within the submit user gesture to reduce popup blocking.
+      const opened = window.open(waUrl, "_blank", "noopener");
+      if (!opened) window.location.href = waUrl;
+
+      statusEl.textContent = "Success! WhatsApp opened.";
+      form.reset();
     });
   </script>
   <script src="script.js"></script>

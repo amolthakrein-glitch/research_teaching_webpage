@@ -4,6 +4,12 @@
     --bot-glass: rgba(255, 255, 255, 0.95);
 }
 
+:where(a, button, input, textarea, [role="button"]):focus-visible {
+    outline: 3px solid rgba(0, 86, 179, 0.55);
+    outline-offset: 3px;
+    border-radius: 12px;
+}
+
 #chatbot-container {
     position: fixed; bottom: 30px; right: 30px;
     z-index: 9999999; font-family: 'Plus Jakarta Sans', 'Work Sans', sans-serif;

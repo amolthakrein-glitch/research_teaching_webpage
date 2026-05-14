@@ -29,15 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
         emlLink.textContent = `a...e@${data.e_d.split('.')[0]}...m`;
         phnText.textContent = `${data.p_c}-9...20`;
 
-        // Click to Reveal & Activate
-        emlLink.addEventListener('mouseenter', () => {
+        // Ensure email works on mobile (no hover): set mailto immediately, reveal on intent.
+        emlLink.href = `mailto:${fullE}`;
+
+        const revealEmail = () => {
             emlLink.textContent = fullE;
-            emlLink.href = `mailto:${fullE}`;
-        });
+        };
+        emlLink.addEventListener('mouseenter', revealEmail);
+        emlLink.addEventListener('focus', revealEmail);
+        emlLink.addEventListener('click', revealEmail);
+        emlLink.addEventListener('touchstart', revealEmail, { passive: true });
 
         phnText.style.cursor = 'pointer';
-        phnText.addEventListener('click', () => {
+        phnText.tabIndex = 0;
+        phnText.setAttribute('role', 'button');
+        phnText.setAttribute('aria-label', 'Reveal phone number');
+
+        const revealPhone = () => {
             phnText.textContent = fullP;
+        };
+        phnText.addEventListener('click', revealPhone);
+        phnText.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                revealPhone();
+            }
         });
 
         // Fail-safe check

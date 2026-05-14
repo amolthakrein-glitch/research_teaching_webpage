@@ -12,6 +12,12 @@ body.lp-body {
     color: var(--lp-navy);
 }
 
+:where(a, button, [role="button"]):focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.55);
+    outline-offset: 4px;
+    border-radius: 14px;
+}
+
 .hero-v3 {
     position: relative;
     padding: 120px 20px;
@@ -146,4 +152,3 @@ body.lp-body {
 .back-to-profile:hover span {
     transform: translateX(-5px);
 }
-

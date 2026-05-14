@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[paper=a4paper,top=0.2in,bottom=0.2in,left=0.28in,right=0.28in]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[expansion=true,protrusion=true]{microtype}
+\usepackage[hidelinks]{hyperref}
+
+% Lighter "Clean Professional" Palette
+\definecolor{sky_blue}{HTML}{0077B6}
+\definecolor{pale_blue}{HTML}{E8F6FB}
+\definecolor{soft_gray}{HTML}{F7F9FB}
+\definecolor{vibrant_orange}{HTML}{FB8500}
+\definecolor{deep_navy}{HTML}{023047}
+\definecolor{accent_teal}{HTML}{0A9396}
+
+\pagestyle{empty}
+
+% Prevent hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\raggedright
+
+\begin{document}
+
+% ---------------- HEADER ----------------
+\begin{tcolorbox}[colback=sky_blue, colframe=sky_blue, arc=14pt, left=12pt, right=12pt, top=10pt, bottom=10pt, enhanced, sharp corners=south]
+    \centering
+    \textcolor{white}{\Large\textbf{\faBell \quad ADMISSIONS OPEN 2026}}\\[0.4em]
+    \textcolor{white}{\fontsize{48}{56}\selectfont\textbf{JEE \& NEET}}\\[0.2em]
+    \textcolor{white}{\fontsize{30}{38}\selectfont\textbf{ELITE COACHING}}
+\end{tcolorbox}
+
+% ---------------- LOCATION ----------------
+\vspace{4pt}
+\begin{center}
+    \begin{tcolorbox}[colback=vibrant_orange, colframe=vibrant_orange, width=\textwidth, arc=6pt, center, sharp corners, top=4pt, bottom=4pt]
+        \centering \textcolor{white}{\Large\textbf{\faMapMarker* \quad Mahaveer Promenade, Whitefield, Bangalore}}
+    \end{tcolorbox}
+\end{center}
+
+\vspace{4pt}
+
+% ---------------- MENTOR ----------------
+\begin{tcolorbox}[colback=white, colframe=sky_blue!30, arc=14pt, boxrule=1.2pt, top=8pt, bottom=8pt, left=10pt, right=10pt]
+    \textcolor{sky_blue}{\fontsize{23}{27}\selectfont\textbf{\faGraduationCap \quad THE MENTOR}}\\[0.35em]
+    {\fontsize{25}{31}\selectfont\textbf{\textcolor{deep_navy}{Dr. Amol Kumar Thakre}}}\\[0.2em]
+    {\fontsize{16}{20}\selectfont\textit{\textcolor{deep_navy!70}{Ex-GE Senior Research Scientist}}}\\
+    {\fontsize{16}{20}\selectfont\textbf{\textcolor{deep_navy!80}{Ph.D. (Netherlands)}} \quad \textcolor{deep_navy!60}{\large$\bullet$}\quad {\fontsize{15}{19}\selectfont\textbf{\textcolor{deep_navy!80}{Masters IISc (Chem. Engg.)}}}}\\[0.3em]
+    {\fontsize{14}{18}\selectfont\faPhone* \quad +91-9591233320 \quad \textcolor{deep_navy!60}{\large$\bullet$}\quad \faEnvelope \quad amolthakre.in@gmail.com}
+\end{tcolorbox}
+
+\vspace{5pt}
+
+% ---------------- TRACKS ----------------
+\begin{tcolorbox}[colback=pale_blue!35, colframe=sky_blue!20, arc=14pt, boxrule=1pt, top=8pt, bottom=8pt, left=10pt, right=10pt]
+    \textcolor{sky_blue}{\fontsize{21}{24}\selectfont\textbf{\faRocket \quad TOP TRACKS}}\\[0.35em]
+    \begin{itemize}[label=\textcolor{vibrant_orange}{\Large\faCheckCircle}, itemsep=5pt, leftmargin=1.4em]
+        \item {\fontsize{16}{20}\selectfont\textbf{\textcolor{deep_navy}{JEE Main \& Advanced}}}
+        \item {\fontsize{16}{20}\selectfont\textbf{\textcolor{deep_navy}{NEET Physics \& Chem}}}
+        \item {\fontsize{16}{20}\selectfont\textbf{\textcolor{deep_navy}{Class 11--12 Boards}}}
+        \item {\fontsize{16}{20}\selectfont\textbf{\textcolor{deep_navy}{Class 8--10 Foundation}}}
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{5pt}
+
+% ---------------- EDGE + QR (Merged for space efficiency) ----------------
+\begin{tcolorbox}[colback=soft_gray, colframe=accent_teal!70, arc=12pt, boxrule=1.4pt, top=8pt, bottom=8pt, left=10pt, right=10pt, title=\textcolor{white}{\small\textbf{\faGem \quad THE MENTORSHIP EDGE}}, colbacktitle=sky_blue, attach boxed title to top left={xshift=12pt, yshift=-7pt}, boxed title style={arc=6pt}]
+    \begin{minipage}[t]{0.64\textwidth}
+        \vspace{2pt}
+        \begin{itemize}[label=\textcolor{sky_blue}{\faAngleRight}, itemsep=5pt, leftmargin=1.3em]
+            \item {\fontsize{14}{17}\selectfont\textcolor{deep_navy}{\textbf{Industrial R\&D Logic Flow} $\bullet$ \textbf{In-depth Performance Analysis}}}
+            \item {\fontsize{14}{17}\selectfont\textcolor{deep_navy}{\textbf{Hard-Mode Weekly Tests} $\bullet$ \textbf{Scientific Error Correction}}}
+            \item {\fontsize{14}{17}\selectfont\textcolor{deep_navy}{\textbf{Strictly Limited Batch Size} for High-Quality Personal Attention}}
+        \end{itemize}
+        \vspace{2pt}
+        {\fontsize{18}{22}\selectfont\textbf{\textcolor{vibrant_orange}{\faStar \, 10 SEATS ONLY \, \faStar}} \textcolor{deep_navy!75}{• Early response advised}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.30\textwidth}
+        \centering
+        \textcolor{deep_navy}{\fontsize{12}{14}\selectfont\textbf{SCAN TO ENROLL}}\\[0.3em]
+        \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html}{\includegraphics[width=1.45in]{qr_registration.png}}
+    \end{minipage}
+\end{tcolorbox}
+
+% ---------------- FOOTER ----------------
+\begin{tcolorbox}[colback=sky_blue!8, colframe=sky_blue!40, arc=10pt, top=5pt, bottom=5pt, left=10pt, right=10pt]
+    \centering
+    \textcolor{sky_blue!80}{\Large\textbf{DISCIPLINE \quad $\bullet$ \quad RIGOUR \quad $\bullet$ \quad EXCELLENCE}}
+\end{tcolorbox}
+
+\end{document}
