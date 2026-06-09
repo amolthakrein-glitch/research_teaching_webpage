@@ -1,0 +1,213 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[paper=a4paper,top=0.10in,bottom=0.10in,left=0.28in,right=0.28in]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,raster}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[expansion=true,protrusion=true]{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{brand_blue}{HTML}{0B3D6B}
+\definecolor{accent_orange}{HTML}{F47920}
+\definecolor{accent_red}{HTML}{D94040}
+\definecolor{deep_navy}{HTML}{032540}
+\definecolor{teal_accent}{HTML}{0A7B83}
+\definecolor{highlight_border}{HTML}{F0A030}
+
+\pagestyle{empty}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\raggedbottom
+
+\newcommand{\dloc}{\ding{71}}
+\newcommand{\dgrad}{\ding{113}}
+\newcommand{\drocket}{\ding{228}}
+\newcommand{\dbolt}{\ding{94}}
+\newcommand{\dgem}{\ding{86}}
+\newcommand{\dstar}{\ding{73}}
+\newcommand{\dqr}{\ding{37}}
+\newcommand{\dphone}{\ding{172}}
+\newcommand{\dcheck}{\ding{51}}
+\newcommand{\darrow}{\ding{108}}
+
+\newcommand{\fTitle}[1]{{\fontsize{20}{24}\selectfont\bfseries#1}}
+\newcommand{\fBody}[1]{{\fontsize{15}{18}\selectfont\bfseries#1}}
+\newcommand{\fHighlight}[1]{{\fontsize{17}{21}\selectfont\bfseries#1}}
+\newcommand{\fSmall}[1]{{\fontsize{14}{17}\selectfont#1}}
+\newcommand{\fHuge}[1]{{\fontsize{36}{44}\selectfont\bfseries#1}}
+\newcommand{\fLarge}[1]{{\fontsize{26}{32}\selectfont\bfseries#1}}
+\newcommand{\fName}[1]{{\fontsize{24}{29}\selectfont\bfseries#1}}
+
+\begin{document}
+
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[opacity=0.35,inner sep=0pt] at (current page.center)
+        {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{Flyer_background2.png}};
+    \end{tikzpicture}%
+  }%
+}
+
+\vspace{-2pt}
+
+% HEADER
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={2pt}{0pt}{brand_blue},
+  borderline west={2pt}{0pt}{brand_blue},
+  borderline east={2pt}{0pt}{brand_blue},
+  borderline south={2pt}{0pt}{brand_blue},
+  arc=16pt,left=16pt,right=16pt,top=10pt,bottom=12pt,
+]
+  \centering
+  \textcolor{deep_navy}{\fBody{\dloc~~ADMISSIONS OPEN 2026}}\\[0.4em]
+  \textcolor{deep_navy}{\fHuge{JEE \& NEET}}\\[0.05em]
+  \textcolor{accent_orange}{\fLarge{ELITE COACHING}}\\[0.25em]
+  {\color{deep_navy}\fSmall{\itshape Research-Driven Mentorship for Competitive Excellence}}
+\end{tcolorbox}
+
+\vspace{4pt}
+
+% LOCATION
+\begin{center}
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={2pt}{0pt}{accent_orange},
+  borderline west={2pt}{0pt}{accent_orange},
+  borderline east={2pt}{0pt}{accent_orange},
+  borderline south={2pt}{0pt}{accent_orange},
+  width=0.86\textwidth,arc=20pt,center,top=4pt,bottom=4pt,
+]
+  \centering\textcolor{accent_orange}{\fBody{\dloc~~Mahaveer Promenade, Bangalore}}
+\end{tcolorbox}
+\end{center}
+
+\vspace{4pt}
+
+% SIDE-BY-SIDE: TOP TRACKS | HIGHLIGHTS
+\begin{tcbraster}[raster columns=2,raster equal height=rows,raster column skip=8pt]
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={1pt}{0pt}{brand_blue!60},
+  borderline west={1pt}{0pt}{brand_blue!60},
+  borderline east={1pt}{0pt}{brand_blue!60},
+  borderline south={1pt}{0pt}{brand_blue!60},
+  arc=12pt,top=8pt,bottom=8pt,left=9pt,right=9pt,
+]
+  \textcolor{brand_blue}{\fTitle{\drocket~~TOP TRACKS}}\\[0.35em]
+  \begin{itemize}[label=\textcolor{accent_orange}{\dcheck},itemsep=4pt,leftmargin=1.1em,topsep=0pt]
+    \item \textcolor{deep_navy}{\fBody{JEE Main \& Advanced}}
+    \item \textcolor{deep_navy}{\fBody{NEET Physics \& Chemistry}}
+    \item \textcolor{deep_navy}{\fBody{Class 11--12 Boards}}
+    \item \textcolor{deep_navy}{\fBody{Class 8--10 Foundation}}
+  \end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={1.3pt}{0pt}{highlight_border},
+  borderline west={1.3pt}{0pt}{highlight_border},
+  borderline east={1.3pt}{0pt}{highlight_border},
+  borderline south={1.3pt}{0pt}{highlight_border},
+  arc=12pt,top=8pt,bottom=8pt,left=9pt,right=9pt,
+]
+  \textcolor{accent_orange}{\fTitle{\dbolt~~HIGHLIGHTS}}\\[0.35em]
+  {\fHighlight{\textcolor{deep_navy}{\textcolor{accent_red}{\textbf{90+ percentile}} for all the students in JEE}}}\\[0.25em]
+  {\fHighlight{\textcolor{deep_navy}{All \textbf{10th} and \textbf{12th} graders got \textcolor{accent_red}{\textbf{90+\%}} and \textcolor{accent_red}{\textbf{85+\%}} in PCM respectively}}}
+\end{tcolorbox}
+\end{tcbraster}
+
+\vspace{4pt}
+
+% MENTOR
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={1.3pt}{0pt}{brand_blue!50},
+  borderline west={1.3pt}{0pt}{brand_blue!50},
+  borderline east={1.3pt}{0pt}{brand_blue!50},
+  borderline south={1.3pt}{0pt}{brand_blue!50},
+  arc=12pt,top=8pt,bottom=8pt,left=11pt,right=11pt,
+]
+  \centering
+  \textcolor{brand_blue}{\fTitle{\dgrad~~THE MENTOR}}\\[0.3em]
+  \textcolor{deep_navy}{\fName{Dr. Amol Kumar Thakre}}\\[0.15em]
+  \textcolor{deep_navy}{\fSmall{\itshape Ex-GE Senior Research Scientist}}\\[0.08em]
+  \textcolor{deep_navy}{\fSmall{\bfseries Ph.D.\,(Netherlands)}}
+  \quad\textcolor{deep_navy}{$\bullet$}\quad
+  \textcolor{deep_navy}{\fSmall{\bfseries Masters,\,IISc\,(Chem.\,Engg.)}}\\[0.3em]
+  \textcolor{deep_navy}{\fSmall{\textbf{T:}~\href{tel:+919591233320}{+91-9591233320}
+    \quad\textcolor{deep_navy}{$\bullet$}\quad
+    \href{mailto:amolthakre.in@gmail.com}{amolthakre.in@gmail.com}}}\\[0.12em]
+  \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html}{%
+    \textcolor{teal_accent}{\fBody{\underline{Research\_teaching\_webpage\_link}}}}
+\end{tcolorbox}
+
+\vspace{8pt}
+
+% MENTORSHIP EDGE + QR
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={1.4pt}{0pt}{teal_accent},
+  borderline west={1.4pt}{0pt}{teal_accent},
+  borderline east={1.4pt}{0pt}{teal_accent},
+  borderline south={1.4pt}{0pt}{teal_accent},
+  arc=12pt,top=16pt,bottom=8pt,left=11pt,right=11pt,
+  title={\textcolor{deep_navy}{\fBody{\dgem~~THE MENTORSHIP EDGE}}},
+  opacitybacktitle=0,
+  attach boxed title to top left={xshift=12pt,yshift=0pt},
+  boxed title style={arc=6pt,blanker,borderline north={1pt}{0pt}{brand_blue},borderline west={1pt}{0pt}{brand_blue},borderline east={1pt}{0pt}{brand_blue},borderline south={1pt}{0pt}{brand_blue}},
+]
+  \begin{minipage}[t]{0.63\textwidth}
+    \begin{itemize}[label=\textcolor{brand_blue}{\darrow},itemsep=5pt,leftmargin=1.1em,topsep=1pt]
+      \item \textcolor{deep_navy}{\fBody{R\&D Logic Flow $\bullet$ Performance Analysis}}
+      \item \textcolor{deep_navy}{\fBody{Hard-Mode Tests $\bullet$ Error Correction}}
+      \item \textcolor{deep_navy}{\fBody{Limited Batch Size $\bullet$ Personal Mentorship}}
+    \end{itemize}
+    \vspace{2pt}
+    \textcolor{accent_orange}{\fHighlight{\dstar~~5 SEATS ONLY~~\dstar}}\quad\textcolor{deep_navy}{\fSmall{-- Early response advised}}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.32\textwidth}
+    \centering
+    \textcolor{deep_navy}{\fBody{\dqr~~SCAN TO ENROLL}}\\[0.25em]
+    \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html}{%
+      \includegraphics[width=1.3in]{qr_registration.png}}\\[0.25em]
+    \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html}{%
+      \textcolor{brand_blue}{\fSmall{\textit{or click here}}}}
+  \end{minipage}
+\end{tcolorbox}
+
+\vspace{4pt}
+
+% WHATSAPP
+\begin{tcolorbox}[
+  enhanced,blanker,
+  borderline north={1pt}{0pt}{brand_blue!60},
+  borderline west={1pt}{0pt}{brand_blue!60},
+  borderline east={1pt}{0pt}{brand_blue!60},
+  borderline south={1pt}{0pt}{brand_blue!60},
+  arc=10pt,top=5pt,bottom=5pt,left=10pt,right=10pt,
+]
+  \centering
+  \href{https://wa.me/919591233320?text=I\%20saw\%20your\%20flyer\%20and\%20want\%20to\%20enquire\%20about\%20JEE\%2FNEET\%20coaching.}{%
+    \textcolor{deep_navy}{\fBody{\dphone~~Message on WhatsApp for Quick Enquiry}}}
+\end{tcolorbox}
+
+\vspace{2pt}
+
+% FOOTER
+\begin{center}
+  \textcolor{deep_navy}{\fTitle{DISCIPLINE \quad$\bullet$\quad RIGOUR \quad$\bullet$\quad EXCELLENCE}}
+\end{center}
+
+\end{document}

@@ -47,7 +47,7 @@ body.lp-body {
     border-radius: 32px;
     overflow: hidden;
     background: var(--lp-soft);
-    min-height: 300px;
+    min-height: 200px;
 }
 
 .bento-item img {
@@ -127,11 +127,11 @@ body.lp-body {
     gap: 20px;
     background: white;
     color: var(--lp-blue);
-    padding: 25px 64px;
+    padding: clamp(12px, 3vw, 25px) clamp(24px, 6vw, 64px);
     border: 4px solid var(--lp-blue);
     border-radius: 999px;
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     text-decoration: none;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);

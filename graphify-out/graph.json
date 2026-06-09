@@ -1,0 +1,4910 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "visitor_tracking_and_analytics_flow",
+        "label": "Visitor Traffic and Analytics Dashboard Flow",
+        "nodes": [
+          "research_teaching_webpage_script_logvisit",
+          "research_teaching_webpage_registration_server_handle_visit_log",
+          "research_teaching_webpage_registration_server_handle_admin"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js"
+      },
+      {
+        "id": "enquiry_and_lead_logging_flow",
+        "label": "Admissions Enquiry and Chat Request Logging System",
+        "nodes": [
+          "research_teaching_webpage_chatbot_logenquiry",
+          "research_teaching_webpage_registration_server_handle_registration",
+          "research_teaching_webpage_registration_server_handle_chat_request_log",
+          "research_teaching_webpage_registration_page"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js"
+      },
+      {
+        "id": "coaching_pedagogy_methods",
+        "label": "Dr. Amol Thakre's Coaching Pedagogy Framework",
+        "nodes": [
+          "research_teaching_webpage_concept_concept_to_competition",
+          "research_teaching_webpage_concept_digital_twin",
+          "research_teaching_webpage_concept_industrial_rd_logic",
+          "research_teaching_webpage_concept_performance_analytics",
+          "research_teaching_webpage_concept_vedic_math"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html"
+      },
+      {
+        "id": "coaching_flyer_variants",
+        "label": "JEE/NEET Coaching Flyer Variants",
+        "nodes": [
+          "research_teaching_webpage_flyer_original_document",
+          "research_teaching_webpage_flyer_professional_document",
+          "research_teaching_webpage_clickable_flyer_jee_neet_redesign_document",
+          "research_teaching_webpage_clickable_flyer_jee_neet_document",
+          "research_teaching_webpage_flyer_document",
+          "research_teaching_webpage_flyer3_document"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf"
+      },
+      {
+        "id": "frontend_design_taste_skills",
+        "label": "Frontend Design Taste Skills",
+        "nodes": [
+          "design_taste_frontend_skill_design_taste_frontend",
+          "gpt_taste_skill_gpt_taste",
+          "high_end_visual_design_skill_high_end_visual_design",
+          "minimalist_ui_skill_minimalist_ui",
+          "industrial_brutalist_ui_skill_industrial_brutalist_ui"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md"
+      },
+      {
+        "id": "image_to_code_design_workflow",
+        "label": "Image-to-Code Design Workflow",
+        "nodes": [
+          "image_to_code_skill_image_to_code",
+          "imagegen_frontend_web_skill_imagegen_frontend_web",
+          "imagegen_frontend_mobile_skill_imagegen_frontend_mobile"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/image-to-code/SKILL.md"
+      },
+      {
+        "id": "thakre_academy_website_pages",
+        "label": "Thakre Academy Website Pages",
+        "nodes": [
+          "website_home_home",
+          "website_research_researchpage",
+          "website_coaching_coachingpage",
+          "website_register_registerpage"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "Coaching_webpage_claude/ui_kits/website/index.html"
+      },
+      {
+        "id": "alternative_newsletter_variations",
+        "label": "Alternative Newsletter Design Variations",
+        "nodes": [
+          "alternative_concepts_newsletter_monogram_concept",
+          "alternative_concepts_newsletter_vibrant_concept",
+          "alternative_concepts_newsletter_watercolor_concept"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "newsletter/alternative_concepts/Newsletter_Monogram.pdf"
+      },
+      {
+        "id": "dr_thakre_credentials",
+        "label": "Dr. Thakre Academic and Industrial Credentials",
+        "nodes": [
+          "docs_cv_amol_thakre_phd_twente",
+          "docs_cv_amol_thakre_ge_analytics",
+          "docs_cv_amol_thakre_equinor"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "assets/docs/CV_Amol_Thakre.pdf"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "Coaching.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L1",
+      "id": "website_coaching",
+      "community": 0,
+      "norm_label": "coaching.jsx"
+    },
+    {
+      "label": "CourseCatalog()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L78",
+      "id": "website_coaching_coursecatalog",
+      "community": 0,
+      "norm_label": "coursecatalog()"
+    },
+    {
+      "label": "CourseDetail()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L167",
+      "id": "website_coaching_coursedetail",
+      "community": 0,
+      "norm_label": "coursedetail()"
+    },
+    {
+      "label": "CoachingPage()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L267",
+      "id": "website_coaching_coachingpage",
+      "community": 0,
+      "norm_label": "coachingpage()"
+    },
+    {
+      "label": "Home.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L1",
+      "id": "website_home",
+      "community": 0,
+      "norm_label": "home.jsx"
+    },
+    {
+      "label": "HeroSection()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L6",
+      "id": "website_home_herosection",
+      "community": 0,
+      "norm_label": "herosection()"
+    },
+    {
+      "label": "MethodologyPillars()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L100",
+      "id": "website_home_methodologypillars",
+      "community": 0,
+      "norm_label": "methodologypillars()"
+    },
+    {
+      "label": "TestimonialsPillar()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L222",
+      "id": "website_home_testimonialspillar",
+      "community": 0,
+      "norm_label": "testimonialspillar()"
+    },
+    {
+      "label": "BookSection()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L334",
+      "id": "website_home_booksection",
+      "community": 0,
+      "norm_label": "booksection()"
+    },
+    {
+      "label": "CTASection()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L400",
+      "id": "website_home_ctasection",
+      "community": 0,
+      "norm_label": "ctasection()"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L446",
+      "id": "website_home_home",
+      "community": 0,
+      "norm_label": "home()"
+    },
+    {
+      "label": "Register.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L1",
+      "id": "website_register",
+      "community": 19,
+      "norm_label": "register.jsx"
+    },
+    {
+      "label": "SidePanel()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L6",
+      "id": "website_register_sidepanel",
+      "community": 19,
+      "norm_label": "sidepanel()"
+    },
+    {
+      "label": "RegForm()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L48",
+      "id": "website_register_regform",
+      "community": 19,
+      "norm_label": "regform()"
+    },
+    {
+      "label": "Register()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L108",
+      "id": "website_register_register",
+      "community": 19,
+      "norm_label": "register()"
+    },
+    {
+      "label": "Research.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L1",
+      "id": "website_research",
+      "community": 3,
+      "norm_label": "research.jsx"
+    },
+    {
+      "label": "ProfileHero()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L6",
+      "id": "website_research_profilehero",
+      "community": 3,
+      "norm_label": "profilehero()"
+    },
+    {
+      "label": "MethodologyStatement()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L89",
+      "id": "website_research_methodologystatement",
+      "community": 3,
+      "norm_label": "methodologystatement()"
+    },
+    {
+      "label": "CVTimeline()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L137",
+      "id": "website_research_cvtimeline",
+      "community": 3,
+      "norm_label": "cvtimeline()"
+    },
+    {
+      "label": "ResearchAreas()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L217",
+      "id": "website_research_researchareas",
+      "community": 3,
+      "norm_label": "researchareas()"
+    },
+    {
+      "label": "Publications()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L274",
+      "id": "website_research_publications",
+      "community": 3,
+      "norm_label": "publications()"
+    },
+    {
+      "label": "ResearchPage()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L318",
+      "id": "website_research_researchpage",
+      "community": 3,
+      "norm_label": "researchpage()"
+    },
+    {
+      "label": "SiteChrome.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L1",
+      "id": "website_sitechrome",
+      "community": 0,
+      "norm_label": "sitechrome.jsx"
+    },
+    {
+      "label": "Logo()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L12",
+      "id": "website_sitechrome_logo",
+      "community": 0,
+      "norm_label": "logo()"
+    },
+    {
+      "label": "Header()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L34",
+      "id": "website_sitechrome_header",
+      "community": 0,
+      "norm_label": "header()"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L77",
+      "id": "website_sitechrome_footer",
+      "community": 0,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "Section()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L120",
+      "id": "website_sitechrome_section",
+      "community": 0,
+      "norm_label": "section()"
+    },
+    {
+      "label": "PhotoSlot()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L145",
+      "id": "website_sitechrome_photoslot",
+      "community": 0,
+      "norm_label": "photoslot()"
+    },
+    {
+      "label": "ds-runtime.jsx",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L1",
+      "id": "website_ds_runtime",
+      "community": 6,
+      "norm_label": "ds-runtime.jsx"
+    },
+    {
+      "label": "Card()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L14",
+      "id": "website_ds_runtime_card",
+      "community": 6,
+      "norm_label": "card()"
+    },
+    {
+      "label": "Badge()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L62",
+      "id": "website_ds_runtime_badge",
+      "community": 6,
+      "norm_label": "badge()"
+    },
+    {
+      "label": "Button()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L94",
+      "id": "website_ds_runtime_button",
+      "community": 6,
+      "norm_label": "button()"
+    },
+    {
+      "label": "Avatar()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L169",
+      "id": "website_ds_runtime_avatar",
+      "community": 6,
+      "norm_label": "avatar()"
+    },
+    {
+      "label": "Stat()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L200",
+      "id": "website_ds_runtime_stat",
+      "community": 6,
+      "norm_label": "stat()"
+    },
+    {
+      "label": "Pill()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L233",
+      "id": "website_ds_runtime_pill",
+      "community": 6,
+      "norm_label": "pill()"
+    },
+    {
+      "label": "Input()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L264",
+      "id": "website_ds_runtime_input",
+      "community": 6,
+      "norm_label": "input()"
+    },
+    {
+      "label": "Select()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L324",
+      "id": "website_ds_runtime_select",
+      "community": 6,
+      "norm_label": "select()"
+    },
+    {
+      "label": "CourseCard()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L373",
+      "id": "website_ds_runtime_coursecard",
+      "community": 6,
+      "norm_label": "coursecard()"
+    },
+    {
+      "label": "ResultCard()",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L433",
+      "id": "website_ds_runtime_resultcard",
+      "community": 6,
+      "norm_label": "resultcard()"
+    },
+    {
+      "label": "chatbot.js",
+      "file_type": "code",
+      "source_file": "chatbot.js",
+      "source_location": "L1",
+      "id": "chatbot",
+      "community": 23,
+      "norm_label": "chatbot.js"
+    },
+    {
+      "label": "initChatbot()",
+      "file_type": "code",
+      "source_file": "chatbot.js",
+      "source_location": "L53",
+      "id": "chatbot_initchatbot",
+      "community": 23,
+      "norm_label": "initchatbot()"
+    },
+    {
+      "label": "flyer3_links.json",
+      "file_type": "code",
+      "source_file": "flyer3_links.json",
+      "source_location": "L1",
+      "id": "flyer3_links",
+      "community": 18,
+      "norm_label": "flyer3_links.json"
+    },
+    {
+      "label": "width",
+      "file_type": "code",
+      "source_file": "flyer3_links.json",
+      "source_location": "L2",
+      "id": "flyer3_links_width",
+      "community": 18,
+      "norm_label": "width"
+    },
+    {
+      "label": "height",
+      "file_type": "code",
+      "source_file": "flyer3_links.json",
+      "source_location": "L3",
+      "id": "flyer3_links_height",
+      "community": 18,
+      "norm_label": "height"
+    },
+    {
+      "label": "links",
+      "file_type": "code",
+      "source_file": "flyer3_links.json",
+      "source_location": "L4",
+      "id": "flyer3_links_links",
+      "community": 18,
+      "norm_label": "links"
+    },
+    {
+      "label": "registration_server.py",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L1",
+      "id": "registration_server",
+      "community": 4,
+      "norm_label": "registration_server.py"
+    },
+    {
+      "label": "ensure_logs()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L22",
+      "id": "registration_server_ensure_logs",
+      "community": 4,
+      "norm_label": "ensure_logs()"
+    },
+    {
+      "label": "get_geo_info()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L34",
+      "id": "registration_server_get_geo_info",
+      "community": 4,
+      "norm_label": "get_geo_info()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L34",
+      "id": "str",
+      "community": 4,
+      "norm_label": "str"
+    },
+    {
+      "label": "UnifiedHandler",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L50",
+      "id": "registration_server_unifiedhandler",
+      "community": 4,
+      "norm_label": "unifiedhandler"
+    },
+    {
+      "label": "SimpleHTTPRequestHandler",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "simplehttprequesthandler",
+      "community": 4,
+      "norm_label": "simplehttprequesthandler"
+    },
+    {
+      "label": ".do_GET()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L51",
+      "id": "registration_server_unifiedhandler_do_get",
+      "community": 4,
+      "norm_label": ".do_get()"
+    },
+    {
+      "label": ".do_POST()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L57",
+      "id": "registration_server_unifiedhandler_do_post",
+      "community": 4,
+      "norm_label": ".do_post()"
+    },
+    {
+      "label": ".handle_registration()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L67",
+      "id": "registration_server_unifiedhandler_handle_registration",
+      "community": 4,
+      "norm_label": ".handle_registration()"
+    },
+    {
+      "label": ".handle_visit_log()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L75",
+      "id": "registration_server_unifiedhandler_handle_visit_log",
+      "community": 4,
+      "norm_label": ".handle_visit_log()"
+    },
+    {
+      "label": ".handle_chat_request_log()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L85",
+      "id": "registration_server_unifiedhandler_handle_chat_request_log",
+      "community": 4,
+      "norm_label": ".handle_chat_request_log()"
+    },
+    {
+      "label": ".handle_admin()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L103",
+      "id": "registration_server_unifiedhandler_handle_admin",
+      "community": 4,
+      "norm_label": ".handle_admin()"
+    },
+    {
+      "label": "._get_payload()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L240",
+      "id": "registration_server_unifiedhandler_get_payload",
+      "community": 4,
+      "norm_label": "._get_payload()"
+    },
+    {
+      "label": "._send_json()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L246",
+      "id": "registration_server_unifiedhandler_send_json",
+      "community": 4,
+      "norm_label": "._send_json()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "registration_server.py",
+      "source_location": "L250",
+      "id": "registration_server_main",
+      "community": 4,
+      "norm_label": "main()"
+    },
+    {
+      "label": "script.js",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L1",
+      "id": "script",
+      "community": 22,
+      "norm_label": "script.js"
+    },
+    {
+      "label": "verifyContact()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L15",
+      "id": "script_verifycontact",
+      "community": 22,
+      "norm_label": "verifycontact()"
+    },
+    {
+      "label": "logVisit()",
+      "file_type": "code",
+      "source_file": "script.js",
+      "source_location": "L67",
+      "id": "script_logvisit",
+      "community": 22,
+      "norm_label": "logvisit()"
+    },
+    {
+      "label": "skills-lock.json",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L1",
+      "id": "skills_lock",
+      "community": 2,
+      "norm_label": "skills-lock.json"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L2",
+      "id": "skills_lock_version",
+      "community": 2,
+      "norm_label": "version"
+    },
+    {
+      "label": "skills",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L3",
+      "id": "skills_lock_skills",
+      "community": 2,
+      "norm_label": "skills"
+    },
+    {
+      "label": "brandkit",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L4",
+      "id": "skills_lock_skills_brandkit",
+      "community": 9,
+      "norm_label": "brandkit"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L5",
+      "id": "skills_lock_brandkit_source",
+      "community": 9,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L6",
+      "id": "skills_lock_brandkit_sourcetype",
+      "community": 9,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L7",
+      "id": "skills_lock_brandkit_skillpath",
+      "community": 9,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L8",
+      "id": "skills_lock_brandkit_computedhash",
+      "community": 9,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "design-taste-frontend",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L10",
+      "id": "skills_lock_skills_design_taste_frontend",
+      "community": 2,
+      "norm_label": "design-taste-frontend"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L11",
+      "id": "skills_lock_design_taste_frontend_source",
+      "community": 2,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L12",
+      "id": "skills_lock_design_taste_frontend_sourcetype",
+      "community": 2,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L13",
+      "id": "skills_lock_design_taste_frontend_skillpath",
+      "community": 2,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L14",
+      "id": "skills_lock_design_taste_frontend_computedhash",
+      "community": 2,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "design-taste-frontend-v1",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L16",
+      "id": "skills_lock_skills_design_taste_frontend_v1",
+      "community": 10,
+      "norm_label": "design-taste-frontend-v1"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L17",
+      "id": "skills_lock_design_taste_frontend_v1_source",
+      "community": 10,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L18",
+      "id": "skills_lock_design_taste_frontend_v1_sourcetype",
+      "community": 10,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L19",
+      "id": "skills_lock_design_taste_frontend_v1_skillpath",
+      "community": 10,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L20",
+      "id": "skills_lock_design_taste_frontend_v1_computedhash",
+      "community": 10,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "full-output-enforcement",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L22",
+      "id": "skills_lock_skills_full_output_enforcement",
+      "community": 11,
+      "norm_label": "full-output-enforcement"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L23",
+      "id": "skills_lock_full_output_enforcement_source",
+      "community": 11,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L24",
+      "id": "skills_lock_full_output_enforcement_sourcetype",
+      "community": 11,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L25",
+      "id": "skills_lock_full_output_enforcement_skillpath",
+      "community": 11,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L26",
+      "id": "skills_lock_full_output_enforcement_computedhash",
+      "community": 11,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "gpt-taste",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L28",
+      "id": "skills_lock_skills_gpt_taste",
+      "community": 12,
+      "norm_label": "gpt-taste"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L29",
+      "id": "skills_lock_gpt_taste_source",
+      "community": 12,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L30",
+      "id": "skills_lock_gpt_taste_sourcetype",
+      "community": 12,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L31",
+      "id": "skills_lock_gpt_taste_skillpath",
+      "community": 12,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L32",
+      "id": "skills_lock_gpt_taste_computedhash",
+      "community": 12,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "high-end-visual-design",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L34",
+      "id": "skills_lock_skills_high_end_visual_design",
+      "community": 2,
+      "norm_label": "high-end-visual-design"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L35",
+      "id": "skills_lock_high_end_visual_design_source",
+      "community": 2,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L36",
+      "id": "skills_lock_high_end_visual_design_sourcetype",
+      "community": 2,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L37",
+      "id": "skills_lock_high_end_visual_design_skillpath",
+      "community": 2,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L38",
+      "id": "skills_lock_high_end_visual_design_computedhash",
+      "community": 2,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "image-to-code",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L40",
+      "id": "skills_lock_skills_image_to_code",
+      "community": 13,
+      "norm_label": "image-to-code"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L41",
+      "id": "skills_lock_image_to_code_source",
+      "community": 13,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L42",
+      "id": "skills_lock_image_to_code_sourcetype",
+      "community": 13,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L43",
+      "id": "skills_lock_image_to_code_skillpath",
+      "community": 13,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L44",
+      "id": "skills_lock_image_to_code_computedhash",
+      "community": 13,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "imagegen-frontend-mobile",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L46",
+      "id": "skills_lock_skills_imagegen_frontend_mobile",
+      "community": 14,
+      "norm_label": "imagegen-frontend-mobile"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L47",
+      "id": "skills_lock_imagegen_frontend_mobile_source",
+      "community": 14,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L48",
+      "id": "skills_lock_imagegen_frontend_mobile_sourcetype",
+      "community": 14,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L49",
+      "id": "skills_lock_imagegen_frontend_mobile_skillpath",
+      "community": 14,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L50",
+      "id": "skills_lock_imagegen_frontend_mobile_computedhash",
+      "community": 14,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "imagegen-frontend-web",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L52",
+      "id": "skills_lock_skills_imagegen_frontend_web",
+      "community": 2,
+      "norm_label": "imagegen-frontend-web"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L53",
+      "id": "skills_lock_imagegen_frontend_web_source",
+      "community": 2,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L54",
+      "id": "skills_lock_imagegen_frontend_web_sourcetype",
+      "community": 2,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L55",
+      "id": "skills_lock_imagegen_frontend_web_skillpath",
+      "community": 2,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L56",
+      "id": "skills_lock_imagegen_frontend_web_computedhash",
+      "community": 2,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "industrial-brutalist-ui",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L58",
+      "id": "skills_lock_skills_industrial_brutalist_ui",
+      "community": 15,
+      "norm_label": "industrial-brutalist-ui"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L59",
+      "id": "skills_lock_industrial_brutalist_ui_source",
+      "community": 15,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L60",
+      "id": "skills_lock_industrial_brutalist_ui_sourcetype",
+      "community": 15,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L61",
+      "id": "skills_lock_industrial_brutalist_ui_skillpath",
+      "community": 15,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L62",
+      "id": "skills_lock_industrial_brutalist_ui_computedhash",
+      "community": 15,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "minimalist-ui",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L64",
+      "id": "skills_lock_skills_minimalist_ui",
+      "community": 16,
+      "norm_label": "minimalist-ui"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L65",
+      "id": "skills_lock_minimalist_ui_source",
+      "community": 16,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L66",
+      "id": "skills_lock_minimalist_ui_sourcetype",
+      "community": 16,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L67",
+      "id": "skills_lock_minimalist_ui_skillpath",
+      "community": 16,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L68",
+      "id": "skills_lock_minimalist_ui_computedhash",
+      "community": 16,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "redesign-existing-projects",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L70",
+      "id": "skills_lock_skills_redesign_existing_projects",
+      "community": 17,
+      "norm_label": "redesign-existing-projects"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L71",
+      "id": "skills_lock_redesign_existing_projects_source",
+      "community": 17,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L72",
+      "id": "skills_lock_redesign_existing_projects_sourcetype",
+      "community": 17,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L73",
+      "id": "skills_lock_redesign_existing_projects_skillpath",
+      "community": 17,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L74",
+      "id": "skills_lock_redesign_existing_projects_computedhash",
+      "community": 17,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "stitch-design-taste",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L76",
+      "id": "skills_lock_skills_stitch_design_taste",
+      "community": 2,
+      "norm_label": "stitch-design-taste"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L77",
+      "id": "skills_lock_stitch_design_taste_source",
+      "community": 2,
+      "norm_label": "source"
+    },
+    {
+      "label": "sourceType",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L78",
+      "id": "skills_lock_stitch_design_taste_sourcetype",
+      "community": 2,
+      "norm_label": "sourcetype"
+    },
+    {
+      "label": "skillPath",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L79",
+      "id": "skills_lock_stitch_design_taste_skillpath",
+      "community": 2,
+      "norm_label": "skillpath"
+    },
+    {
+      "label": "computedHash",
+      "file_type": "code",
+      "source_file": "skills-lock.json",
+      "source_location": "L80",
+      "id": "skills_lock_stitch_design_taste_computedhash",
+      "community": 2,
+      "norm_label": "computedhash"
+    },
+    {
+      "label": "initChatbot",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "53-346",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_initchatbot",
+      "community": 1,
+      "norm_label": "initchatbot"
+    },
+    {
+      "label": "knowledgeBase",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "16-46",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_knowledgebase",
+      "community": 33,
+      "norm_label": "knowledgebase"
+    },
+    {
+      "label": "detectIntent",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "164-175",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_detectintent",
+      "community": 8,
+      "norm_label": "detectintent"
+    },
+    {
+      "label": "processInput",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "191-324",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_processinput",
+      "community": 8,
+      "norm_label": "processinput"
+    },
+    {
+      "label": "logEnquiry",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "138-140",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_logenquiry",
+      "community": 8,
+      "norm_label": "logenquiry"
+    },
+    {
+      "label": "logChatRequest",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "142-144",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_chatbot_logchatrequest",
+      "community": 8,
+      "norm_label": "logchatrequest"
+    },
+    {
+      "label": "UnifiedHandler",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "50-249",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_unifiedhandler",
+      "community": 35,
+      "norm_label": "unifiedhandler"
+    },
+    {
+      "label": "do_GET",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "51-55",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_do_get",
+      "community": 21,
+      "norm_label": "do_get"
+    },
+    {
+      "label": "do_POST",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "57-65",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_do_post",
+      "community": 8,
+      "norm_label": "do_post"
+    },
+    {
+      "label": "handle_registration",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "67-73",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_handle_registration",
+      "community": 8,
+      "norm_label": "handle_registration"
+    },
+    {
+      "label": "handle_visit_log",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "75-83",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_handle_visit_log",
+      "community": 1,
+      "norm_label": "handle_visit_log"
+    },
+    {
+      "label": "handle_chat_request_log",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "85-101",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_handle_chat_request_log",
+      "community": 8,
+      "norm_label": "handle_chat_request_log"
+    },
+    {
+      "label": "handle_admin",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "103-239",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_handle_admin",
+      "community": 21,
+      "norm_label": "handle_admin"
+    },
+    {
+      "label": "get_geo_info",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "34-48",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_get_geo_info",
+      "community": 1,
+      "norm_label": "get_geo_info"
+    },
+    {
+      "label": "ensure_logs",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "22-32",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_server_ensure_logs",
+      "community": 34,
+      "norm_label": "ensure_logs"
+    },
+    {
+      "label": "verifyContact",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js",
+      "source_location": "15-19",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_script_verifycontact",
+      "community": 27,
+      "norm_label": "verifycontact"
+    },
+    {
+      "label": "logVisit",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js",
+      "source_location": "67-80",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_script_logvisit",
+      "community": 1,
+      "norm_label": "logvisit"
+    },
+    {
+      "label": "Index Portfolio Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_index_page",
+      "community": 1,
+      "norm_label": "index portfolio page"
+    },
+    {
+      "label": "Admissions Campaign Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/campaign.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_campaign_page",
+      "community": 1,
+      "norm_label": "admissions campaign page"
+    },
+    {
+      "label": "Vedic Math & AI Summer School Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_summer_school_page",
+      "community": 1,
+      "norm_label": "vedic math & ai summer school page"
+    },
+    {
+      "label": "Registration Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_registration_page",
+      "community": 1,
+      "norm_label": "registration page"
+    },
+    {
+      "label": "Academic Education Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/edu_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_edu_detail_page",
+      "community": 1,
+      "norm_label": "academic education detail page"
+    },
+    {
+      "label": "Industrial Experience Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/exp_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_exp_detail_page",
+      "community": 1,
+      "norm_label": "industrial experience detail page"
+    },
+    {
+      "label": "Mentorship Philosophy Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/phil_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_phil_detail_page",
+      "community": 1,
+      "norm_label": "mentorship philosophy detail page"
+    },
+    {
+      "label": "Computational Tech Stack Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/tech_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_tech_detail_page",
+      "community": 1,
+      "norm_label": "computational tech stack detail page"
+    },
+    {
+      "label": "Multiphase Simulation Lab Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/lab_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_lab_detail_page",
+      "community": 1,
+      "norm_label": "multiphase simulation lab detail page"
+    },
+    {
+      "label": "Global Collaboration Impact Detail Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/impact_detail.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_impact_detail_page",
+      "community": 1,
+      "norm_label": "global collaboration impact detail page"
+    },
+    {
+      "label": "Legacy Portfolio Index Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/copy_index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_copy_index_page",
+      "community": 1,
+      "norm_label": "legacy portfolio index page"
+    },
+    {
+      "label": "Coaching Admissions Flyer Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer_science_math_mid_march_2026.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_science_math_mid_march_2026_page",
+      "community": 1,
+      "norm_label": "coaching admissions flyer page"
+    },
+    {
+      "label": "WhatsApp Elite Coaching Flyer Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/whatsapp_flyer_2026.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_whatsapp_flyer_2026_page",
+      "community": 1,
+      "norm_label": "whatsapp elite coaching flyer page"
+    },
+    {
+      "label": "Interactive PDF Flyer Page",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer3_interactive.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer3_interactive_page",
+      "community": 1,
+      "norm_label": "interactive pdf flyer page"
+    },
+    {
+      "label": "Redirect Page (Join Now)",
+      "file_type": "document",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/join-now.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "id": "research_teaching_webpage_join_now_page",
+      "community": 1,
+      "norm_label": "redirect page (join now)"
+    },
+    {
+      "label": "Skills Lock Configuration",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/skills-lock.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_skills_lock_config",
+      "community": 36,
+      "norm_label": "skills lock configuration"
+    },
+    {
+      "label": "Flyer Interactive Link Bounding Boxes",
+      "file_type": "code",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer3_links.json",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer3_links",
+      "community": 1,
+      "norm_label": "flyer interactive link bounding boxes"
+    },
+    {
+      "label": "Contact Obfuscation Mechanism",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js",
+      "source_location": "6-64",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Protects contact information (email and phone) from automated scrapers using JavaScript-based obfuscation while maintaining mobile usability (e.g. setting mailto immediately on touch start / focus / click).",
+      "id": "research_teaching_webpage_concept_contact_obfuscation",
+      "community": 27,
+      "norm_label": "contact obfuscation mechanism"
+    },
+    {
+      "label": "Concept-to-Competition Pipeline",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "22",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Applies industrial R&D logic to exam preparation by focusing on visual concept intuition first, followed by rigorous problem sets, weekly tests, and detailed error tracking to ensure high performance in competitive exams.",
+      "id": "research_teaching_webpage_concept_concept_to_competition",
+      "community": 1,
+      "norm_label": "concept-to-competition pipeline"
+    },
+    {
+      "label": "Digital Twin Method",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/campaign.html",
+      "source_location": "40-47",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Replaces rote learning with mental simulations, enabling students to visualize physical and chemical systems through analytical and computational frameworks.",
+      "id": "research_teaching_webpage_concept_digital_twin",
+      "community": 1,
+      "norm_label": "digital twin method"
+    },
+    {
+      "label": "Vedic Speed and Agility",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "38-46",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Uses the 16 Sutras of Vedic Mathematics to optimize mental calculation speed and efficiency, giving students a time-saving edge in competitive exams.",
+      "id": "research_teaching_webpage_concept_vedic_math",
+      "community": 1,
+      "norm_label": "vedic speed and agility"
+    },
+    {
+      "label": "Industrial R&D Logic Flow",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/exp_detail.html",
+      "source_location": "44-93",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Leverages problem-solving and decision-making frameworks from companies like GE and Equinor (e.g. multi-well systems, subsea separation, multiphase flows) to teach physics and chemistry.",
+      "id": "research_teaching_webpage_concept_industrial_rd_logic",
+      "community": 1,
+      "norm_label": "industrial r&d logic flow"
+    },
+    {
+      "label": "High-Fidelity Performance Analytics",
+      "file_type": "rationale",
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/phil_detail.html",
+      "source_location": "60-66",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Amol Kumar Thakre",
+      "contributor": null,
+      "rationale": "Utilizes chapter-wise statistics and error logging to map student performance, targeting conceptual gaps dynamically before they lead to errors.",
+      "id": "research_teaching_webpage_concept_performance_analytics",
+      "community": 21,
+      "norm_label": "high-fidelity performance analytics"
+    },
+    {
+      "label": "Clickable Flyer JEE NEET",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_clickable_flyer_jee_neet_document",
+      "community": 5,
+      "norm_label": "clickable flyer jee neet"
+    },
+    {
+      "label": "Clickable Flyer JEE NEET Redesign",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET_redesign.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_document",
+      "community": 5,
+      "norm_label": "clickable flyer jee neet redesign"
+    },
+    {
+      "label": "Flyer",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_document",
+      "community": 5,
+      "norm_label": "flyer"
+    },
+    {
+      "label": "Flyer 3",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer3.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer3_document",
+      "community": 5,
+      "norm_label": "flyer 3"
+    },
+    {
+      "label": "Flyer Professional",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_Professional.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_professional_document",
+      "community": 5,
+      "norm_label": "flyer professional"
+    },
+    {
+      "label": "Flyer Original",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_original_document",
+      "community": 5,
+      "norm_label": "flyer original"
+    },
+    {
+      "label": "Brandkit Image Generation Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/brandkit/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "brandkit_skill_brandkit",
+      "community": 28,
+      "norm_label": "brandkit image generation skill"
+    },
+    {
+      "label": "Anti-Slop Frontend Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "design_taste_frontend_skill_design_taste_frontend",
+      "community": 7,
+      "norm_label": "anti-slop frontend skill"
+    },
+    {
+      "label": "Anti-Slop Frontend Skill v1",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend-v1/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "design_taste_frontend_v1_skill_design_taste_frontend_v1",
+      "community": 7,
+      "norm_label": "anti-slop frontend skill v1"
+    },
+    {
+      "label": "Full-Output Enforcement Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/full-output-enforcement/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "full_output_enforcement_skill_full_output_enforcement",
+      "community": 31,
+      "norm_label": "full-output enforcement skill"
+    },
+    {
+      "label": "Elite UX/UI & Advanced GSAP Motion Engineer",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/gpt-taste/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "gpt_taste_skill_gpt_taste",
+      "community": 25,
+      "norm_label": "elite ux/ui & advanced gsap motion engineer"
+    },
+    {
+      "label": "Principal UI/UX Architect & Motion Choreographer",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/high-end-visual-design/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "high_end_visual_design_skill_high_end_visual_design",
+      "community": 25,
+      "norm_label": "principal ui/ux architect & motion choreographer"
+    },
+    {
+      "label": "Image-to-Code Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/image-to-code/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "image_to_code_skill_image_to_code",
+      "community": 26,
+      "norm_label": "image-to-code skill"
+    },
+    {
+      "label": "Mobile App Image Generation Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/imagegen-frontend-mobile/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "imagegen_frontend_mobile_skill_imagegen_frontend_mobile",
+      "community": 32,
+      "norm_label": "mobile app image generation skill"
+    },
+    {
+      "label": "Frontend Image Direction Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/imagegen-frontend-web/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "imagegen_frontend_web_skill_imagegen_frontend_web",
+      "community": 26,
+      "norm_label": "frontend image direction skill"
+    },
+    {
+      "label": "Industrial Brutalism & Tactical Telemetry UI",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/industrial-brutalist-ui/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "industrial_brutalist_ui_skill_industrial_brutalist_ui",
+      "community": 7,
+      "norm_label": "industrial brutalism & tactical telemetry ui"
+    },
+    {
+      "label": "Premium Utilitarian Minimalism & Editorial UI",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/minimalist-ui/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "minimalist_ui_skill_minimalist_ui",
+      "community": 7,
+      "norm_label": "premium utilitarian minimalism & editorial ui"
+    },
+    {
+      "label": "Redesign Existing Projects Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/redesign-existing-projects/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "redesign_existing_projects_skill_redesign_existing_projects",
+      "community": 7,
+      "norm_label": "redesign existing projects skill"
+    },
+    {
+      "label": "Taste Standard Design System",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/stitch-design-taste/DESIGN.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "stitch_design_taste_design_stitch_design_taste",
+      "community": 7,
+      "norm_label": "taste standard design system"
+    },
+    {
+      "label": "Semantic Design System Skill",
+      "file_type": "rationale",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/stitch-design-taste/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "stitch_design_taste_skill_stitch_design_taste",
+      "community": 7,
+      "norm_label": "semantic design system skill"
+    },
+    {
+      "label": "Serena Project Config",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.serena/project.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_serena_project_serena_project_config",
+      "community": 5,
+      "norm_label": "serena project config"
+    },
+    {
+      "label": "Serena Project Local Config",
+      "file_type": "document",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.serena/project.local.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "_serena_project_local_serena_project_local_config",
+      "community": 5,
+      "norm_label": "serena project local config"
+    },
+    {
+      "label": "Dr. Amol Kumar Thakre (Original Flyer)",
+      "file_type": "concept",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_original_mentor_amol_kumar_thakre",
+      "community": 5,
+      "norm_label": "dr. amol kumar thakre (original flyer)"
+    },
+    {
+      "label": "Dr. Amol Kumar Thakre (Professional Flyer)",
+      "file_type": "concept",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_Professional.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer_professional_mentor_amol_kumar_thakre",
+      "community": 5,
+      "norm_label": "dr. amol kumar thakre (professional flyer)"
+    },
+    {
+      "label": "Dr. Amol Kumar Thakre (Flyer 3)",
+      "file_type": "concept",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer3.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_flyer3_mentor_amol_kumar_thakre",
+      "community": 5,
+      "norm_label": "dr. amol kumar thakre (flyer 3)"
+    },
+    {
+      "label": "Dr. Amol Kumar Thakre (Clickable Flyer Redesign)",
+      "file_type": "concept",
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET_redesign.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_mentor_amol_kumar_thakre",
+      "community": 5,
+      "norm_label": "dr. amol kumar thakre (clickable flyer redesign)"
+    },
+    {
+      "label": "Deployment Guide",
+      "file_type": "document",
+      "source_file": "Coaching_webpage_claude/export/complete/DEPLOYMENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_deployment_guide_deployment_guide",
+      "community": 20,
+      "norm_label": "deployment guide"
+    },
+    {
+      "label": "Design System File Structure",
+      "file_type": "concept",
+      "source_file": "Coaching_webpage_claude/export/complete/DEPLOYMENT_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_deployment_guide_design_system_structure",
+      "community": 29,
+      "norm_label": "design system file structure"
+    },
+    {
+      "label": "Complete Export Index",
+      "file_type": "document",
+      "source_file": "Coaching_webpage_claude/export/complete/INDEX.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_index_complete_index",
+      "community": 20,
+      "norm_label": "complete export index"
+    },
+    {
+      "label": "Thakre Academy Brand Definition",
+      "file_type": "concept",
+      "source_file": "Coaching_webpage_claude/export/complete/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_skill_brand_definition",
+      "community": 0,
+      "norm_label": "thakre academy brand definition"
+    },
+    {
+      "label": "Standalone Website Readme",
+      "file_type": "document",
+      "source_file": "Coaching_webpage_claude/export/complete/STANDALONE_README.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_standalone_readme_readme",
+      "community": 30,
+      "norm_label": "standalone website readme"
+    },
+    {
+      "label": "Scholar's Study Palette",
+      "file_type": "rationale",
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Deep navy for authority/ink, prestige gold as a precious accent rule/garnish, warm cream paper for approachable Scholarly look rather than clinical white.",
+      "id": "complete_readme_scholars_study_palette",
+      "community": 0,
+      "norm_label": "scholar's study palette"
+    },
+    {
+      "label": "Scholarly Typography",
+      "file_type": "rationale",
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Spectral (serif) for display & headings to give scholarly, editorial gravitas. Hanken Grotesk (sans) for body & UI for clean, friendly legibility.",
+      "id": "complete_readme_editorial_typography",
+      "community": 0,
+      "norm_label": "scholarly typography"
+    },
+    {
+      "label": "No Marketing Fluff Policy",
+      "file_type": "rationale",
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Avoid student names, testimonials, ranks, or fee figures to focus purely on academic credentials and methodology-first trust.",
+      "id": "complete_readme_no_marketing_fluff",
+      "community": 24,
+      "norm_label": "no marketing fluff policy"
+    },
+    {
+      "label": "Standalone Thakre Academy Website",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/export/complete/thakre-academy-website.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "complete_thakre_academy_website_standalone_html",
+      "community": 0,
+      "norm_label": "standalone thakre academy website"
+    },
+    {
+      "label": "Courses Data Definition",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_coaching_courses_data",
+      "community": 24,
+      "norm_label": "courses data definition"
+    },
+    {
+      "label": "Methodology Pillars Component",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_home_methodology_pillars",
+      "community": 37,
+      "norm_label": "methodology pillars component"
+    },
+    {
+      "label": "Register Page Component",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_register_registerpage",
+      "community": 0,
+      "norm_label": "register page component"
+    },
+    {
+      "label": "CV Timeline Component",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_research_cv_timeline",
+      "community": 38,
+      "norm_label": "cv timeline component"
+    },
+    {
+      "label": "Design System Runtime Components",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_ds_runtime_ds",
+      "community": 0,
+      "norm_label": "design system runtime components"
+    },
+    {
+      "label": "Website UI Kit Guide",
+      "file_type": "document",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_readme_ui_kit_guide",
+      "community": 20,
+      "norm_label": "website ui kit guide"
+    },
+    {
+      "label": "Web UI Kit Sandbox Entry",
+      "file_type": "code",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "website_index_app",
+      "community": 0,
+      "norm_label": "web ui kit sandbox entry"
+    },
+    {
+      "label": "Dr. Amol Kumar Thakre Professional CV",
+      "file_type": "document",
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_cv_amol_thakre_profile",
+      "community": 3,
+      "norm_label": "dr. amol kumar thakre professional cv"
+    },
+    {
+      "label": "PhD Twente Molecular Dynamics Research",
+      "file_type": "concept",
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_cv_amol_thakre_phd_twente",
+      "community": 3,
+      "norm_label": "phd twente molecular dynamics research"
+    },
+    {
+      "label": "Senior Staff Analytics Engineer at GE",
+      "file_type": "concept",
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_cv_amol_thakre_ge_analytics",
+      "community": 3,
+      "norm_label": "senior staff analytics engineer at ge"
+    },
+    {
+      "label": "Senior Research Scientist at Equinor",
+      "file_type": "concept",
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_cv_amol_thakre_equinor",
+      "community": 3,
+      "norm_label": "senior research scientist at equinor"
+    },
+    {
+      "label": "JEE & NEET Clickable Flyer",
+      "file_type": "document",
+      "source_file": "assets/docs/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "docs_clickable_flyer_jee_neet_flyer",
+      "community": 3,
+      "norm_label": "jee & neet clickable flyer"
+    },
+    {
+      "label": "Thakre Academy Academic Excellence Newsletter",
+      "file_type": "document",
+      "source_file": "newsletter/Newsletter.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "newsletter_newsletter_excellence",
+      "community": 3,
+      "norm_label": "thakre academy academic excellence newsletter"
+    },
+    {
+      "label": "Newsletter Design Concept - Monogram",
+      "file_type": "document",
+      "source_file": "newsletter/alternative_concepts/Newsletter_Monogram.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "alternative_concepts_newsletter_monogram_concept",
+      "community": 3,
+      "norm_label": "newsletter design concept - monogram"
+    },
+    {
+      "label": "Newsletter Design Concept - Vibrant",
+      "file_type": "document",
+      "source_file": "newsletter/alternative_concepts/Newsletter_Vibrant.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "alternative_concepts_newsletter_vibrant_concept",
+      "community": 3,
+      "norm_label": "newsletter design concept - vibrant"
+    },
+    {
+      "label": "Newsletter Design Concept - Watercolor",
+      "file_type": "document",
+      "source_file": "newsletter/alternative_concepts/Newsletter_Watercolor.pdf",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "alternative_concepts_newsletter_watercolor_concept",
+      "community": 3,
+      "norm_label": "newsletter design concept - watercolor"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "website_coaching",
+      "target": "website_coaching_coachingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "website_coaching",
+      "target": "website_coaching_coursecatalog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "website_coaching",
+      "target": "website_coaching_coursedetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Coaching.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_coaching_coachingpage",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_coaching_coachingpage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L334",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_booksection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L400",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_ctasection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_herosection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_methodologypillars",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": "L222",
+      "weight": 1.0,
+      "source": "website_home",
+      "target": "website_home_testimonialspillar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Home.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_home_home",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_home_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "website_register",
+      "target": "website_register_regform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "website_register",
+      "target": "website_register_register",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "website_register",
+      "target": "website_register_sidepanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_cvtimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_methodologystatement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_profilehero",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L274",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_publications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_researchareas",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "website_research",
+      "target": "website_research_researchpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_research_researchpage"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_research_researchpage",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Research.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_research_researchpage",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "website_sitechrome",
+      "target": "website_sitechrome_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "website_sitechrome",
+      "target": "website_sitechrome_header",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "website_sitechrome",
+      "target": "website_sitechrome_logo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L145",
+      "weight": 1.0,
+      "source": "website_sitechrome",
+      "target": "website_sitechrome_photoslot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "website_sitechrome",
+      "target": "website_sitechrome_section",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_sitechrome_header"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/SiteChrome.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_sitechrome_header",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_sitechrome_footer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_avatar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_badge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_card",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L373",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_coursecard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_input",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_pill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L433",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_resultcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L324",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Coaching_webpage_claude/ui_kits/website/ds-runtime.jsx",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "website_ds_runtime",
+      "target": "website_ds_runtime_stat",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "chatbot.js",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "chatbot",
+      "target": "chatbot_initchatbot",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "flyer3_links.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "flyer3_links",
+      "target": "flyer3_links_height",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "flyer3_links.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "flyer3_links",
+      "target": "flyer3_links_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "flyer3_links.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "flyer3_links",
+      "target": "flyer3_links_width",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "registration_server",
+      "target": "registration_server_ensure_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "registration_server",
+      "target": "registration_server_get_geo_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L250",
+      "weight": 1.0,
+      "source": "registration_server",
+      "target": "registration_server_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "registration_server",
+      "target": "registration_server_unifiedhandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L251",
+      "weight": 1.0,
+      "source": "registration_server_main",
+      "target": "registration_server_ensure_logs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "registration_server_get_geo_info",
+      "target": "str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_visit_log",
+      "target": "registration_server_get_geo_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_do_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_do_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_get_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_handle_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_handle_chat_request_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_handle_registration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_handle_visit_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "registration_server_unifiedhandler_send_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler",
+      "target": "simplehttprequesthandler",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_do_get",
+      "target": "registration_server_unifiedhandler_handle_admin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_do_post",
+      "target": "registration_server_unifiedhandler_handle_chat_request_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_do_post",
+      "target": "registration_server_unifiedhandler_handle_registration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_do_post",
+      "target": "registration_server_unifiedhandler_handle_visit_log",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_registration",
+      "target": "registration_server_unifiedhandler_get_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_registration",
+      "target": "registration_server_unifiedhandler_send_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_visit_log",
+      "target": "registration_server_unifiedhandler_get_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_visit_log",
+      "target": "registration_server_unifiedhandler_send_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L86",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_chat_request_log",
+      "target": "registration_server_unifiedhandler_get_payload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "registration_server.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "registration_server_unifiedhandler_handle_chat_request_log",
+      "target": "registration_server_unifiedhandler_send_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "script",
+      "target": "script_logvisit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script.js",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "script",
+      "target": "script_verifycontact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "skills_lock",
+      "target": "skills_lock_skills",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "skills_lock",
+      "target": "skills_lock_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_brandkit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_design_taste_frontend",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_design_taste_frontend_v1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_full_output_enforcement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_gpt_taste",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_high_end_visual_design",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_image_to_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_imagegen_frontend_mobile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_imagegen_frontend_web",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_industrial_brutalist_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_minimalist_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_redesign_existing_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "skills_lock_skills",
+      "target": "skills_lock_skills_stitch_design_taste",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "skills_lock_skills_brandkit",
+      "target": "skills_lock_brandkit_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "skills_lock_skills_brandkit",
+      "target": "skills_lock_brandkit_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "skills_lock_skills_brandkit",
+      "target": "skills_lock_brandkit_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "skills_lock_skills_brandkit",
+      "target": "skills_lock_brandkit_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend",
+      "target": "skills_lock_design_taste_frontend_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend",
+      "target": "skills_lock_design_taste_frontend_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend",
+      "target": "skills_lock_design_taste_frontend_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend",
+      "target": "skills_lock_design_taste_frontend_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend_v1",
+      "target": "skills_lock_design_taste_frontend_v1_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend_v1",
+      "target": "skills_lock_design_taste_frontend_v1_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend_v1",
+      "target": "skills_lock_design_taste_frontend_v1_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "skills_lock_skills_design_taste_frontend_v1",
+      "target": "skills_lock_design_taste_frontend_v1_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "skills_lock_skills_full_output_enforcement",
+      "target": "skills_lock_full_output_enforcement_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "skills_lock_skills_full_output_enforcement",
+      "target": "skills_lock_full_output_enforcement_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "skills_lock_skills_full_output_enforcement",
+      "target": "skills_lock_full_output_enforcement_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "skills_lock_skills_full_output_enforcement",
+      "target": "skills_lock_full_output_enforcement_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "skills_lock_skills_gpt_taste",
+      "target": "skills_lock_gpt_taste_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "skills_lock_skills_gpt_taste",
+      "target": "skills_lock_gpt_taste_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "skills_lock_skills_gpt_taste",
+      "target": "skills_lock_gpt_taste_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "skills_lock_skills_gpt_taste",
+      "target": "skills_lock_gpt_taste_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "skills_lock_skills_high_end_visual_design",
+      "target": "skills_lock_high_end_visual_design_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "skills_lock_skills_high_end_visual_design",
+      "target": "skills_lock_high_end_visual_design_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "skills_lock_skills_high_end_visual_design",
+      "target": "skills_lock_high_end_visual_design_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "skills_lock_skills_high_end_visual_design",
+      "target": "skills_lock_high_end_visual_design_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "skills_lock_skills_image_to_code",
+      "target": "skills_lock_image_to_code_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "skills_lock_skills_image_to_code",
+      "target": "skills_lock_image_to_code_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "skills_lock_skills_image_to_code",
+      "target": "skills_lock_image_to_code_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "skills_lock_skills_image_to_code",
+      "target": "skills_lock_image_to_code_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_mobile",
+      "target": "skills_lock_imagegen_frontend_mobile_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_mobile",
+      "target": "skills_lock_imagegen_frontend_mobile_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_mobile",
+      "target": "skills_lock_imagegen_frontend_mobile_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_mobile",
+      "target": "skills_lock_imagegen_frontend_mobile_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_web",
+      "target": "skills_lock_imagegen_frontend_web_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_web",
+      "target": "skills_lock_imagegen_frontend_web_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_web",
+      "target": "skills_lock_imagegen_frontend_web_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "skills_lock_skills_imagegen_frontend_web",
+      "target": "skills_lock_imagegen_frontend_web_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "skills_lock_skills_industrial_brutalist_ui",
+      "target": "skills_lock_industrial_brutalist_ui_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "skills_lock_skills_industrial_brutalist_ui",
+      "target": "skills_lock_industrial_brutalist_ui_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "skills_lock_skills_industrial_brutalist_ui",
+      "target": "skills_lock_industrial_brutalist_ui_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "skills_lock_skills_industrial_brutalist_ui",
+      "target": "skills_lock_industrial_brutalist_ui_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "skills_lock_skills_minimalist_ui",
+      "target": "skills_lock_minimalist_ui_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "skills_lock_skills_minimalist_ui",
+      "target": "skills_lock_minimalist_ui_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "skills_lock_skills_minimalist_ui",
+      "target": "skills_lock_minimalist_ui_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "skills_lock_skills_minimalist_ui",
+      "target": "skills_lock_minimalist_ui_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "skills_lock_skills_redesign_existing_projects",
+      "target": "skills_lock_redesign_existing_projects_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "skills_lock_skills_redesign_existing_projects",
+      "target": "skills_lock_redesign_existing_projects_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "skills_lock_skills_redesign_existing_projects",
+      "target": "skills_lock_redesign_existing_projects_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "skills_lock_skills_redesign_existing_projects",
+      "target": "skills_lock_redesign_existing_projects_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "skills_lock_skills_stitch_design_taste",
+      "target": "skills_lock_stitch_design_taste_computedhash",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "skills_lock_skills_stitch_design_taste",
+      "target": "skills_lock_stitch_design_taste_skillpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "skills_lock_skills_stitch_design_taste",
+      "target": "skills_lock_stitch_design_taste_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "skills-lock.json",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "skills_lock_skills_stitch_design_taste",
+      "target": "skills_lock_stitch_design_taste_sourcetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/campaign.html",
+      "source_location": "115",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_campaign_page",
+      "target": "research_teaching_webpage_chatbot_initchatbot"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "129",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_chatbot_initchatbot"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration.html",
+      "source_location": "304",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_page",
+      "target": "research_teaching_webpage_chatbot_initchatbot"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "121",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_summer_school_page",
+      "target": "research_teaching_webpage_chatbot_initchatbot"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "193",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_chatbot_processinput",
+      "target": "research_teaching_webpage_chatbot_detectintent"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "195",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_chatbot_processinput",
+      "target": "research_teaching_webpage_chatbot_logchatrequest"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "304",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_chatbot_processinput",
+      "target": "research_teaching_webpage_chatbot_logenquiry"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "139",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_chatbot_logenquiry",
+      "target": "research_teaching_webpage_registration_server_handle_registration"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js",
+      "source_location": "143",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_chatbot_logchatrequest",
+      "target": "research_teaching_webpage_registration_server_handle_chat_request_log"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "53",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_server_do_get",
+      "target": "research_teaching_webpage_registration_server_handle_admin"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "63",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_server_do_post",
+      "target": "research_teaching_webpage_registration_server_handle_chat_request_log"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "59",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_server_do_post",
+      "target": "research_teaching_webpage_registration_server_handle_registration"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "61",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_server_do_post",
+      "target": "research_teaching_webpage_registration_server_handle_visit_log"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "79",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_server_handle_visit_log",
+      "target": "research_teaching_webpage_registration_server_get_geo_info"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js",
+      "source_location": "69",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_script_logvisit",
+      "target": "research_teaching_webpage_registration_server_handle_visit_log"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration_server.py",
+      "source_location": "103",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_performance_analytics",
+      "target": "research_teaching_webpage_registration_server_handle_admin"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js",
+      "source_location": "15",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_contact_obfuscation",
+      "target": "research_teaching_webpage_script_verifycontact"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/campaign.html",
+      "source_location": "114",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_campaign_page",
+      "target": "research_teaching_webpage_script_logvisit"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/registration.html",
+      "source_location": "303",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_registration_page",
+      "target": "research_teaching_webpage_script_logvisit"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "120",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_summer_school_page",
+      "target": "research_teaching_webpage_script_logvisit"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "35",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_campaign_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "124",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_copy_index_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "46",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_edu_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "70",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_exp_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "111",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_impact_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "101",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_lab_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "60",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_phil_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "36",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_summer_school_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html",
+      "source_location": "89",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_index_page",
+      "target": "research_teaching_webpage_tech_detail_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/campaign.html",
+      "source_location": "33",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_campaign_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "43",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_vedic_math",
+      "target": "research_teaching_webpage_summer_school_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "32",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_summer_school_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer3_interactive.html",
+      "source_location": "85",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer3_interactive_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer_science_math_mid_march_2026.html",
+      "source_location": "228",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_science_math_mid_march_2026_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/join-now.html",
+      "source_location": "9",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_join_now_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/whatsapp_flyer_2026.html",
+      "source_location": "349",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_whatsapp_flyer_2026_page",
+      "target": "research_teaching_webpage_registration_page"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/exp_detail.html",
+      "source_location": "59",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_digital_twin",
+      "target": "research_teaching_webpage_exp_detail_page"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/exp_detail.html",
+      "source_location": "57",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_industrial_rd_logic",
+      "target": "research_teaching_webpage_exp_detail_page"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/phil_detail.html",
+      "source_location": "55",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_concept_to_competition",
+      "target": "research_teaching_webpage_phil_detail_page"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/flyer3_interactive.html",
+      "source_location": "68-94",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer3_interactive_page",
+      "target": "research_teaching_webpage_flyer3_links"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/summer_school.html",
+      "source_location": "43",
+      "weight": 1.0,
+      "source": "research_teaching_webpage_concept_vedic_math",
+      "target": "research_teaching_webpage_concept_concept_to_competition"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_clickable_flyer_jee_neet_document",
+      "target": "research_teaching_webpage_flyer_original_document"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET_redesign.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_document",
+      "target": "research_teaching_webpage_clickable_flyer_jee_neet_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Clickable_Flyer_JEE_NEET_redesign.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_document",
+      "target": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_document",
+      "target": "research_teaching_webpage_flyer_original_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer3.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer3_document",
+      "target": "research_teaching_webpage_flyer3_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_Professional.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_professional_document",
+      "target": "research_teaching_webpage_flyer_original_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_Professional.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_professional_document",
+      "target": "research_teaching_webpage_flyer_professional_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.serena/project.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "_serena_project_serena_project_config",
+      "target": "research_teaching_webpage_flyer_original_document"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_original_document",
+      "target": "research_teaching_webpage_flyer_original_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_taste_frontend_skill_design_taste_frontend",
+      "target": "design_taste_frontend_v1_skill_design_taste_frontend_v1"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_taste_frontend_skill_design_taste_frontend",
+      "target": "industrial_brutalist_ui_skill_industrial_brutalist_ui"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_taste_frontend_skill_design_taste_frontend",
+      "target": "minimalist_ui_skill_minimalist_ui"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_taste_frontend_skill_design_taste_frontend",
+      "target": "redesign_existing_projects_skill_redesign_existing_projects"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/stitch-design-taste/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "stitch_design_taste_skill_stitch_design_taste",
+      "target": "design_taste_frontend_skill_design_taste_frontend"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/gpt-taste/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "gpt_taste_skill_gpt_taste",
+      "target": "high_end_visual_design_skill_high_end_visual_design"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/image-to-code/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "image_to_code_skill_image_to_code",
+      "target": "imagegen_frontend_web_skill_imagegen_frontend_web"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/stitch-design-taste/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "stitch_design_taste_skill_stitch_design_taste",
+      "target": "stitch_design_taste_design_stitch_design_taste"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.serena/project.local.yml",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "_serena_project_local_serena_project_local_config",
+      "target": "_serena_project_serena_project_config"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_original_mentor_amol_kumar_thakre",
+      "target": "research_teaching_webpage_clickable_flyer_jee_neet_redesign_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_original_mentor_amol_kumar_thakre",
+      "target": "research_teaching_webpage_flyer3_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "research_teaching_webpage_flyer_original_mentor_amol_kumar_thakre",
+      "target": "research_teaching_webpage_flyer_professional_mentor_amol_kumar_thakre"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/export/complete/DEPLOYMENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_deployment_guide_deployment_guide",
+      "target": "complete_index_complete_index"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/export/complete/DEPLOYMENT_GUIDE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_deployment_guide_deployment_guide",
+      "target": "website_readme_ui_kit_guide"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Coaching_webpage_claude/export/complete/SKILL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_skill_brand_definition",
+      "target": "complete_readme_scholars_study_palette"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_readme_scholars_study_palette",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_readme_editorial_typography",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/export/complete/readme.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_readme_no_marketing_fluff",
+      "target": "website_coaching_courses_data"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/export/complete/thakre-academy-website.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_thakre_academy_website_standalone_html",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Coaching_webpage_claude/export/complete/thakre-academy-website.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "complete_thakre_academy_website_standalone_html",
+      "target": "website_index_app"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_index_app",
+      "target": "website_register_registerpage"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/Register.jsx",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "website_register_registerpage",
+      "target": "website_ds_runtime_ds"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/docs/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_clickable_flyer_jee_neet_flyer",
+      "target": "website_index_app"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/docs/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_clickable_flyer_jee_neet_flyer",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_cv_amol_thakre_equinor",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_cv_amol_thakre_ge_analytics",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_cv_amol_thakre_phd_twente",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "newsletter/Newsletter.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "newsletter_newsletter_excellence",
+      "target": "docs_cv_amol_thakre_profile"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "assets/docs/Clickable_Flyer_JEE_NEET.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "docs_clickable_flyer_jee_neet_flyer",
+      "target": "newsletter_newsletter_excellence"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Monogram.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "alternative_concepts_newsletter_monogram_concept",
+      "target": "newsletter_newsletter_excellence"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Vibrant.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "alternative_concepts_newsletter_vibrant_concept",
+      "target": "newsletter_newsletter_excellence"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Watercolor.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "alternative_concepts_newsletter_watercolor_concept",
+      "target": "newsletter_newsletter_excellence"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Monogram.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "alternative_concepts_newsletter_monogram_concept",
+      "target": "alternative_concepts_newsletter_vibrant_concept"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Vibrant.pdf",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "alternative_concepts_newsletter_vibrant_concept",
+      "target": "alternative_concepts_newsletter_watercolor_concept"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "visitor_tracking_and_analytics_flow",
+      "label": "Visitor Traffic and Analytics Dashboard Flow",
+      "nodes": [
+        "research_teaching_webpage_script_logvisit",
+        "research_teaching_webpage_registration_server_handle_visit_log",
+        "research_teaching_webpage_registration_server_handle_admin"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/script.js"
+    },
+    {
+      "id": "enquiry_and_lead_logging_flow",
+      "label": "Admissions Enquiry and Chat Request Logging System",
+      "nodes": [
+        "research_teaching_webpage_chatbot_logenquiry",
+        "research_teaching_webpage_registration_server_handle_registration",
+        "research_teaching_webpage_registration_server_handle_chat_request_log",
+        "research_teaching_webpage_registration_page"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/chatbot.js"
+    },
+    {
+      "id": "coaching_pedagogy_methods",
+      "label": "Dr. Amol Thakre's Coaching Pedagogy Framework",
+      "nodes": [
+        "research_teaching_webpage_concept_concept_to_competition",
+        "research_teaching_webpage_concept_digital_twin",
+        "research_teaching_webpage_concept_industrial_rd_logic",
+        "research_teaching_webpage_concept_performance_analytics",
+        "research_teaching_webpage_concept_vedic_math"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Career_Professional/Careers/CV_and_Profiles/research_teaching_webpage/index.html"
+    },
+    {
+      "id": "coaching_flyer_variants",
+      "label": "JEE/NEET Coaching Flyer Variants",
+      "nodes": [
+        "research_teaching_webpage_flyer_original_document",
+        "research_teaching_webpage_flyer_professional_document",
+        "research_teaching_webpage_clickable_flyer_jee_neet_redesign_document",
+        "research_teaching_webpage_clickable_flyer_jee_neet_document",
+        "research_teaching_webpage_flyer_document",
+        "research_teaching_webpage_flyer3_document"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/Flyer_original.pdf"
+    },
+    {
+      "id": "frontend_design_taste_skills",
+      "label": "Frontend Design Taste Skills",
+      "nodes": [
+        "design_taste_frontend_skill_design_taste_frontend",
+        "gpt_taste_skill_gpt_taste",
+        "high_end_visual_design_skill_high_end_visual_design",
+        "minimalist_ui_skill_minimalist_ui",
+        "industrial_brutalist_ui_skill_industrial_brutalist_ui"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/design-taste-frontend/SKILL.md"
+    },
+    {
+      "id": "image_to_code_design_workflow",
+      "label": "Image-to-Code Design Workflow",
+      "nodes": [
+        "image_to_code_skill_image_to_code",
+        "imagegen_frontend_web_skill_imagegen_frontend_web",
+        "imagegen_frontend_mobile_skill_imagegen_frontend_mobile"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Careers/CV_and_Profiles/research_teaching_webpage/.agents/skills/image-to-code/SKILL.md"
+    },
+    {
+      "id": "thakre_academy_website_pages",
+      "label": "Thakre Academy Website Pages",
+      "nodes": [
+        "website_home_home",
+        "website_research_researchpage",
+        "website_coaching_coachingpage",
+        "website_register_registerpage"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "Coaching_webpage_claude/ui_kits/website/index.html"
+    },
+    {
+      "id": "alternative_newsletter_variations",
+      "label": "Alternative Newsletter Design Variations",
+      "nodes": [
+        "alternative_concepts_newsletter_monogram_concept",
+        "alternative_concepts_newsletter_vibrant_concept",
+        "alternative_concepts_newsletter_watercolor_concept"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "newsletter/alternative_concepts/Newsletter_Monogram.pdf"
+    },
+    {
+      "id": "dr_thakre_credentials",
+      "label": "Dr. Thakre Academic and Industrial Credentials",
+      "nodes": [
+        "docs_cv_amol_thakre_phd_twente",
+        "docs_cv_amol_thakre_ge_analytics",
+        "docs_cv_amol_thakre_equinor"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "assets/docs/CV_Amol_Thakre.pdf"
+    }
+  ]
+}

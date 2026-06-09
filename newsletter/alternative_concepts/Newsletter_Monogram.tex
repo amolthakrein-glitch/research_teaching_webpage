@@ -1,0 +1,244 @@
+\documentclass[11pt,a4paper,landscape]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[paper=landscape,top=0.08in,bottom=0.08in,left=0.08in,right=0.08in]{geometry}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,raster}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[expansion=true,protrusion=true]{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tikz}
+
+\definecolor{brand_blue}{HTML}{0B3D6B}
+\definecolor{accent_orange}{HTML}{F47920}
+\definecolor{accent_red}{HTML}{D94040}
+\definecolor{deep_navy}{HTML}{032540}
+\definecolor{teal_accent}{HTML}{0A7B83}
+\definecolor{charcoal_gray}{HTML}{2D3748}
+\definecolor{light_grey}{HTML}{F8FAFC}
+
+\pagestyle{empty}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\newcommand{\dloc}{\ding{71}}
+\newcommand{\dgrad}{\ding{113}}
+\newcommand{\drocket}{\ding{228}}
+\newcommand{\dbolt}{\ding{94}}
+\newcommand{\dgem}{\ding{86}}
+\newcommand{\dstar}{\ding{73}}
+\newcommand{\dqr}{\ding{37}}
+\newcommand{\dphone}{\ding{172}}
+\newcommand{\dcheck}{\ding{51}}
+\newcommand{\darrow}{\ding{108}}
+
+\newcommand{\fTitle}[1]{{\fontsize{16.5}{19.5}\selectfont\bfseries#1}}
+\newcommand{\fBody}[1]{{\fontsize{14.2}{17}\selectfont\bfseries#1}}
+\newcommand{\fHighlight}[1]{{\fontsize{12.2}{14.5}\selectfont\bfseries#1}}
+\newcommand{\fSmall}[1]{{\fontsize{11}{13.2}\selectfont#1}}
+\newcommand{\fTiny}[1]{{\fontsize{10}{12}\selectfont#1}}
+\newcommand{\fName}[1]{{\fontsize{19.5}{22.5}\selectfont\bfseries#1}}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture,overlay]
+
+  % --- COLUMN 1: RESULTS & METRICS ---
+  \node (col1) at ([xshift=-9.2cm,yshift=0.0cm]current page.center) {%
+    \begin{minipage}{0.29\paperwidth}
+      \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=accent_orange!95!black,
+        colbacktitle=accent_orange!95!black,
+        coltitle=white,
+        halign title=center,
+        title={\fTitle{\dbolt~~ACADEMIC EXCELLENCE}},
+        opacityback=1.0,
+        arc=10pt,boxrule=2.0pt,
+        top=6pt,bottom=6pt,left=8pt,right=8pt,
+        height=19.5cm,
+        halign=center
+      ]
+        \textcolor{charcoal_gray}{\fSmall{\itshape Unrivalled competitive academic outcomes built on deep conceptual reasoning, logical deduction, and high-fidelity R\&D mentorship.}}\\[0.5em]
+        
+        \begin{tcolorbox}[
+          enhanced,
+          colback=accent_orange!5!white,
+          colframe=accent_orange!50!white,
+          arc=6pt,boxrule=1.2pt,
+          top=5pt,bottom=5pt,left=6pt,right=6pt
+        ]
+          \centering
+          \textcolor{accent_orange!90!black}{\fBody{100\% Result in JEE}}\\[0.15em]
+          \textcolor{charcoal_gray}{\fSmall{\textbf{91+ \%tile average} achieved by every classroom student till date. In-depth prep for both JEE Main \& Advanced formats.}}
+        \end{tcolorbox}
+        \vspace{0.4em}
+
+        \begin{tcolorbox}[
+          enhanced,
+          colback=teal_accent!5!white,
+          colframe=teal_accent!50!white,
+          arc=6pt,boxrule=1.2pt,
+          top=5pt,bottom=5pt,left=6pt,right=6pt
+        ]
+          \centering
+          \textcolor{teal_accent!90!black}{\fBody{Class 8, 9, 10 Foundation}}\\[0.15em]
+          \textcolor{charcoal_gray}{\fSmall{\textbf{90+\% marks} secured by all 8th, 9th, and 10th graders. Focuses on Olympiad, NTSE, and strong mathematical logic.}}
+        \end{tcolorbox}
+        \vspace{0.4em}
+
+        \begin{tcolorbox}[
+          enhanced,
+          colback=brand_blue!5!white,
+          colframe=brand_blue!50!white,
+          arc=6pt,boxrule=1.2pt,
+          top=5pt,bottom=5pt,left=6pt,right=6pt
+        ]
+          \centering
+          \textcolor{brand_blue!90!black}{\fBody{Class 11 \& 12 Boards}}\\[0.15em]
+          \textcolor{charcoal_gray}{\fSmall{\textbf{85+\% in PCM} secured by all 11th \& 12th graders. Bridges Board requirements with advanced conceptual application.}}
+        \end{tcolorbox}
+        \vspace{0.6em}
+
+        \textcolor{charcoal_gray}{\fTiny{\dstar~~100\% CBSE/State Board Distinction Rate~~\dstar}}\\
+        \textcolor{charcoal_gray}{\fTiny{\dstar~~Scientist-Designed Problem Solving Series~~\dstar}}
+      \end{tcolorbox}
+    \end{minipage}%
+  };
+
+  % --- COLUMN 2: PROGRAM HIGHLIGHTS & PREMIUM FEATURES ---
+  \node (col2) at ([xshift=0cm,yshift=0.0cm]current page.center) {%
+    \begin{minipage}{0.31\paperwidth}
+      \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=brand_blue!90!black,
+        colbacktitle=brand_blue!90!black,
+        coltitle=white,
+        halign title=center,
+        title={\fTitle{\dgem~~PROGRAM \& FEATURES}},
+        opacityback=1.0,
+        arc=10pt,boxrule=2.0pt,
+        top=6pt,bottom=6pt,left=8pt,right=8pt,
+        height=19.5cm
+      ]
+        \centering
+        \vspace{0.15em}
+        \begin{tcolorbox}[
+          enhanced,
+          colback=brand_blue!4!white,
+          colframe=brand_blue!30!white,
+          arc=8pt,boxrule=1.0pt,
+          top=5pt,bottom=5pt,left=8pt,right=8pt,
+          halign=left
+        ]
+          \textcolor{brand_blue}{\fBody{\drocket~~Classroom Program Highlights}}\\[0.25em]
+          \begin{itemize}[label=\textcolor{accent_orange}{\dcheck},itemsep=2.5pt,leftmargin=1.1em,topsep=1pt]
+            \item \textcolor{charcoal_gray}{\fSmall{\textbf{Full-Year Syllabus:} Conceptual, in-depth roadmap covering Board and JEE/NEET syllabi.}}
+            \item \textcolor{charcoal_gray}{\fSmall{\textbf{Micro-Batch Size:} Strictly limited to 10 students for complete personal focus and direct guidance.}}
+            \item \textcolor{charcoal_gray}{\fSmall{\textbf{Performance Twins:} Scientific logging of mistakes to create customized adaptive review sheets.}}
+            \item \textcolor{charcoal_gray}{\fSmall{\textbf{Weekly Diagnostics:} Conceptual mock tests with actionable analytical performance reports for parents.}}
+          \end{itemize}
+        \end{tcolorbox}
+        \vspace{0.45em}
+        
+        \begin{tcolorbox}[
+          enhanced,
+          colback=brand_blue!4!white,
+          colframe=brand_blue!30!white,
+          arc=8pt,boxrule=1.0pt,
+          top=5pt,bottom=5pt,left=8pt,right=8pt,
+          halign=left
+        ]
+          \textcolor{brand_blue}{\fBody{\dstar~~Core Features for Parents}}\\[0.25em]
+          \begin{itemize}[label=\textcolor{teal_accent}{\darrow},itemsep=4pt,leftmargin=1.1em,topsep=1pt]
+            \item \textcolor{brand_blue}{\fHighlight{Individual Attention \& Mentoring}}\\
+              \textcolor{charcoal_gray}{\fSmall{Direct 1-on-1 access to a Ph.D. mentor. Custom tracking designed to break plateaus and build confidence.}}
+            \item \textcolor{brand_blue}{\fHighlight{Customized Training \& Assessments}}\\
+              \textcolor{charcoal_gray}{\fSmall{Adaptive learning worksheets and weekly diagnostic tests built around resolving mapped conceptual gaps.}}
+            \item \textcolor{brand_blue}{\fHighlight{Intensive Exam Prep}}\\
+              \textcolor{charcoal_gray}{\fSmall{Rigorous mock tests, scientific error-log remediation sessions, and advanced hard-mode problems.}}
+          \end{itemize}
+        \end{tcolorbox}
+      \end{tcolorbox}
+    \end{minipage}%
+  };
+
+  % --- COLUMN 3: MENTOR PROFILE & CONNECT ---
+  \node (col3) at ([xshift=9.2cm,yshift=0.0cm]current page.center) {%
+    \begin{minipage}{0.29\paperwidth}
+      \begin{tcolorbox}[
+        enhanced,
+        colback=white,
+        colframe=teal_accent!95!black,
+        colbacktitle=teal_accent!95!black,
+        coltitle=white,
+        halign title=center,
+        title={\fTitle{\dgrad~~THE MENTOR}},
+        opacityback=1.0,
+        arc=10pt,boxrule=2.0pt,
+        top=6pt,bottom=6pt,left=8pt,right=8pt,
+        height=19.5cm,
+        halign=center
+      ]
+        \vspace{0.15em}
+        \includegraphics[width=0.75in]{../dr_amol_logo_concept_2.png}\\[0.15em]
+        \textcolor{deep_navy}{\fName{Dr. Amol Kumar Thakre}}\\[0.1em]
+        \textcolor{charcoal_gray}{\fSmall{\bfseries Ph.D.\,(Twente, Netherlands) $\bullet$ Masters, IISc}}\\[0.1em]
+        \textcolor{teal_accent}{\fSmall{\itshape Ex-GE Senior Research Scientist / Equinor (Norway)}}\\[0.35em]
+        
+        \textcolor{brand_blue}{\fHighlight{\drocket~~Admissions 2026 Roadmap}}\\[0.1em]
+        \textcolor{charcoal_gray}{\fTiny{\textbf{1.} Register Online \quad\textbf{2.} Assessment \quad\textbf{3.} Roadmap \quad\textbf{4.} Induction}}\\[0.35em]
+        
+        \textcolor{charcoal_gray}{\fSmall{\textbf{T:}~\href{tel:+919591233320}{\textcolor{brand_blue}{+91-9591233320}}
+          \quad\textcolor{charcoal_gray}{$\bullet$}\quad
+          \href{mailto:amolthakre.in@gmail.com}{\textcolor{brand_blue}{amolthakre.in@gmail.com}}}}\\[0.1em]
+        \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html}{%
+          \textcolor{brand_blue}{\fSmall{\underline{Research \& Teaching Webpage}}}}\\[0.3em]
+        
+        \textcolor{charcoal_gray}{\fTiny{\dqr~~SCAN FOR BATCH ADMISSIONS (WHITEFIELD)}}\\[0.2em]
+        \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html}{%
+          \includegraphics[width=0.8in]{../qr_registration.png}}\\[0.25em]
+        
+        \begin{tcolorbox}[
+          enhanced,
+          colback=brand_blue,
+          colframe=brand_blue,
+          arc=5pt,top=4.5pt,bottom=4.5pt,left=6pt,right=6pt,
+          halign=center,
+          boxrule=0pt
+        ]
+          \href{https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html}{%
+            \textcolor{white}{\fHighlight{\darrow~~REGISTER HERE~~\darrow}}%
+          }
+        \end{tcolorbox}
+        \vspace{0.2em}
+        
+        \begin{tcolorbox}[
+          enhanced,
+          colback=teal_accent,
+          colframe=teal_accent,
+          arc=5pt,top=4.5pt,bottom=4.5pt,left=6pt,right=6pt,
+          halign=center,
+          boxrule=0pt
+        ]
+          \href{https://wa.me/919591233320?text=I\%20saw\%20your\%20flyer\%20and\%20want\%20to\%20enquire\%20about\%20JEE\%2FNEET\%20coaching.}{%
+            \textcolor{white}{\fHighlight{\dphone~~WhatsApp Enquiry}}%
+          }
+        \end{tcolorbox}
+      \end{tcolorbox}
+    \end{minipage}%
+  };
+
+\end{tikzpicture}
+
+\end{document}

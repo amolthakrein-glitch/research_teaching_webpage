@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=0pt]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+\usepackage{eso-pic}
+\usepackage{pdfpages}
+\pagestyle{empty}
+
+\newcommand{\FlyerOverlays}{%
+  \begin{tikzpicture}[x=1pt,y=1pt,remember picture,overlay]%
+    % Overwrite location pill text (remove "Whitefield")
+    % Coordinates are relative to the bottom-left of the page (pdfpages picturecommand origin)
+    % Page size: 595 x 842 pt (A4)
+    % Location pill (centered)
+    \node[anchor=center,fill=orange!90!red,rounded corners=18pt,minimum width=500pt,minimum height=44pt] at (297.6, 620) {};
+    \node[anchor=center,text=white,font=\bfseries\Large] at (297.6, 610) {Mahaveer Promenade, Bangalore};%
+
+    % Highlight box (moved down by ~1cm; more colorful; no overlaps)
+    \node[anchor=north west,fill=orange!10,draw=orange!70!black,rounded corners=10pt,drop shadow={shadow xshift=1.2pt,shadow yshift=-1.2pt,fill=black,opacity=0.25},inner xsep=18pt,inner ysep=14pt,text width=540pt] (hl) at (28, 505) {%
+      \raggedright\bfseries\Large
+      All the students from the classes in \textbf{90+ percentile} in JEE\\[8pt]
+      All \textbf{10th} and \textbf{12th} graders got \textbf{90+\%} and \textbf{85+\%} in \textbf{PCM}~\mbox{respectively}%
+    };
+    % Left accent bar + icon for visual pop
+    \fill[orange!80!red,rounded corners=8pt] ([xshift=6pt,yshift=-6pt]hl.north west) rectangle ([xshift=14pt,yshift=6pt]hl.south west);
+    \node[anchor=west,fill=orange!80!red,text=white,circle,inner sep=3.5pt] at ([xshift=26pt]hl.west) {\bfseries !};%
+
+    % Move the "THE MENTORSHIP EDGE" box down by ~1cm:
+    % Mask the original and redraw slightly lower to avoid overlaps.
+    \fill[white] (0, 250) rectangle (595, 440);
+
+    % Outer rounded box
+    \draw[blue!85!black,line width=2.2pt,rounded corners=22pt] (40, 255) rectangle (555, 385);
+    \fill[blue!6] (42, 257) rectangle (553, 383);
+
+    % Header strip
+    \fill[blue!80!black,rounded corners=22pt] (40, 362) rectangle (555, 402);
+    \node[anchor=west,text=white,font=\bfseries\Large] at (66, 382) {$\diamond$~~THE MENTORSHIP EDGE};
+
+    % Body text
+    \node[align=center,font=\bfseries\Large,text=black] at (297.5, 325) {Industrial R\&D Logic Flow $\bullet$ In-depth Performance Analysis\\Hard-Mode Weekly Tests $\bullet$ Scientific Error Correction\\Personal Mentorship $\bullet$ Strictly Limited Batch Size};
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\includepdf[pages=1,picturecommand={\put(0,0){\FlyerOverlays}}]{Flyer_original.pdf}
+\end{document}

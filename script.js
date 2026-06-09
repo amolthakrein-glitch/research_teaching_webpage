@@ -79,4 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     logVisit();
+
+    // Section tabs
+    const tabs = document.querySelectorAll('.tab');
+    const sections = {
+        research: document.getElementById('section-research'),
+        teaching: document.getElementById('section-teaching')
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            Object.entries(sections).forEach(([key, el]) => {
+                if (el) el.classList.toggle('active', key === tab.dataset.section);
+            });
+        });
+    });
 });

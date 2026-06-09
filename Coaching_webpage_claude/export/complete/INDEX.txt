@@ -1,0 +1,91 @@
+THAKRE ACADEMY DESIGN SYSTEM — COMPLETE EXPORT
+===============================================
+
+📦 WHAT'S INCLUDED
+
+1. STANDALONE WEBSITE (ready to use immediately)
+   └─ thakre-academy-website.html
+      A single self-contained file with the full floria-themed website.
+      Double-click to open in any browser. No setup needed.
+
+2. DESIGN SYSTEM (for development/modification)
+   ├─ styles.css ........................ Global styles entry point
+   ├─ tokens/ ........................... Design tokens
+   │  ├─ colors.css .................... Navy/Gold/Cream + semantics
+   │  ├─ typography.css ............... Spectral + Hanken Grotesk specs
+   │  ├─ fonts.css .................... Webfont imports
+   │  ├─ spacing.css .................. Spacing, radii, shadows
+   │  └─ base.css ..................... Base resets
+   │
+   ├─ components/ ...................... Reusable UI components
+   │  ├─ core/ ........................ Core (Badge, Button, Card, etc.)
+   │  ├─ domain/ ..................... Domain (CourseCard, ResultCard)
+   │  └─ forms/ ...................... Forms (Input, Select)
+   │
+   ├─ ui_kits/ ......................... Full website screens
+   │  └─ website/ ..................... Home, Bio, Courses, Register
+   │
+   ├─ assets/ .......................... Logos, book cover, icon scripts
+   ├─ guidelines/ ...................... Design system cards (colors, type, etc.)
+   └─ readme.md ........................ Full design system documentation
+
+3. DEPLOYMENT & DOCS
+   ├─ DEPLOYMENT_GUIDE.md .............. How to set up locally or on a server
+   ├─ SKILL.md ......................... Design system skill metadata
+   └─ STANDALONE_README.txt ............ Quick-start for standalone HTML
+
+🎨 DESIGN HIGHLIGHTS
+
+• Floria-inspired Editorial Dark Theme
+  - Warm near-black gallery palette (#0a0e14)
+  - Gold (#c8a24a) as the single accent
+  - Vignette gradient + minimal structural shadows
+
+• Typography: Spectral (serif) + Hanken Grotesk (sans)
+  - Italic-serif accents on key words ("Learn like a researcher.")
+  - Computational precision, no bloat
+
+• Zero marketing fluff
+  - No student names, testimonials, ranks, or fees
+  - Methodology & credentials only
+
+🚀 HOW TO USE
+
+QUICK START (no coding needed):
+  1. Extract this zip
+  2. Double-click thakre-academy-website.html
+  3. Done — it opens in your browser
+
+TO EDIT OR DEPLOY:
+  1. Read DEPLOYMENT_GUIDE.md
+  2. Modify any .jsx files in ui_kits/website/ or tokens/
+  3. To rebuild the standalone HTML, use the design system compiler
+     (or upload the entire folder to your web host)
+
+DRAG-AND-DROP PLACEHOLDERS:
+  • Portrait on the Bio & Research page
+  • Book cover on the Home page
+  Drop your own images onto these sections to replace placeholders.
+
+CUSTOMIZATION:
+  • Colors: tokens/colors.css
+  • Typography: tokens/typography.css
+  • Spacing/radii: tokens/spacing.css
+  • Website pages: ui_kits/website/*.jsx
+
+📋 FILE STRUCTURE
+
+export/complete/
+  ├─ thakre-academy-website.html     ← Start here (double-click)
+  ├─ readme.md                        Design system guide
+  ├─ DEPLOYMENT_GUIDE.md             Setup instructions
+  ├─ SKILL.md                         Design system metadata
+  ├─ styles.css                       Global stylesheet entry
+  ├─ tokens/                          Design tokens
+  ├─ components/                      UI components (JSX)
+  ├─ ui_kits/website/                 Website pages (JSX)
+  ├─ assets/                          Logos, fonts, utilities
+  └─ guidelines/                      Design system cards (HTML)
+
+Generated June 9, 2026.
+Thakre Academy Design System v1.0

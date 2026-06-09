@@ -10,8 +10,10 @@
 
     const c_e_u = "amolthakre.in";
     const c_e_d = "gmail.com";
-    const c_p_f = "919591233320";
-    const c_p_d = "+91-9591233320";
+    const c_p_cc = "91";
+    const c_p_m = "9591233320";
+    const c_p_f = c_p_cc + c_p_m;
+    const c_p_d = "+" + c_p_cc + "-" + c_p_m;
 
     const knowledgeBase = {
         mentor: {
@@ -56,7 +58,7 @@
         const container = document.createElement("div");
         container.id = "chatbot-container";
         container.innerHTML = `
-            <button id="chatbot-button">🎓</button>
+            <button id="chatbot-button" aria-label="Open chat assistant">🎓</button>
             <div id="chatbot-window">
                 <div id="chatbot-header">
                     <div class="bot-info">

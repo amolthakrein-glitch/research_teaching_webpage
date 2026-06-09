@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer3 - Interactive Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+            padding: 20px;
+        }
+        .container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+        }
+        .container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .link-overlay {
+            position: absolute;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .link-overlay:hover {
+            background: rgba(255, 255, 0, 0.3);
+            outline: 2px solid rgba(255, 255, 0, 0.6);
+        }
+        .link-overlay::after {
+            content: '🔗';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            font-size: 16px;
+            transition: opacity 0.2s ease;
+        }
+        .link-overlay:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="flyer3_page.png" alt="Flyer3" id="flyer-image">
+        
+        <!-- Link overlays - positioned using percentage coordinates -->
+        <!-- These will be dynamically calculated based on the image dimensions -->
+    </div>
+
+    <script>
+        // Link data from PDF (coordinates in PDF points, 842x595 page)
+        const pdfLinks = [
+            {
+                uri: "tel:+919591233320",
+                rect: {x0: 281.68, y0: 429.53, x1: 389.52, y1: 444.89},
+                label: "Phone: +91 9****3320"
+            },
+            {
+                uri: "mailto:amolthakre.in@gmail.com",
+                rect: {x0: 426.47, y0: 429.53, x1: 589.67, y1: 444.89},
+                label: "Email: amolthakre.in@gmail.com"
+            },
+            {
+                uri: "https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html",
+                rect: {x0: 335.06, y0: 444.72, x1: 521.01, y1: 462.07},
+                label: "Website"
+            },
+            {
+                uri: "https://amolthakrein-glitch.github.io/research_teaching_webpage/registration.html",
+                rect: {x0: 336.32, y0: 463.80, x1: 519.75, y1: 478.11},
+                label: "Registration"
+            },
+            {
+                uri: "https://wa.me/919591233320?text=I%20saw%20your%20flyer%20and%20want%20to%20enquire%20about%20JEE%2FNEET%20coaching.",
+                rect: {x0: 339.89, y0: 480.07, x1: 516.65, y1: 498.10},
+                label: "WhatsApp"
+            }
+        ];
+
+        const pdfWidth = 842;
+        const pdfHeight = 595;
+        const container = document.querySelector('.container');
+        const image = document.getElementById('flyer-image');
+
+        function createLinkOverlays() {
+            const imgWidth = image.clientWidth;
+            const imgHeight = image.clientHeight;
+            
+            const scaleX = imgWidth / pdfWidth;
+            const scaleY = imgHeight / pdfHeight;
+
+            pdfLinks.forEach(link => {
+                const overlay = document.createElement('a');
+                overlay.href = link.uri;
+                overlay.className = 'link-overlay';
+                overlay.title = link.label;
+                overlay.target = '_blank';
+                
+                // Convert PDF coordinates to percentage positions
+                // Note: PDF y-axis is bottom-up, so we invert
+                const left = (link.rect.x0 / pdfWidth) * 100;
+                const top = ((pdfHeight - link.rect.y1) / pdfHeight) * 100;
+                const width = ((link.rect.x1 - link.rect.x0) / pdfWidth) * 100;
+                const height = ((link.rect.y1 - link.rect.y0) / pdfHeight) * 100;
+
+                overlay.style.left = `${left}%`;
+                overlay.style.top = `${top}%`;
+                overlay.style.width = `${width}%`;
+                overlay.style.height = `${height}%`;
+
+                container.appendChild(overlay);
+            });
+        }
+
+        // Create overlays after image loads and on resize
+        image.addEventListener('load', createLinkOverlays);
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.link-overlay').forEach(el => el.remove());
+            createLinkOverlays();
+        });
+        
+        // Also handle cached images
+        if (image.complete) {
+            createLinkOverlays();
+        }
+    </script>
+</body>
+</html>
