@@ -115,9 +115,15 @@ body.elite-body::before {
 /* Decorative CSS-only solar system: full-hero backdrop, centered in the
    gap between the text column and the portrait (~58%/42% of hero box) */
 .solar-system {
-    --ss-scale: 1;
     position: absolute;
-    inset: 0;
+    top: 50%;
+    right: 2%;
+    left: auto;
+    inset: auto;
+    transform: translateY(-50%);
+    width: min(44vw, 560px);
+    aspect-ratio: 1 / 1;
+    max-height: 92%;
     z-index: 0;
     opacity: 0.85;
     pointer-events: none;
@@ -125,8 +131,8 @@ body.elite-body::before {
 
 .ss-core {
     position: absolute;
-    top: calc(24% - 40px);
-    left: calc(72% + 80px);
+    top: 50%;
+    left: 50%;
     width: 0;
     height: 0;
     transform: translate(-50%, -50%);
@@ -163,12 +169,12 @@ body.elite-body::before {
     animation: ssSpin linear infinite;
 }
 
-.ss-orbit-1 { width: calc(220px  * var(--ss-scale)); height: calc(220px  * var(--ss-scale)); animation-duration: 10s; }
-.ss-orbit-2 { width: calc(340px  * var(--ss-scale)); height: calc(340px  * var(--ss-scale)); animation-duration: 18s; }
-.ss-orbit-3 { width: calc(min(460px, 48vw) * var(--ss-scale)); height: calc(min(460px, 48vw) * var(--ss-scale)); animation-duration: 28s; }
-.ss-orbit-4 { width: calc(min(560px, 54vw) * var(--ss-scale)); height: calc(min(560px, 54vw) * var(--ss-scale)); animation-duration: 40s; }
-.ss-orbit-5 { width: calc(min(640px, 58vw) * var(--ss-scale)); height: calc(min(640px, 58vw) * var(--ss-scale)); animation-duration: 48s; }
-.ss-orbit-6 { width: calc(min(720px, 60vw) * var(--ss-scale)); height: calc(min(720px, 60vw) * var(--ss-scale)); animation-duration: 56s; }
+.ss-orbit-1 { width: 26%; height: 26%; animation-duration: 10s; }
+.ss-orbit-2 { width: 40%; height: 40%; animation-duration: 18s; }
+.ss-orbit-3 { width: 54%; height: 54%; animation-duration: 28s; }
+.ss-orbit-4 { width: 68%; height: 68%; animation-duration: 40s; }
+.ss-orbit-5 { width: 84%; height: 84%; animation-duration: 48s; }
+.ss-orbit-6 { width: 100%; height: 100%; animation-duration: 56s; }
 
 @keyframes ssSpin {
     from { transform: translate(-50%, -50%) rotate(0deg); }
@@ -181,8 +187,8 @@ body.elite-body::before {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: calc(min(600px, 56vw) * var(--ss-scale));
-    height: calc(min(600px, 56vw) * var(--ss-scale));
+    width: 92%;
+    height: 92%;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     background: repeating-conic-gradient(rgba(148, 163, 184, 0.35) 0deg 1deg, transparent 1deg 5deg);
@@ -253,12 +259,16 @@ body.elite-body::before {
 
 @media (max-width: 900px) {
     .solar-system {
-        --ss-scale: 0.55;
-        opacity: 0.5;
+        top: 0;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: min(72vw, 340px);
+        max-height: none;
+        opacity: 0.3;
+        z-index: -1;
     }
-    .ss-core { top: 30%; left: 50%; }
-    .hero-media {
-        position: static;
+    .hero-lockup {
         margin: 0 auto var(--space-sm);
     }
 }
@@ -271,17 +281,16 @@ body.elite-body::before {
     }
 }
 
-.hero-content, .hero-media { position: relative; z-index: 1; }
+.hero-content, .hero-lockup { position: relative; z-index: 1; }
 
-.hero-media {
-    position: static;
-    margin-bottom: var(--space-sm);
-    z-index: 2;
+.hero-lockup {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    /* ~tag pill width: centers the portrait over the tag's midpoint */
-    max-width: 340px;
+    width: max-content;
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
 }
 
 .ink-gradient {
@@ -322,6 +331,7 @@ body.elite-body::before {
     position: relative;
     max-width: min(190px, 40vw);
     width: 100%;
+    margin-bottom: var(--space-xs);
     border-radius: var(--radius);
     padding: 2px;
     background: conic-gradient(from 210deg, rgba(34,211,238,0.7), rgba(245,158,11,0.55), rgba(34,211,238,0.12), rgba(34,211,238,0.7));
@@ -333,7 +343,7 @@ body.elite-body::before {
     to   { transform: translateY(-10px); }
 }
 
-.hero-media img {
+.portrait-ring img {
     display: block;
     width: 100%;
     max-width: 100%;
@@ -346,7 +356,7 @@ body.elite-body::before {
     transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
 }
 
-.hero-media img:hover {
+.portrait-ring img:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 40px 80px rgba(34, 211, 238, 0.18), var(--shadow-deep);
 }
@@ -800,7 +810,7 @@ body.elite-body::after {
     to   { opacity: 1; transform: translateY(0); }
 }
 /* Portrait keeps its float; stage animation wraps the ring's parent */
-.hero-media.hero-stage { animation-name: heroRevealSoft; }
+.hero-lockup.hero-stage { animation-name: heroRevealSoft; }
 @keyframes heroRevealSoft {
     from { opacity: 0; transform: translateY(18px) scale(0.98); }
     to   { opacity: 1; transform: translateY(0) scale(1); }
@@ -1150,11 +1160,6 @@ body.elite-body::after {
     transition-delay: calc(var(--i, 0) * 90ms);
 }
 .reveal-fallback .reveal.in-view { opacity: 1; transform: translateY(0); }
-
-/* Desktop solar system scale to fit orbits */
-@media (min-width: 1001px) {
-    .solar-system { --ss-scale: 0.8; }
-}
 
 /* ── Responsive adjustments for new pieces ── */
 @media (max-width: 1000px) and (min-width: 641px) {
