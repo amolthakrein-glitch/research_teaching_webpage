@@ -125,8 +125,8 @@ body.elite-body::before {
 
 .ss-core {
     position: absolute;
-    top: 50%;
-    left: 66%;
+    top: 24%;
+    left: 80%;
     width: 0;
     height: 0;
     transform: translate(-50%, -50%);
@@ -274,9 +274,8 @@ body.elite-body::before {
 .hero-content, .hero-media { position: relative; z-index: 1; }
 
 .hero-media {
-    position: absolute;
-    top: var(--space-sm);
-    right: calc(var(--space-xs) * 0.5);
+    position: static;
+    margin-bottom: var(--space-sm);
     z-index: 2;
     display: flex;
     justify-content: center;
