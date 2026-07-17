@@ -311,7 +311,11 @@ body.elite-body::before {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 10s linear infinite;
+    /* shimmer alone would override the .hero-stage entrance (one animation
+       property) and leave the h1 stuck at opacity 0 — run both */
+    animation:
+        heroReveal 0.9s var(--ease-out) 0.18s forwards,
+        shimmer 10s linear infinite;
 }
 
 @keyframes shimmer {
