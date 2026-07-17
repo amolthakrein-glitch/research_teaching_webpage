@@ -28,18 +28,18 @@
     <main class="elite-container">
         <!-- Section Tabs -->
         <nav class="section-tabs" role="tablist">
-            <button class="tab active" data-section="research" role="tab" aria-selected="true" aria-controls="section-research">
+            <button class="tab active" id="tab-research" data-section="research" role="tab" aria-selected="true" aria-controls="section-research">
                 <svg class="tab-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
                 Research &amp; Bio
             </button>
-            <button class="tab" data-section="teaching" role="tab" aria-selected="false" aria-controls="section-teaching">
+            <button class="tab" id="tab-teaching" data-section="teaching" role="tab" aria-selected="false" aria-controls="section-teaching">
                 <svg class="tab-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg>
                 Coaching &amp; Teaching
             </button>
         </nav>
 
         <!-- ── Research & Bio ── -->
-        <div id="section-research" class="section-content active" role="tabpanel">
+        <div id="section-research" class="section-content active" role="tabpanel" aria-labelledby="tab-research">
             <header class="hero-elite">
                 <canvas id="flow-field" aria-hidden="true"></canvas>
                 <div class="hero-content">
@@ -145,7 +145,7 @@
         </div>
 
         <!-- ── Coaching & Teaching ── -->
-        <div id="section-teaching" class="section-content" role="tabpanel">
+        <div id="section-teaching" class="section-content" role="tabpanel" aria-labelledby="tab-teaching">
             <div class="teaching-hero">
                 <span class="bento-tag">2026 Admissions Open</span>
                 <h2>Elite Mentorship Program</h2>
