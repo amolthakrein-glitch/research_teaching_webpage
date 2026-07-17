@@ -116,10 +116,10 @@ body.elite-body::before {
    gap between the text column and the portrait (~58%/42% of hero box) */
 .solar-system {
     position: absolute;
-    top: 50%;
-    right: -3%;
-    left: auto;
+    /* note: `inset` shorthand must come first — it resets top/right/left */
     inset: auto;
+    top: calc(50% - 95px);
+    right: -3%;
     transform: translateY(-50%);
     width: min(44vw, 560px);
     aspect-ratio: 1 / 1;
@@ -130,12 +130,9 @@ body.elite-body::before {
 }
 
 .ss-core {
+    /* spans the whole stage: children size as % of the stage square */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    transform: translate(-50%, -50%);
+    inset: 0;
 }
 
 .ss-sun {
