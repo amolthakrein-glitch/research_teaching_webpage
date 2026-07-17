@@ -126,7 +126,7 @@ body.elite-body::before {
 .ss-core {
     position: absolute;
     top: 24%;
-    left: 80%;
+    left: 72%;
     width: 0;
     height: 0;
     transform: translate(-50%, -50%);
@@ -278,7 +278,7 @@ body.elite-body::before {
     margin-bottom: var(--space-sm);
     z-index: 2;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -1148,6 +1148,11 @@ body.elite-body::after {
     transition-delay: calc(var(--i, 0) * 90ms);
 }
 .reveal-fallback .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+/* Desktop solar system scale to fit orbits */
+@media (min-width: 1001px) {
+    .solar-system { --ss-scale: 0.8; }
+}
 
 /* ── Responsive adjustments for new pieces ── */
 @media (max-width: 1000px) and (min-width: 641px) {

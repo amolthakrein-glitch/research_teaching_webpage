@@ -342,9 +342,10 @@
         input.onkeypress = (e) => {
             if (e.key === "Enter") handleIn();
         };
-        setTimeout(() => {
-            if (win.style.display !== "flex") document.getElementById("chatbot-button").click();
-        }, 2000);
+        // Auto-open disabled: chatbot opens only on user click
+        // setTimeout(() => {
+        //     if (win.style.display !== "flex") document.getElementById("chatbot-button").click();
+        // }, 2000);
     }
 
     initChatbot();
