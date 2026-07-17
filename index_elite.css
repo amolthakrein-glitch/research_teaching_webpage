@@ -118,10 +118,10 @@ body.elite-body::before {
     position: absolute;
     /* note: `inset` shorthand must come first — it resets top/right/left */
     inset: auto;
-    top: calc(50% - 95px);
-    right: -3%;
+    top: calc(50% - 170px);
+    right: 1%;
     transform: translateY(-50%);
-    width: min(44vw, 560px);
+    width: min(40vw, 500px);
     aspect-ratio: 1 / 1;
     max-height: 92%;
     z-index: 0;
