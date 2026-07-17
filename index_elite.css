@@ -125,6 +125,25 @@ body.elite-body::before {
 
 .hero-content, .hero-media { position: relative; z-index: 1; }
 
+#hero3d {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
+    mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
+}
+
+.ink-gradient {
+    background: linear-gradient(120deg, var(--cyan), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--cyan);
+}
+
 .hero-content h1 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
@@ -185,6 +204,7 @@ body.elite-body::before {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-sm);
     margin-top: var(--space-lg);
+    perspective: 1400px;
 }
 
 .bento-item {
@@ -200,6 +220,8 @@ body.elite-body::before {
     overflow: hidden;
     isolation: isolate;
     box-shadow: var(--shadow-soft);
+    transform-style: preserve-3d;
+    will-change: transform;
     transition:
         transform 0.45s var(--ease-spring),
         box-shadow 0.45s var(--ease-out);
@@ -455,6 +477,16 @@ a:hover { color: #fff; }
 
 .section-content.active { display: block; }
 
+.section-content.section-leaving {
+    display: block;
+    animation: sectionFadeOut 0.28s var(--ease-out) forwards;
+}
+
+@keyframes sectionFadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(8px); }
+}
+
 @keyframes sectionFadeIn {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
@@ -647,26 +679,26 @@ body.elite-body::after {
     cursor: pointer;
     border: 1px solid transparent;
     white-space: nowrap;
-    transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-out), background 0.3s ease, color 0.3s ease;
+    transition: transform 0.25s var(--ease-spring), box-shadow 0.35s var(--ease-out), background 0.3s ease, color 0.3s ease;
 }
 .btn-gold {
     background: linear-gradient(135deg, var(--gold), #d97706);
     color: #020617;
     box-shadow: 0 10px 26px rgba(245, 158, 11, 0.28);
 }
-.btn-gold:hover { color: #020617; transform: translateY(-3px); box-shadow: 0 16px 36px rgba(245, 158, 11, 0.4); }
+.btn-gold:hover { color: #020617; transform: translateY(-3px); box-shadow: 0 18px 44px rgba(245, 158, 11, 0.5); }
 .btn-cyan {
     background: linear-gradient(135deg, var(--cyan), #0891b2);
     color: var(--bg);
     box-shadow: 0 10px 26px rgba(34, 211, 238, 0.24);
 }
-.btn-cyan:hover { color: var(--bg); transform: translateY(-3px); box-shadow: 0 16px 36px rgba(34, 211, 238, 0.36); }
+.btn-cyan:hover { color: var(--bg); transform: translateY(-3px); box-shadow: 0 18px 44px rgba(34, 211, 238, 0.44); }
 .btn-ghost {
     background: rgba(255, 255, 255, 0.04);
     border-color: var(--border);
     color: var(--text);
 }
-.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-3px); }
+.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-3px); box-shadow: 0 14px 32px rgba(34, 211, 238, 0.18); }
 .btn-compact { padding: 11px 26px; font-size: 0.9rem; }
 .btn-block { display: flex; width: 100%; padding: 11px; font-size: 0.9rem; border-radius: 12px; }
 
@@ -705,10 +737,14 @@ body.elite-body::after {
 }
 .hero-stats dt {
     font-family: var(--font-display);
-    font-size: var(--fs-500);
+    font-size: var(--fs-600);
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
+}
+
+.hero-stats dt span[data-count] {
+    color: var(--gold);
 }
 .hero-stats dd {
     margin: 2px 0 0;
