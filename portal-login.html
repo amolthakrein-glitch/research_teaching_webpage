@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Portal Login | Dr. Amol Thakre</title>
+    <meta name="description" content="Login to the student portal for enrolled JEE/NEET students." />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index_elite.css" />
+    <link rel="stylesheet" href="portal.css" />
+</head>
+<body class="elite-body">
+    <div class="portal-login-container">
+        <div class="portal-card">
+            <h1>Student Portal</h1>
+            <p class="portal-sub">Login to access your course material.</p>
+
+            <div id="portal-config-banner" class="portal-banner" hidden></div>
+            <div id="login-error" class="portal-error" role="alert" aria-live="polite"></div>
+
+            <form id="login-form" novalidate>
+                <div class="portal-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="username" required />
+                </div>
+                <div class="portal-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="current-password" required />
+                </div>
+                <button type="submit" class="btn-cyan" id="login-submit">Login</button>
+            </form>
+
+            <div class="portal-footer">
+                <span>Not enrolled yet? <a href="registration.html">Register &rarr;</a></span>
+                <a href="index.html" class="portal-back">&larr; Back to home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="portal.js"></script>
+    <script>
+        (function () {
+            if (!window.Portal || !Portal.isConfigured()) {
+                if (window.Portal) Portal.showUnconfiguredBanner();
+                return;
+            }
+
+            const form = document.getElementById('login-form');
+            const errorBox = document.getElementById('login-error');
+            const submitBtn = document.getElementById('login-submit');
+
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                errorBox.textContent = '';
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Logging in…';
+
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+
+                const result = await Portal.login(email, password);
+
+                if (result.error) {
+                    errorBox.textContent = result.error;
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Login';
+                    return;
+                }
+
+                window.location.href = 'portal.html';
+            });
+        })();
+    </script>
+</body>
+</html>

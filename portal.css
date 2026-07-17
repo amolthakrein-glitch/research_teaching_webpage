@@ -1,0 +1,270 @@
+/* portal.css — Student Portal (login + dashboard, plus the homepage entry
+   banner in index.html's teaching section). Load after index_elite.css. */
+
+.portal-banner-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+}
+
+.portal-banner-card p {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.portal-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.portal-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-sm);
+    width: 100%;
+    flex: 1;
+}
+
+/* Config / error banners */
+.portal-banner {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-400);
+    margin-bottom: var(--space-sm);
+}
+
+/* ── Login page ── */
+.portal-login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm);
+}
+
+.portal-card {
+    width: 100%;
+    max-width: 420px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 35%), var(--glass);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-deep);
+    position: relative;
+    isolation: isolate;
+}
+
+.portal-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 1px;
+    background: var(--hairline-cyan);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+.portal-card h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-700);
+    color: #fff;
+    margin: 0 0 var(--space-xs);
+    text-align: center;
+}
+
+.portal-card .portal-sub {
+    color: var(--slate);
+    font-size: var(--fs-300);
+    text-align: center;
+    margin: 0 0 var(--space-md);
+}
+
+.portal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: var(--space-sm);
+}
+
+.portal-field label {
+    font-size: var(--fs-300);
+    font-weight: 700;
+    color: var(--slate);
+}
+
+.portal-field input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: var(--fs-400);
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.portal-field input:focus {
+    outline: none;
+    border-color: var(--cyan);
+    background: rgba(34, 211, 238, 0.06);
+}
+
+.portal-error {
+    color: #fda4af;
+    background: rgba(244, 63, 94, 0.1);
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: var(--fs-300);
+    margin-bottom: var(--space-sm);
+}
+
+.portal-error:empty { display: none; }
+
+.portal-card .btn-cyan { width: 100%; margin-top: var(--space-xs); }
+
+.portal-footer {
+    margin-top: var(--space-md);
+    text-align: center;
+    font-size: var(--fs-300);
+    color: var(--slate);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portal-footer a { color: var(--cyan); text-decoration: none; font-weight: 700; }
+.portal-footer a:hover { text-decoration: underline; }
+.portal-footer .portal-back { color: var(--slate); font-weight: 400; }
+
+/* ── Dashboard page ── */
+.portal-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border);
+}
+
+.portal-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.portal-identity h1 {
+    font-family: var(--font-display);
+    font-size: var(--fs-600);
+    color: #fff;
+    margin: 0;
+}
+
+.portal-track-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.portal-section {
+    margin-bottom: var(--space-lg);
+}
+
+.portal-section h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-500);
+    color: #fff;
+    margin: 0 0 var(--space-sm);
+}
+
+.portal-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.portal-file-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    transition: border-color 0.25s ease, transform 0.25s var(--ease-spring);
+}
+
+.portal-file-row:hover { border-color: var(--cyan); transform: translateY(-2px); }
+
+.portal-file-icon { color: var(--cyan); flex-shrink: 0; }
+
+.portal-file-meta { flex: 1; min-width: 0; }
+
+.portal-file-name {
+    font-weight: 700;
+    color: var(--text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.portal-file-sub {
+    font-size: var(--fs-300);
+    color: var(--slate);
+}
+
+.portal-empty {
+    color: var(--slate);
+    font-size: var(--fs-400);
+    padding: var(--space-sm);
+    text-align: center;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.portal-skeleton {
+    height: 56px;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 37%, rgba(255,255,255,0.03) 63%);
+    background-size: 400% 100%;
+    animation: portal-shimmer 1.4s ease infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes portal-shimmer {
+    0% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+@media (max-width: 640px) {
+    .portal-file-row { flex-wrap: wrap; }
+    .portal-file-row .btn-outline { width: 100%; }
+}
