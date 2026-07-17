@@ -41,17 +41,23 @@
         <!-- ── Research & Bio ── -->
         <div id="section-research" class="section-content active" role="tabpanel" aria-labelledby="tab-research">
             <header class="hero-elite">
-                <div class="solar-system" aria-hidden="true">
+                <div class="solar-system">
                     <div class="ss-core">
-                        <div class="ss-sun"></div>
-                        <div class="ss-orbit ss-orbit-1"><span class="ss-planet ss-planet-cyan"></span></div>
-                        <div class="ss-orbit ss-orbit-2"><span class="ss-planet ss-planet-gold"></span></div>
-                        <div class="ss-orbit ss-orbit-3"><span class="ss-planet ss-planet-slate"></span></div>
-                        <div class="ss-orbit ss-orbit-4 ss-orbit-ringed"><span class="ss-planet ss-planet-cyan"></span></div>
+                        <div class="ss-sun" data-body="sun" tabindex="0" role="button" aria-label="About the Sun"></div>
+                        <div class="ss-orbit ss-orbit-1"><span class="ss-planet ss-planet-slate" data-body="mercury" tabindex="0" role="button" aria-label="About Mercury"></span></div>
+                        <div class="ss-orbit ss-orbit-2"><span class="ss-planet ss-planet-gold" data-body="venus" tabindex="0" role="button" aria-label="About Venus"></span></div>
+                        <div class="ss-orbit ss-orbit-3"><span class="ss-planet ss-planet-cyan" data-body="earth" tabindex="0" role="button" aria-label="About Earth"></span></div>
+                        <div class="ss-orbit ss-orbit-4"><span class="ss-planet ss-planet-mars" data-body="mars" tabindex="0" role="button" aria-label="About Mars"></span></div>
                         <div class="ss-belt asteroid-belt" aria-hidden="true"></div>
-                        <div class="ss-orbit ss-orbit-5"><span class="ss-planet ss-planet-gold"></span></div>
-                        <div class="ss-orbit ss-orbit-6"><span class="ss-planet ss-planet-white"></span></div>
+                        <div class="ss-orbit ss-orbit-5"><span class="ss-planet ss-planet-gold ss-planet-jupiter" data-body="jupiter" tabindex="0" role="button" aria-label="About Jupiter"></span></div>
+                        <div class="ss-orbit ss-orbit-6 ss-orbit-ringed"><span class="ss-planet ss-planet-gold" data-body="saturn" tabindex="0" role="button" aria-label="About Saturn"></span></div>
                     </div>
+                </div>
+                <div id="planet-card" class="planet-card" role="dialog" aria-label="Celestial body details" hidden>
+                    <button type="button" class="planet-card-close" aria-label="Close">&times;</button>
+                    <h3 class="planet-card-name"></h3>
+                    <div class="planet-card-row"><span class="planet-card-label">Size vs Earth</span><span class="planet-card-value planet-card-size"></span></div>
+                    <div class="planet-card-row"><span class="planet-card-label">Year vs Earth</span><span class="planet-card-value planet-card-year"></span></div>
                 </div>
                 <div class="hero-content">
                     <span class="bento-tag hero-stage s1">Research | Teaching | Simulation</span>

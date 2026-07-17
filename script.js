@@ -126,4 +126,76 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
         });
     }
+
+    // ── Solar system: click-for-info planet cards ──
+    const solarSystem = document.querySelector('.solar-system');
+    const heroElite = document.querySelector('.hero-elite');
+    const planetCard = document.getElementById('planet-card');
+    if (solarSystem && heroElite && planetCard) {
+        const BODY_DATA = {
+            sun: { name: 'The Sun', size: '109× Earth (1,392,700 km diameter)', year: '—' },
+            mercury: { name: 'Mercury', size: '0.38× Earth', year: '0.24 Earth years (88 days)' },
+            venus: { name: 'Venus', size: '0.95× Earth', year: '0.62 Earth years (225 days)' },
+            earth: { name: 'Earth', size: '1× (12,742 km)', year: '1 year (365.25 days)' },
+            mars: { name: 'Mars', size: '0.53× Earth', year: '1.88 Earth years (687 days)' },
+            jupiter: { name: 'Jupiter', size: '11.2× Earth', year: '11.86 Earth years' },
+            saturn: { name: 'Saturn', size: '9.45× Earth', year: '29.45 Earth years' }
+        };
+
+        const cardName = planetCard.querySelector('.planet-card-name');
+        const cardSize = planetCard.querySelector('.planet-card-size');
+        const cardYear = planetCard.querySelector('.planet-card-year');
+        const cardClose = planetCard.querySelector('.planet-card-close');
+
+        const positionCard = (clientX, clientY) => {
+            const heroRect = heroElite.getBoundingClientRect();
+            const cardW = planetCard.offsetWidth || 220;
+            const cardH = planetCard.offsetHeight || 100;
+            let left = clientX - heroRect.left + 12;
+            let top = clientY - heroRect.top + 12;
+            left = Math.max(8, Math.min(left, heroRect.width - cardW - 8));
+            top = Math.max(8, Math.min(top, heroRect.height - cardH - 8));
+            planetCard.style.left = `${left}px`;
+            planetCard.style.top = `${top}px`;
+        };
+
+        const openCard = (body, clientX, clientY) => {
+            const data = BODY_DATA[body];
+            if (!data) return;
+            cardName.textContent = data.name;
+            cardSize.textContent = data.size;
+            cardYear.textContent = data.year;
+            planetCard.hidden = false;
+            positionCard(clientX, clientY);
+            solarSystem.classList.add('ss-paused');
+        };
+
+        const closeCard = () => {
+            if (planetCard.hidden) return;
+            planetCard.hidden = true;
+            solarSystem.classList.remove('ss-paused');
+        };
+
+        document.querySelectorAll('.ss-planet, .ss-sun').forEach(body => {
+            body.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openCard(body.dataset.body, e.clientX, e.clientY);
+            });
+            body.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const rect = body.getBoundingClientRect();
+                    openCard(body.dataset.body, rect.left + rect.width / 2, rect.top + rect.height / 2);
+                }
+            });
+        });
+
+        cardClose.addEventListener('click', closeCard);
+        document.addEventListener('click', (e) => {
+            if (!planetCard.hidden && !planetCard.contains(e.target)) closeCard();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeCard();
+        });
+    }
 });
