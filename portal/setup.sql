@@ -70,3 +70,21 @@ create policy "students can read own track + common files"
             )
         )
     );
+
+-- ============================================================================
+-- INTERIM: OPEN ACCESS MODE — drop these when enabling passwords
+-- Matches portal.js `OPEN_ACCESS = true`. Lets anonymous (unauthenticated)
+-- visitors read all files in the course-material bucket via the anon key.
+-- When flipping portal.js back to OPEN_ACCESS = false, run the commented
+-- `drop policy` line below to remove this.
+-- ============================================================================
+
+drop policy if exists "interim open access read" on storage.objects;
+create policy "interim open access read"
+    on storage.objects
+    for select
+    to anon
+    using (bucket_id = 'course-material');
+
+-- To remove later:
+-- drop policy if exists "interim open access read" on storage.objects;

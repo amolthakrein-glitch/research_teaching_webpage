@@ -7,6 +7,8 @@
 const SUPABASE_URL = 'YOUR_PROJECT_URL';
 const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
 
+const OPEN_ACCESS = true; // interim: no password required. Set to false to restore login.
+
 const BUCKET = 'course-material';
 const SIGNED_URL_TTL = 3600; // seconds
 
@@ -156,6 +158,7 @@ function trackLabel(track) {
 
 // Exposed globally for the page-level scripts in portal.html / portal-login.html.
 window.Portal = {
+    OPEN_ACCESS,
     isConfigured,
     showUnconfiguredBanner,
     login,
@@ -168,4 +171,5 @@ window.Portal = {
     formatSize,
     formatDate,
     trackLabel,
+    TRACK_LABELS,
 };

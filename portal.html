@@ -21,6 +21,7 @@
                 <div class="portal-identity">
                     <h1 id="student-name">Loading…</h1>
                     <span id="track-pill" class="portal-track-pill" hidden></span>
+                    <select id="track-select" class="portal-track-select" hidden></select>
                 </div>
                 <button id="logout-btn" class="btn-ghost" type="button">Logout</button>
             </div>
@@ -63,6 +64,8 @@
                 return;
             }
 
+            var OPEN_ACCESS = Portal.OPEN_ACCESS;
+
             function renderFiles(container, files) {
                 container.innerHTML = '';
                 if (!files.length) {
@@ -103,6 +106,35 @@
                 });
             }
 
+            async function loadTrackFiles(track) {
+                const [trackResult, commonResult] = await Promise.all([
+                    Portal.listFiles(track),
+                    Portal.listFiles('common'),
+                ]);
+                renderFiles(document.getElementById('track-files'), trackResult.data || []);
+                renderFiles(document.getElementById('common-files'), commonResult.data || []);
+            }
+
+            async function initOpenAccess() {
+                document.getElementById('logout-btn').hidden = true;
+                document.getElementById('student-name').textContent = 'Course Material';
+
+                const select = document.getElementById('track-select');
+                Object.keys(Portal.TRACK_LABELS).forEach(function (track) {
+                    const opt = document.createElement('option');
+                    opt.value = track;
+                    opt.textContent = Portal.trackLabel(track);
+                    select.appendChild(opt);
+                });
+                select.value = 'class11-neet';
+                select.hidden = false;
+                select.addEventListener('change', function () {
+                    loadTrackFiles(select.value);
+                });
+
+                await loadTrackFiles(select.value);
+            }
+
             async function init() {
                 const session = await Portal.requireSession();
                 if (!session) return;
@@ -121,20 +153,18 @@
                 pill.textContent = Portal.trackLabel(student.class_track);
                 pill.hidden = false;
 
-                const [trackResult, commonResult] = await Promise.all([
-                    Portal.listFiles(student.class_track),
-                    Portal.listFiles('common'),
-                ]);
-
-                renderFiles(document.getElementById('track-files'), trackResult.data || []);
-                renderFiles(document.getElementById('common-files'), commonResult.data || []);
+                await loadTrackFiles(student.class_track);
             }
 
             document.getElementById('logout-btn').addEventListener('click', function () {
                 Portal.logout();
             });
 
-            init();
+            if (OPEN_ACCESS) {
+                initOpenAccess();
+            } else {
+                init();
+            }
         })();
     </script>
 </body>

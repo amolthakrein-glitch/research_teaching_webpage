@@ -44,6 +44,11 @@
     <script src="portal.js"></script>
     <script>
         (function () {
+            if (window.Portal && Portal.OPEN_ACCESS) {
+                window.location.replace('portal.html');
+                return;
+            }
+
             if (!window.Portal || !Portal.isConfigured()) {
                 if (window.Portal) Portal.showUnconfiguredBanner();
                 return;

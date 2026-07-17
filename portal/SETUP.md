@@ -1,3 +1,23 @@
+## Interim open-access mode
+
+`portal.js` currently has `OPEN_ACCESS = true`. This means the portal skips
+login entirely: visiting `portal.html` shows a track picker instead of a
+per-student dashboard, and anyone with the link can browse/download course
+material for any track — no signup, invite, or password needed.
+
+While this is on:
+- Step 2 below (disable public signups) can be deferred — no one signs up anyway.
+- Step 6 below (invite/enroll students) can be deferred — there's no per-student login to gate.
+- The anon read policy at the bottom of `portal/setup.sql` ("interim open
+  access read") **must** be run, or file listing/downloads will fail with 403.
+
+To go back to authenticated access later: set `OPEN_ACCESS = false` in
+`portal.js`, then in Supabase SQL Editor run
+`drop policy if exists "interim open access read" on storage.objects;`,
+and complete steps 2 and 6 below.
+
+---
+
 # Student Portal — One-Time Setup (manual, ~15 min)
 
 The site code is done. These dashboard steps are yours (they can't be scripted from a static site):
