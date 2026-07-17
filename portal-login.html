@@ -49,6 +49,12 @@
                 return;
             }
 
+            // Already logged in? Straight to the dashboard.
+            (async function () {
+                const session = await Portal.getSession();
+                if (session) window.location.href = 'portal.html';
+            })();
+
             const form = document.getElementById('login-form');
             const errorBox = document.getElementById('login-error');
             const submitBtn = document.getElementById('login-submit');

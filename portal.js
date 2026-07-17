@@ -66,6 +66,14 @@ async function logout() {
     window.location.href = 'portal-login.html';
 }
 
+// Returns the current session, or null (also null when unconfigured).
+async function getSession() {
+    const client = getClient();
+    if (!client) return null;
+    const { data: { session } } = await client.auth.getSession();
+    return session;
+}
+
 // Guards portal.html: redirects to login if there's no active session.
 // Returns the session on success.
 async function requireSession() {
@@ -108,7 +116,7 @@ async function listFiles(folder) {
 
 async function getDownloadUrl(path) {
     const client = getClient();
-    const { data, error } = await client.storage.from(BUCKET).createSignedUrl(path, SIGNED_URL_TTL);
+    const { data, error } = await client.storage.from(BUCKET).createSignedUrl(path, SIGNED_URL_TTL, { download: true });
     if (error) return { error: error.message };
     return { data: data.signedUrl };
 }
@@ -152,6 +160,7 @@ window.Portal = {
     showUnconfiguredBanner,
     login,
     logout,
+    getSession,
     requireSession,
     loadStudent,
     listFiles,

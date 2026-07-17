@@ -90,7 +90,14 @@
                             alert('Could not generate download link: ' + result.error);
                             return;
                         }
-                        window.open(result.data, '_blank', 'noopener');
+                        // Programmatic anchor click — unlike async window.open(),
+                        // this is not blocked by popup blockers after an await.
+                        const a = document.createElement('a');
+                        a.href = result.data;
+                        a.rel = 'noopener';
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
                     });
                     container.appendChild(node);
                 });
