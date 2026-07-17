@@ -1,3 +1,17 @@
+## Interim local-materials mode
+
+`portal.js` currently has `LOCAL_MODE = true`. This serves files straight
+from this repo's `materials/` folder (via `materials/manifest.json`) — no
+Supabase, no auth, no signed URLs. Fine for interim use since GitHub Pages is
+already public. To add material: drop the file into `materials/<track>/`
+(tracks: `common`, `foundation-10`, `class11-neet`, `class11-jee`,
+`class12-neet`, `class12-jee`) and add a matching entry to
+`materials/manifest.json` (`name`, `file`, `size` in bytes, `date`).
+
+To move to real per-student access later: set `LOCAL_MODE = false` in
+`portal.js`, then follow the Supabase setup below (`OPEN_ACCESS` controls
+whether that Supabase mode is track-picker-open or fully authenticated).
+
 ## Interim open-access mode
 
 `portal.js` currently has `OPEN_ACCESS = true`. This means the portal skips

@@ -276,7 +276,7 @@ body.elite-body::before {
 .hero-media {
     position: absolute;
     top: var(--space-sm);
-    right: var(--space-sm);
+    right: calc(var(--space-xs) * 0.5);
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -1168,7 +1168,7 @@ body.elite-body::after {
     position: absolute;
     z-index: 5;
     min-width: 200px;
-    max-width: 240px;
+    max-width: 260px;
     padding: var(--space-sm);
     background: var(--glass);
     -webkit-backdrop-filter: blur(16px);
@@ -1203,6 +1203,13 @@ body.elite-body::after {
 }
 .planet-card-label { color: var(--slate); }
 .planet-card-value { color: var(--cyan); font-weight: 600; text-align: right; }
+.planet-card-fact {
+    color: var(--slate);
+    font-size: var(--fs-300);
+    font-style: italic;
+    margin: var(--space-xs) 0 0;
+    max-width: 30ch;
+}
 .planet-card-close {
     position: absolute;
     top: 8px;

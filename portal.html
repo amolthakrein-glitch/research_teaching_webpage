@@ -59,8 +59,12 @@
     <script src="portal.js"></script>
     <script>
         (function () {
-            if (!window.Portal || !Portal.isConfigured()) {
-                if (window.Portal) Portal.showUnconfiguredBanner();
+            if (!window.Portal) return;
+
+            var LOCAL_MODE = Portal.LOCAL_MODE;
+
+            if (!LOCAL_MODE && !Portal.isConfigured()) {
+                Portal.showUnconfiguredBanner();
                 return;
             }
 
@@ -84,6 +88,17 @@
                     node.querySelector('.portal-file-sub').textContent = [size, date].filter(Boolean).join(' · ');
                     const btn = node.querySelector('.portal-download-btn');
                     btn.addEventListener('click', async function () {
+                        if (file.local) {
+                            // No signed URL needed — the file is served straight
+                            // from this repo's materials/ folder.
+                            const a = document.createElement('a');
+                            a.href = file.path;
+                            a.download = file.name;
+                            document.body.appendChild(a);
+                            a.click();
+                            a.remove();
+                            return;
+                        }
                         btn.disabled = true;
                         btn.textContent = '…';
                         const result = await Portal.getDownloadUrl(file.path);
@@ -107,9 +122,10 @@
             }
 
             async function loadTrackFiles(track) {
+                const listFn = LOCAL_MODE ? Portal.listLocalFiles : Portal.listFiles;
                 const [trackResult, commonResult] = await Promise.all([
-                    Portal.listFiles(track),
-                    Portal.listFiles('common'),
+                    listFn(track),
+                    listFn('common'),
                 ]);
                 renderFiles(document.getElementById('track-files'), trackResult.data || []);
                 renderFiles(document.getElementById('common-files'), commonResult.data || []);
@@ -160,7 +176,7 @@
                 Portal.logout();
             });
 
-            if (OPEN_ACCESS) {
+            if (LOCAL_MODE || OPEN_ACCESS) {
                 initOpenAccess();
             } else {
                 init();

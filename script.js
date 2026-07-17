@@ -133,18 +133,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const planetCard = document.getElementById('planet-card');
     if (solarSystem && heroElite && planetCard) {
         const BODY_DATA = {
-            sun: { name: 'The Sun', size: '109× Earth (1,392,700 km diameter)', year: '—' },
-            mercury: { name: 'Mercury', size: '0.38× Earth', year: '0.24 Earth years (88 days)' },
-            venus: { name: 'Venus', size: '0.95× Earth', year: '0.62 Earth years (225 days)' },
-            earth: { name: 'Earth', size: '1× (12,742 km)', year: '1 year (365.25 days)' },
-            mars: { name: 'Mars', size: '0.53× Earth', year: '1.88 Earth years (687 days)' },
-            jupiter: { name: 'Jupiter', size: '11.2× Earth', year: '11.86 Earth years' },
-            saturn: { name: 'Saturn', size: '9.45× Earth', year: '29.45 Earth years' }
+            sun: { name: 'The Sun', size: '109× Earth (1,392,700 km diameter)', year: '—', day: '~25–35 Earth days (rotates faster at equator)', fact: "The Sun holds 99.86% of the solar system's mass." },
+            mercury: { name: 'Mercury', size: '0.38× Earth', year: '0.24 Earth years (88 days)', day: '58.6 Earth days', fact: 'A Mercury day is longer than its year.' },
+            venus: { name: 'Venus', size: '0.95× Earth', year: '0.62 Earth years (225 days)', day: '243 Earth days (spins backwards)', fact: 'Venus rotates in the opposite direction to most planets.' },
+            earth: { name: 'Earth', size: '1× (12,742 km)', year: '1 year (365.25 days)', day: '24 hours', fact: 'Earth is the only known planet with liquid water on its surface.' },
+            mars: { name: 'Mars', size: '0.53× Earth', year: '1.88 Earth years (687 days)', day: '24.6 hours', fact: 'Mars hosts Olympus Mons — the tallest volcano in the solar system.' },
+            jupiter: { name: 'Jupiter', size: '11.2× Earth', year: '11.86 Earth years', day: '9.9 hours (fastest spinner)', fact: "Jupiter's Great Red Spot is a storm bigger than Earth, raging for centuries." },
+            saturn: { name: 'Saturn', size: '9.45× Earth', year: '29.45 Earth years', day: '10.7 hours', fact: 'Saturn is so light it would float in water.' }
         };
 
         const cardName = planetCard.querySelector('.planet-card-name');
         const cardSize = planetCard.querySelector('.planet-card-size');
         const cardYear = planetCard.querySelector('.planet-card-year');
+        const cardDay = planetCard.querySelector('.planet-card-day');
+        const cardFact = planetCard.querySelector('.planet-card-fact');
         const cardClose = planetCard.querySelector('.planet-card-close');
 
         const positionCard = (clientX, clientY) => {
@@ -165,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cardName.textContent = data.name;
             cardSize.textContent = data.size;
             cardYear.textContent = data.year;
+            cardDay.textContent = data.day;
+            cardFact.textContent = data.fact;
             planetCard.hidden = false;
             positionCard(clientX, clientY);
             solarSystem.classList.add('ss-paused');

@@ -9,6 +9,8 @@ const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
 
 const OPEN_ACCESS = true; // interim: no password required. Set to false to restore login.
 
+const LOCAL_MODE = true; // serve materials/ from this repo, no auth. Set false when Supabase is configured.
+
 const BUCKET = 'course-material';
 const SIGNED_URL_TTL = 3600; // seconds
 
@@ -116,6 +118,28 @@ async function listFiles(folder) {
     return { data: files.map((f) => ({ ...f, path: `${folder}/${f.name}` })) };
 }
 
+// Local-materials mode: reads materials/manifest.json instead of Supabase
+// storage. Returns the same {data} / {error} shape as listFiles() above so
+// the renderer in portal.html can treat local and Supabase entries alike.
+async function listLocalFiles(track) {
+    try {
+        const res = await fetch('materials/manifest.json', { cache: 'no-store' });
+        if (!res.ok) return { error: `Could not load materials manifest (${res.status}).` };
+        const manifest = await res.json();
+        const entries = manifest[track] || [];
+        const files = entries.map((entry) => ({
+            name: entry.name,
+            path: entry.file,
+            metadata: { size: entry.size },
+            created_at: entry.date,
+            local: true,
+        }));
+        return { data: files };
+    } catch (err) {
+        return { error: err.message || 'Could not load local materials.' };
+    }
+}
+
 async function getDownloadUrl(path) {
     const client = getClient();
     const { data, error } = await client.storage.from(BUCKET).createSignedUrl(path, SIGNED_URL_TTL, { download: true });
@@ -159,6 +183,7 @@ function trackLabel(track) {
 // Exposed globally for the page-level scripts in portal.html / portal-login.html.
 window.Portal = {
     OPEN_ACCESS,
+    LOCAL_MODE,
     isConfigured,
     showUnconfiguredBanner,
     login,
@@ -167,6 +192,7 @@ window.Portal = {
     requireSession,
     loadStudent,
     listFiles,
+    listLocalFiles,
     getDownloadUrl,
     formatSize,
     formatDate,

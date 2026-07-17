@@ -44,7 +44,7 @@
     <script src="portal.js"></script>
     <script>
         (function () {
-            if (window.Portal && Portal.OPEN_ACCESS) {
+            if (window.Portal && (Portal.LOCAL_MODE || Portal.OPEN_ACCESS)) {
                 window.location.replace('portal.html');
                 return;
             }
