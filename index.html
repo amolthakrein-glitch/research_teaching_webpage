@@ -41,14 +41,17 @@
         <!-- ── Research & Bio ── -->
         <div id="section-research" class="section-content active" role="tabpanel" aria-labelledby="tab-research">
             <header class="hero-elite">
-                <canvas id="flow-field" aria-hidden="true"></canvas>
                 <div class="solar-system" aria-hidden="true">
-                    <div class="ss-sun"></div>
-                    <div class="ss-orbit ss-orbit-1"><span class="ss-planet ss-planet-cyan"></span></div>
-                    <div class="ss-orbit ss-orbit-2"><span class="ss-planet ss-planet-gold"></span></div>
-                    <div class="ss-orbit ss-orbit-3"><span class="ss-planet ss-planet-slate"></span></div>
-                    <div class="ss-orbit ss-orbit-4"><span class="ss-planet ss-planet-cyan"></span></div>
-                    <div class="ss-orbit ss-orbit-5"><span class="ss-planet ss-planet-gold"></span></div>
+                    <div class="ss-core">
+                        <div class="ss-sun"></div>
+                        <div class="ss-orbit ss-orbit-1"><span class="ss-planet ss-planet-cyan"></span></div>
+                        <div class="ss-orbit ss-orbit-2"><span class="ss-planet ss-planet-gold"></span></div>
+                        <div class="ss-orbit ss-orbit-3"><span class="ss-planet ss-planet-slate"></span></div>
+                        <div class="ss-orbit ss-orbit-4 ss-orbit-ringed"><span class="ss-planet ss-planet-cyan"></span></div>
+                        <div class="ss-belt asteroid-belt" aria-hidden="true"></div>
+                        <div class="ss-orbit ss-orbit-5"><span class="ss-planet ss-planet-gold"></span></div>
+                        <div class="ss-orbit ss-orbit-6"><span class="ss-planet ss-planet-white"></span></div>
+                    </div>
                 </div>
                 <div class="hero-content">
                     <span class="bento-tag hero-stage s1">Research | Teaching | Simulation</span>
@@ -332,6 +335,5 @@
 
     <script src="script.js"></script>
     <script src="chatbot.js"></script>
-    <script type="module" src="hero3d.js"></script>
-</body>
+    </body>
 </html>

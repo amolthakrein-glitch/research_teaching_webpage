@@ -112,50 +112,84 @@ body.elite-body::before {
     overflow: hidden;
 }
 
-/* Decorative CSS-only solar system, right side of hero, behind content */
+/* Decorative CSS-only solar system: full-hero backdrop, centered in the
+   gap between the text column and the portrait (~58%/42% of hero box) */
 .solar-system {
+    --ss-scale: 1;
     position: absolute;
-    top: 50%;
-    right: -6%;
-    width: min(560px, 60vw);
-    height: min(560px, 60vw);
-    transform: translateY(-50%);
+    inset: 0;
     z-index: 0;
-    opacity: 0.5;
+    opacity: 0.85;
     pointer-events: none;
+}
+
+.ss-core {
+    position: absolute;
+    top: 42%;
+    left: 58%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
 }
 
 .ss-sun {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 22px;
-    height: 22px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle at 35% 35%, #fff8e1, var(--gold) 60%, rgba(245, 158, 11, 0.2));
-    box-shadow: 0 0 24px 6px rgba(245, 158, 11, 0.45);
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff8e1 22%, var(--gold) 62%, rgba(245, 158, 11, 0.25) 100%);
+    box-shadow:
+        0 0 24px 6px rgba(245, 158, 11, 0.55),
+        0 0 48px 16px rgba(245, 158, 11, 0.35),
+        0 0 96px 32px rgba(245, 158, 11, 0.18);
+    animation: ssPulse 6s ease-in-out infinite;
+}
+
+@keyframes ssPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.95; }
+    50%      { transform: translate(-50%, -50%) scale(1.06); opacity: 1; }
 }
 
 .ss-orbit {
     position: absolute;
     top: 50%;
     left: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px dashed rgba(255, 255, 255, 0.10);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: ssSpin linear infinite;
 }
 
-.ss-orbit-1 { width: 90px;  height: 90px;  animation-duration: 8s; }
-.ss-orbit-2 { width: 160px; height: 160px; animation-duration: 14s; }
-.ss-orbit-3 { width: 240px; height: 240px; animation-duration: 22s; }
-.ss-orbit-4 { width: 340px; height: 340px; animation-duration: 30s; }
-.ss-orbit-5 { width: 460px; height: 460px; animation-duration: 40s; }
+.ss-orbit-1 { width: calc(220px  * var(--ss-scale)); height: calc(220px  * var(--ss-scale)); animation-duration: 10s; }
+.ss-orbit-2 { width: calc(340px  * var(--ss-scale)); height: calc(340px  * var(--ss-scale)); animation-duration: 18s; }
+.ss-orbit-3 { width: calc(min(460px, 48vw) * var(--ss-scale)); height: calc(min(460px, 48vw) * var(--ss-scale)); animation-duration: 28s; }
+.ss-orbit-4 { width: calc(min(560px, 54vw) * var(--ss-scale)); height: calc(min(560px, 54vw) * var(--ss-scale)); animation-duration: 40s; }
+.ss-orbit-5 { width: calc(min(640px, 58vw) * var(--ss-scale)); height: calc(min(640px, 58vw) * var(--ss-scale)); animation-duration: 48s; }
+.ss-orbit-6 { width: calc(min(720px, 60vw) * var(--ss-scale)); height: calc(min(720px, 60vw) * var(--ss-scale)); animation-duration: 56s; }
 
 @keyframes ssSpin {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Thin rotating asteroid belt ring between orbit-4 and orbit-5 */
+.ss-belt,
+.asteroid-belt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(min(600px, 56vw) * var(--ss-scale));
+    height: calc(min(600px, 56vw) * var(--ss-scale));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: repeating-conic-gradient(rgba(148, 163, 184, 0.35) 0deg 1deg, transparent 1deg 5deg);
+    -webkit-mask-image: radial-gradient(closest-side, transparent 92%, #000 93% 97%, transparent 98%);
+    mask-image: radial-gradient(closest-side, transparent 92%, #000 93% 97%, transparent 98%);
+    opacity: 0.5;
+    animation: ssSpin 90s linear infinite;
 }
 
 .ss-planet {
@@ -166,34 +200,46 @@ body.elite-body::before {
     transform: translate(-50%, -50%);
 }
 
-.ss-orbit-1 .ss-planet { width: 4px; height: 4px; }
-.ss-orbit-2 .ss-planet { width: 6px; height: 6px; }
-.ss-orbit-3 .ss-planet { width: 7px; height: 7px; }
-.ss-orbit-4 .ss-planet { width: 9px; height: 9px; }
-.ss-orbit-5 .ss-planet { width: 10px; height: 10px; }
+.ss-orbit-1 .ss-planet { width: 6px;  height: 6px; }
+.ss-orbit-2 .ss-planet { width: 8px;  height: 8px; }
+.ss-orbit-3 .ss-planet { width: 10px; height: 10px; }
+.ss-orbit-4 .ss-planet { width: 12px; height: 12px; }
+.ss-orbit-5 .ss-planet { width: 13px; height: 13px; }
+.ss-orbit-6 .ss-planet { width: 14px; height: 14px; }
 
-.ss-planet-cyan  { background: var(--cyan);  box-shadow: 0 0 8px 2px rgba(34, 211, 238, 0.5); }
-.ss-planet-gold  { background: var(--gold);  box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.5); }
-.ss-planet-slate { background: var(--slate); box-shadow: 0 0 6px 1px rgba(148, 163, 184, 0.4); }
+.ss-planet-cyan  { background: var(--cyan);  box-shadow: 0 0 12px 3px rgba(34, 211, 238, 0.6); }
+.ss-planet-gold  { background: var(--gold);  box-shadow: 0 0 12px 3px rgba(245, 158, 11, 0.6); }
+.ss-planet-slate { background: var(--slate); box-shadow: 0 0 10px 2px rgba(148, 163, 184, 0.5); }
+.ss-planet-white { background: #f8fafc;      box-shadow: 0 0 12px 3px rgba(248, 250, 252, 0.55); }
+
+/* Saturn-like ring on one planet */
+.ss-orbit-ringed .ss-planet::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220%;
+    height: 70%;
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-20deg);
+    pointer-events: none;
+}
 
 @media (max-width: 900px) {
-    .solar-system { display: none; }
+    .solar-system {
+        --ss-scale: 0.55;
+        opacity: 0.5;
+    }
+    .ss-core { top: 30%; left: 50%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .solar-system { display: none; }
-}
-
-#flow-field {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.9;
-    -webkit-mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
-    mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
+    .solar-system .ss-sun,
+    .solar-system .ss-orbit,
+    .solar-system .ss-belt {
+        animation: none;
+    }
 }
 
 .hero-content, .hero-media { position: relative; z-index: 1; }
@@ -202,17 +248,6 @@ body.elite-body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#hero3d {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    -webkit-mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
-    mask-image: radial-gradient(120% 100% at 40% 50%, #000 40%, transparent 85%);
 }
 
 .ink-gradient {
@@ -1093,5 +1128,4 @@ body.elite-body::after {
     .section-head--row { flex-direction: column; align-items: stretch; text-align: center; }
     .industry-cols { grid-template-columns: 1fr; gap: 18px; }
     .industry-cols > div + div { border-left: none; padding-left: 0; border-top: 1px solid rgba(245, 158, 11, 0.2); padding-top: 18px; }
-    #flow-field { display: none; }
 }
