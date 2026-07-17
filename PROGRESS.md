@@ -18,6 +18,11 @@ Plan: /Users/amol/.claude2/plans/lovely-gathering-hinton.md
 - DECISION: material gating by class+track enum: foundation-10, class11-neet, class11-jee, class12-neet, class12-jee (+ common/) — mirrors Course Pathways.
 - DECISION: signups disabled in Supabase; enrollment = dashboard invite + students-row insert (SETUP.md §6).
 
+## Round 2 (2026-07-17, later)
+- Fable review fixes (prev commit): popup-safe downloads ({download:true} + anchor click), skip login when session exists.
+- 8714f44 (Sonnet, Opus gate PASS): OPEN_ACCESS=true interim mode (portal.js:10 — flip false + drop "interim open access read" anon policy to restore auth); portrait fix (.portrait-ring max 340px, aspect-ratio 1/1 cover); CSS-only solar system in hero (hidden <900px + reduced-motion).
+- Gate NITs accepted: hero overflow:hidden clips portrait hover-glow at edges; login→portal redundant hop when unconfigured.
+
 ## Pending
 - User: Supabase project setup per portal/SETUP.md (steps 1-6), then fill portal.js:7-8.
 - Visual QA in a real browser (WebGL hero untested headless).
