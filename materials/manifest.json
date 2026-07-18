@@ -1,23 +1,9 @@
 {
     "class11-jee": [],
-    "class11-math": [
-        {
-            "name": "Test Notes",
-            "file": "materials/class11-math/test_notes.pdf",
-            "size": 193,
-            "date": "2026-07-18"
-        }
-    ],
     "class11-neet": [],
     "class12-jee": [],
     "class12-neet": [],
     "common": [
-        {
-            "name": "Welcome",
-            "file": "materials/common/welcome.pdf",
-            "size": 193,
-            "date": "2026-07-18"
-        },
         {
             "name": "Welcome Sample Notes",
             "file": "materials/common/Welcome_Sample_Notes.pdf",
