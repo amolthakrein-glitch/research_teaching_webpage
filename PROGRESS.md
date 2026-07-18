@@ -27,8 +27,10 @@ Plan: /Users/amol/.claude2/plans/lovely-gathering-hinton.md
 Branch: main. Uncommitted: publish_materials.py (new), portal.js (+listTracks, trackLabel prettify fallback), portal.html (dropdown from manifest keys). Untracked junk not mine: .thumbnail, APP_SPEC.md, graphify-out/, support.js.
 - FACT: publish_materials.py — sync ~/home/Academics_Education/resources/Upload → materials/<track>/ (root files→common), rebuild manifest from disk, commit `chore: publish materials`, push, ls-remote verify. --dry-run supported.
 - VERIFIED: `python3 -m py_compile publish_materials.py` OK; `node --check portal.js` OK; `python3 publish_materials.py --dry-run` with 2 test PDFs → "synced: 2 new, 0 updated" exact paths correct.
-- Test PDFs staged: Upload/class11-math/test_notes.pdf + Upload/welcome.pdf (193 B each) — remove after E2E.
-NEXT: commit code (feat), real script run (commit+push materials, user-approved), http.server curl-verify manifest+file bytes, cleanup test files + rerun.
+- E2E DONE: b132511 (feat, code) → ee82ea1 (publish 2 test PDFs) → live verified (curl https://amolthakrein-glitch.github.io/.../materials/class11-math/test_notes.pdf = 200, 193 B exact) → fd839b0 (cleanup, test files removed everywhere, Upload empty). Rerun → "nothing to publish". All pushed, ls-remote verified.
+- FACT: manifest track keys persist once created even when dir emptied (union with existing keys) — to retire a track, delete its key from manifest.json by hand + rm dir.
+- Workflow now: drop file in Upload/<track>/ (or root → common) → `python3 publish_materials.py` → live in ~1 min.
+NEXT: none — pipeline complete.
 
 ## Pending
 - User: Supabase project setup per portal/SETUP.md (steps 1-6), then fill portal.js:7-8.
