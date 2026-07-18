@@ -136,13 +136,23 @@
                 document.getElementById('student-name').textContent = 'Course Material';
 
                 const select = document.getElementById('track-select');
-                Object.keys(Portal.TRACK_LABELS).forEach(function (track) {
+                const tracksResult = await Portal.listTracks();
+                const tracks = tracksResult.data || [];
+
+                if (tracks.length === 0) {
+                    select.hidden = true;
+                    await loadTrackFiles('common');
+                    return;
+                }
+
+                tracks.forEach(function (track) {
                     const opt = document.createElement('option');
                     opt.value = track;
                     opt.textContent = Portal.trackLabel(track);
                     select.appendChild(opt);
                 });
-                select.value = 'class11-neet';
+
+                select.value = tracks.includes('class11-neet') ? 'class11-neet' : tracks[0];
                 select.hidden = false;
                 select.addEventListener('change', function () {
                     loadTrackFiles(select.value);

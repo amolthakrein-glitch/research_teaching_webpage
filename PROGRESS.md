@@ -23,6 +23,13 @@ Plan: /Users/amol/.claude2/plans/lovely-gathering-hinton.md
 - 8714f44 (Sonnet, Opus gate PASS): OPEN_ACCESS=true interim mode (portal.js:10 — flip false + drop "interim open access read" anon policy to restore auth); portrait fix (.portrait-ring max 340px, aspect-ratio 1/1 cover); CSS-only solar system in hero (hidden <900px + reduced-motion).
 - Gate NITs accepted: hero overflow:hidden clips portrait hover-glow at edges; login→portal redundant hop when unconfigured.
 
+## Round 3 (2026-07-18) — publish pipeline Upload→materials
+Branch: main. Uncommitted: publish_materials.py (new), portal.js (+listTracks, trackLabel prettify fallback), portal.html (dropdown from manifest keys). Untracked junk not mine: .thumbnail, APP_SPEC.md, graphify-out/, support.js.
+- FACT: publish_materials.py — sync ~/home/Academics_Education/resources/Upload → materials/<track>/ (root files→common), rebuild manifest from disk, commit `chore: publish materials`, push, ls-remote verify. --dry-run supported.
+- VERIFIED: `python3 -m py_compile publish_materials.py` OK; `node --check portal.js` OK; `python3 publish_materials.py --dry-run` with 2 test PDFs → "synced: 2 new, 0 updated" exact paths correct.
+- Test PDFs staged: Upload/class11-math/test_notes.pdf + Upload/welcome.pdf (193 B each) — remove after E2E.
+NEXT: commit code (feat), real script run (commit+push materials, user-approved), http.server curl-verify manifest+file bytes, cleanup test files + rerun.
+
 ## Pending
 - User: Supabase project setup per portal/SETUP.md (steps 1-6), then fill portal.js:7-8.
 - Visual QA in a real browser (WebGL hero untested headless).

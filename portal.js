@@ -140,6 +140,18 @@ async function listLocalFiles(track) {
     }
 }
 
+// Track list for the open-access dropdown — every manifest key except common.
+async function listTracks() {
+    try {
+        const res = await fetch('materials/manifest.json', { cache: 'no-store' });
+        if (!res.ok) return { error: `Could not load materials manifest (${res.status}).` };
+        const manifest = await res.json();
+        return { data: Object.keys(manifest).filter((t) => t !== 'common') };
+    } catch (err) {
+        return { error: err.message || 'Could not load track list.' };
+    }
+}
+
 async function getDownloadUrl(path) {
     const client = getClient();
     const { data, error } = await client.storage.from(BUCKET).createSignedUrl(path, SIGNED_URL_TTL, { download: true });
@@ -177,7 +189,11 @@ const TRACK_LABELS = {
 };
 
 function trackLabel(track) {
-    return TRACK_LABELS[track] || track;
+    if (TRACK_LABELS[track]) return TRACK_LABELS[track];
+    // Fallback: prettify slug — split on -/_, title-case, uppercase jee/neet
+    const special = new Set(['jee', 'neet']);
+    const parts = track.replace(/[-_]/g, ' ').split(/\s+/);
+    return parts.map(p => special.has(p.toLowerCase()) ? p.toUpperCase() : p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
 }
 
 // Exposed globally for the page-level scripts in portal.html / portal-login.html.
@@ -193,6 +209,7 @@ window.Portal = {
     loadStudent,
     listFiles,
     listLocalFiles,
+    listTracks,
     getDownloadUrl,
     formatSize,
     formatDate,
