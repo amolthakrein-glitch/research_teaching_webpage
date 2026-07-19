@@ -144,29 +144,47 @@
                 await loadFilesInto('common-files', 'common');
             }
 
-            // Populates one dropdown + its file list, and wires the change handler.
-            // Returns the chosen track (or null if this section has no tracks at all).
-            async function setupTrackSection(selectEl, sectionEl, containerId, tracks, preferred) {
+            function renderPrompt(containerId, text) {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                const el = document.createElement('div');
+                el.className = 'portal-empty';
+                el.textContent = text;
+                container.appendChild(el);
+            }
+
+            // Populates one dropdown with a placeholder "Select..." option — material
+            // only loads once the student actually picks a grade, never by default.
+            function setupTrackSection(selectEl, sectionEl, containerId, tracks, placeholderText) {
                 if (tracks.length === 0) {
                     sectionEl.hidden = true;
-                    return null;
+                    return;
                 }
                 sectionEl.hidden = false;
                 selectEl.innerHTML = '';
+
+                const placeholder = document.createElement('option');
+                placeholder.value = '';
+                placeholder.textContent = placeholderText;
+                selectEl.appendChild(placeholder);
+
                 tracks.forEach(function (track) {
                     const opt = document.createElement('option');
                     opt.value = track;
                     opt.textContent = Portal.trackLabel(track);
                     selectEl.appendChild(opt);
                 });
-                const chosen = preferred && tracks.includes(preferred) ? preferred : tracks[0];
-                selectEl.value = chosen;
+
+                selectEl.value = '';
                 selectEl.hidden = false;
                 selectEl.addEventListener('change', function () {
-                    loadFilesInto(containerId, selectEl.value);
+                    if (selectEl.value) {
+                        loadFilesInto(containerId, selectEl.value);
+                    } else {
+                        renderPrompt(containerId, placeholderText);
+                    }
                 });
-                await loadFilesInto(containerId, chosen);
-                return chosen;
+                renderPrompt(containerId, placeholderText);
             }
 
             async function initOpenAccess() {
@@ -178,23 +196,21 @@
                     Portal.listJeeNeetTracks(),
                 ]);
 
-                await Promise.all([
-                    setupTrackSection(
-                        document.getElementById('track-select'),
-                        document.getElementById('school-section'),
-                        'track-files',
-                        schoolResult.data || [],
-                        null
-                    ),
-                    setupTrackSection(
-                        document.getElementById('jeeneet-track-select'),
-                        document.getElementById('jeeneet-section'),
-                        'jeeneet-files',
-                        jeeNeetResult.data || [],
-                        'class11-neet'
-                    ),
-                    loadCommonFiles(),
-                ]);
+                setupTrackSection(
+                    document.getElementById('track-select'),
+                    document.getElementById('school-section'),
+                    'track-files',
+                    schoolResult.data || [],
+                    'Select a grade…'
+                );
+                setupTrackSection(
+                    document.getElementById('jeeneet-track-select'),
+                    document.getElementById('jeeneet-section'),
+                    'jeeneet-files',
+                    jeeNeetResult.data || [],
+                    'Select a track…'
+                );
+                await loadCommonFiles();
             }
 
             async function init() {
