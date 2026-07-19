@@ -222,6 +222,16 @@
     margin: 0 0 var(--space-sm);
 }
 
+.portal-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+}
+
+.portal-section-head h2 { margin: 0; }
+
 .portal-file-list {
     display: flex;
     flex-direction: column;

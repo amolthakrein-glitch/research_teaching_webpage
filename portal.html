@@ -21,14 +21,27 @@
                 <div class="portal-identity">
                     <h1 id="student-name">Loading…</h1>
                     <span id="track-pill" class="portal-track-pill" hidden></span>
-                    <select id="track-select" class="portal-track-select" hidden></select>
                 </div>
                 <button id="logout-btn" class="btn-ghost" type="button">Logout</button>
             </div>
 
-            <section class="portal-section">
-                <h2>Your Course Material</h2>
+            <section id="school-section" class="portal-section" hidden>
+                <div class="portal-section-head">
+                    <h2>School Course Material (Grade 6–12)</h2>
+                    <select id="track-select" class="portal-track-select" hidden></select>
+                </div>
                 <div id="track-files" class="portal-file-list">
+                    <div class="portal-skeleton"></div>
+                    <div class="portal-skeleton"></div>
+                </div>
+            </section>
+
+            <section id="jeeneet-section" class="portal-section" hidden>
+                <div class="portal-section-head">
+                    <h2>JEE / NEET Preparation</h2>
+                    <select id="jeeneet-track-select" class="portal-track-select" hidden></select>
+                </div>
+                <div id="jeeneet-files" class="portal-file-list">
                     <div class="portal-skeleton"></div>
                     <div class="portal-skeleton"></div>
                 </div>
@@ -121,44 +134,67 @@
                 });
             }
 
-            async function loadTrackFiles(track) {
+            async function loadFilesInto(containerId, track) {
                 const listFn = LOCAL_MODE ? Portal.listLocalFiles : Portal.listFiles;
-                const [trackResult, commonResult] = await Promise.all([
-                    listFn(track),
-                    listFn('common'),
-                ]);
-                renderFiles(document.getElementById('track-files'), trackResult.data || []);
-                renderFiles(document.getElementById('common-files'), commonResult.data || []);
+                const result = await listFn(track);
+                renderFiles(document.getElementById(containerId), result.data || []);
+            }
+
+            async function loadCommonFiles() {
+                await loadFilesInto('common-files', 'common');
+            }
+
+            // Populates one dropdown + its file list, and wires the change handler.
+            // Returns the chosen track (or null if this section has no tracks at all).
+            async function setupTrackSection(selectEl, sectionEl, containerId, tracks, preferred) {
+                if (tracks.length === 0) {
+                    sectionEl.hidden = true;
+                    return null;
+                }
+                sectionEl.hidden = false;
+                selectEl.innerHTML = '';
+                tracks.forEach(function (track) {
+                    const opt = document.createElement('option');
+                    opt.value = track;
+                    opt.textContent = Portal.trackLabel(track);
+                    selectEl.appendChild(opt);
+                });
+                const chosen = preferred && tracks.includes(preferred) ? preferred : tracks[0];
+                selectEl.value = chosen;
+                selectEl.hidden = false;
+                selectEl.addEventListener('change', function () {
+                    loadFilesInto(containerId, selectEl.value);
+                });
+                await loadFilesInto(containerId, chosen);
+                return chosen;
             }
 
             async function initOpenAccess() {
                 document.getElementById('logout-btn').hidden = true;
                 document.getElementById('student-name').textContent = 'Course Material';
 
-                const select = document.getElementById('track-select');
-                const tracksResult = await Portal.listTracks();
-                const tracks = tracksResult.data || [];
+                const [schoolResult, jeeNeetResult] = await Promise.all([
+                    Portal.listTracks(),
+                    Portal.listJeeNeetTracks(),
+                ]);
 
-                if (tracks.length === 0) {
-                    select.hidden = true;
-                    await loadTrackFiles('common');
-                    return;
-                }
-
-                tracks.forEach(function (track) {
-                    const opt = document.createElement('option');
-                    opt.value = track;
-                    opt.textContent = Portal.trackLabel(track);
-                    select.appendChild(opt);
-                });
-
-                select.value = tracks.includes('class11-neet') ? 'class11-neet' : tracks[0];
-                select.hidden = false;
-                select.addEventListener('change', function () {
-                    loadTrackFiles(select.value);
-                });
-
-                await loadTrackFiles(select.value);
+                await Promise.all([
+                    setupTrackSection(
+                        document.getElementById('track-select'),
+                        document.getElementById('school-section'),
+                        'track-files',
+                        schoolResult.data || [],
+                        null
+                    ),
+                    setupTrackSection(
+                        document.getElementById('jeeneet-track-select'),
+                        document.getElementById('jeeneet-section'),
+                        'jeeneet-files',
+                        jeeNeetResult.data || [],
+                        'class11-neet'
+                    ),
+                    loadCommonFiles(),
+                ]);
             }
 
             async function init() {
@@ -179,7 +215,16 @@
                 pill.textContent = Portal.trackLabel(student.class_track);
                 pill.hidden = false;
 
-                await loadTrackFiles(student.class_track);
+                // A logged-in student has exactly one track — show it in whichever
+                // section it belongs to, keep the other section's dropdown hidden.
+                if (Portal.isJeeNeetTrack(student.class_track)) {
+                    document.getElementById('jeeneet-section').hidden = false;
+                    await loadFilesInto('jeeneet-files', student.class_track);
+                } else {
+                    document.getElementById('school-section').hidden = false;
+                    await loadFilesInto('track-files', student.class_track);
+                }
+                await loadCommonFiles();
             }
 
             document.getElementById('logout-btn').addEventListener('click', function () {

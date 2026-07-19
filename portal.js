@@ -140,13 +140,35 @@ async function listLocalFiles(track) {
     }
 }
 
-// Track list for the open-access dropdown — every manifest key except common.
+// A track is JEE/NEET prep if it's the foundation track or ends in -jee/-neet
+// (matches the naming generate_material.py uses: class{grade}-jee, class{grade}-neet).
+// Everything else (class6-math ... class12-<subject>) is regular school material.
+function isJeeNeetTrack(track) {
+    return track === 'foundation-10' || /-(jee|neet)$/.test(track);
+}
+
+async function fetchManifest() {
+    const res = await fetch('materials/manifest.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Could not load materials manifest (${res.status}).`);
+    return res.json();
+}
+
+// Track list for the open-access "School" dropdown — grade 6-12 subject tracks only,
+// excludes common and any JEE/NEET prep tracks (those get their own dropdown/tab).
 async function listTracks() {
     try {
-        const res = await fetch('materials/manifest.json', { cache: 'no-store' });
-        if (!res.ok) return { error: `Could not load materials manifest (${res.status}).` };
-        const manifest = await res.json();
-        return { data: Object.keys(manifest).filter((t) => t !== 'common') };
+        const manifest = await fetchManifest();
+        return { data: Object.keys(manifest).filter((t) => t !== 'common' && !isJeeNeetTrack(t)) };
+    } catch (err) {
+        return { error: err.message || 'Could not load track list.' };
+    }
+}
+
+// Track list for the open-access "JEE/NEET" dropdown.
+async function listJeeNeetTracks() {
+    try {
+        const manifest = await fetchManifest();
+        return { data: Object.keys(manifest).filter(isJeeNeetTrack) };
     } catch (err) {
         return { error: err.message || 'Could not load track list.' };
     }
@@ -210,6 +232,8 @@ window.Portal = {
     listFiles,
     listLocalFiles,
     listTracks,
+    listJeeNeetTracks,
+    isJeeNeetTrack,
     getDownloadUrl,
     formatSize,
     formatDate,
