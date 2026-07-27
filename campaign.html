@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="campaign.css" />
+  <link rel="stylesheet" href="index_elite.css" />
   <link rel="stylesheet" href="chatbot.css" />
   <meta name="description" content="Batch admissions and mentoring details for JEE/NEET coaching." />
   <meta name="author" content="Amol Kumar Thakre" />
@@ -22,40 +22,39 @@
   <meta name="twitter:description" content="Batch admissions and mentoring details for JEE/NEET coaching." />
   <meta name="twitter:image" content="https://amolthakrein-glitch.github.io/research_teaching_webpage/assets/flyer_preview.png" />
 </head>
-<body class="lp-body">
+<body class="elite-body">
 
-  <div class="hero-v3">
-    <div class="lp-container">
-      <div class="lp-badge">Elite Admissions Portal</div>
-      <h1>The Scientist's Way to JEE/NEET.</h1>
-      <p class="lede" style="color:white; opacity:0.9;">Ph.D. Mentorship from the labs of GE and Equinor. High-fidelity results through R&D-driven pedagogy.</p>
-      <div style="margin: 30px 0;">
-        <a href="registration.html" style="color: white; font-size: 2.2rem; font-weight: 800; text-decoration: none; text-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 3px solid white; padding-bottom: 5px;">Enroll for March / June Batch →</a>
+  <nav class="back-nav" style="max-width:1300px; margin:0 auto; padding: 20px var(--space-sm) 0;"><a href="index.html" class="chip" style="text-decoration:none; color:var(--cyan); border-color:var(--cyan);">← Back to Portfolio</a></nav>
+
+  <main class="elite-container">
+    <div class="teaching-hero">
+      <span class="bento-tag">Elite Admissions Portal</span>
+      <h2>The Scientist's Way to JEE/NEET.</h2>
+      <p>Ph.D. Mentorship from the labs of GE and Equinor. High-fidelity results through R&D-driven pedagogy.</p>
+      <div class="hero-cta hero-cta--center">
+        <a href="registration.html" class="btn-gold">Enroll for March / June Batch →</a>
       </div>
     </div>
-  </div>
-
-  <main class="lp-container">
     <div class="bento-grid">
       <!-- Digital Twin Large Card -->
       <div class="bento-item bento-large">
-        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200" alt="Simulation Lab">
+        <div class="card-art art-lab" aria-hidden="true"></div>
         <div class="bento-content">
           <h3>The 'Digital Twin' Method</h3>
           <p>Mental simulations that replace rote learning. Visualize Physics using R&D analytical frameworks.</p>
         </div>
       </div>
-      
+
       <!-- Scarcity Small Card -->
-      <div class="bento-item" style="background:white; color:var(--lp-navy); padding:40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; border: 1px solid #e2e8f0;">
-        <span style="font-size:4rem; margin-bottom:20px; color:var(--lp-accent);">04</span>
+      <div class="bento-item bento-gold" style="display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+        <span style="font-size:4rem; margin-bottom:20px; color:var(--gold); font-weight:800;">04</span>
         <h3 style="margin:0;">Seats Left</h3>
-        <p style="color:var(--lp-slate); margin-top:10px;">March Early Batch</p>
+        <p style="color:var(--slate); margin-top:10px;">March Early Batch</p>
       </div>
 
       <!-- Concept to Competition Small Card -->
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=600" alt="Mathematical Logic">
+        <div class="card-art art-phil" aria-hidden="true"></div>
         <div class="bento-content">
           <h3>Concept-to-Competition</h3>
         </div>
@@ -63,7 +62,7 @@
 
       <!-- Analytics Large Card -->
       <div class="bento-item bento-large">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" alt="Data Dashboard">
+        <div class="card-art art-tech" aria-hidden="true"></div>
         <div class="bento-content">
           <h3>High-Fidelity Analytics</h3>
           <p>Every performance is mapped. Scientific error-log remediation sessions.</p>
@@ -72,7 +71,7 @@
 
       <!-- Elite Peer Group Card -->
       <div class="bento-item bento-large">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="Small Group Study">
+        <div class="card-art art-industry" aria-hidden="true"></div>
         <div class="bento-content">
           <h3>Elite Peer Group</h3>
           <p>Micro-batches of 10 students. Direct Ph.D. level interaction.</p>
@@ -81,31 +80,32 @@
 
       <!-- Logic Small Card -->
       <div class="bento-item">
-        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=600" alt="Physics Research">
+        <div class="card-art art-industry" aria-hidden="true"></div>
         <div class="bento-content">
           <h3>Industrial Logic</h3>
         </div>
       </div>
     </div>
 
-    <section class="lab-preview">
-      <div>
-        <h2 style="font-family:'Source Serif 4', serif; font-size:2.5rem; margin-bottom:20px;">From Global Labs to Your Desktop.</h2>
+    <section class="landing-section">
+      <div class="section-head">
+        <h2 class="grad-h2 grad-cyan">From Global Labs to Your Desktop.</h2>
+      </div>
+      <div style="text-align:center; max-width:700px; margin:0 auto;">
         <p>Dr. Amol Thakre brings experience from GE Research and Equinor (Norway) to Whitefield. This isn't just coaching—it's a launchpad.</p>
-        <ul style="margin-top:20px; padding-left:20px;">
+        <ul style="margin-top:20px; padding-left:20px; text-align:left; display:inline-block;">
           <li>Ph.D. from Twente, Netherlands</li>
           <li>Masters from IISc Bangalore</li>
           <li>Max 10 Students per batch</li>
         </ul>
       </div>
-      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=1000" alt="Scientist Mentoring">
     </section>
   </main>
 
-  <footer class="lp-footer">
-    <p>Mahaveer Promenade, Whitefield, Bangalore | &copy; 2026 Dr. Amol Kumar Thakre</p>
+  <footer class="elite-footer">
+    <p class="footer-copy">Mahaveer Promenade, Whitefield, Bangalore | &copy; 2026 Dr. Amol Kumar Thakre</p>
     <p style="margin-top:25px;">
-      <a href="index.html" class="back-to-profile">
+      <a href="index.html" class="chip" style="text-decoration:none; color:var(--cyan); border-color:var(--cyan);">
         <span>←</span> Back to Research Profile
       </a>
     </p>
