@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /portal.html
+Disallow: /portal-login.html
+Disallow: /registration_server.py
+
+Sitemap: https://amolthakrein-glitch.github.io/research_teaching_webpage/sitemap.xml

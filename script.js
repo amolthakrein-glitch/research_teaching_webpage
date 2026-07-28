@@ -9,37 +9,47 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeSection = 'research';
     const reducedMotionForTabs = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const key = tab.dataset.section;
-            if (key === activeSection) return;
-            activeSection = key;
+    const switchTab = (key, { animate = true, updateHash = true } = {}) => {
+        const tab = Array.from(tabs).find(t => t.dataset.section === key);
+        if (!tab || key === activeSection) return;
+        activeSection = key;
 
-            tabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
-            });
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected', 'true');
-
-            const incoming = sections[key];
-            const outgoing = Object.entries(sections).find(([k]) => k !== key)?.[1];
-
-            if (reducedMotionForTabs || !incoming) {
-                Object.entries(sections).forEach(([k, el]) => {
-                    if (el) el.classList.toggle('active', k === key);
-                });
-                return;
-            }
-
-            if (outgoing && outgoing.classList.contains('active')) {
-                outgoing.classList.add('section-leaving');
-                outgoing.classList.remove('active');
-                window.setTimeout(() => outgoing.classList.remove('section-leaving'), 280);
-            }
-            incoming.classList.add('active');
+        tabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
         });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        if (updateHash) history.replaceState(null, '', `#${key}`);
+
+        const incoming = sections[key];
+        const outgoing = Object.entries(sections).find(([k]) => k !== key)?.[1];
+
+        if (!animate || reducedMotionForTabs || !incoming) {
+            Object.entries(sections).forEach(([k, el]) => {
+                if (el) el.classList.toggle('active', k === key);
+            });
+            return;
+        }
+
+        if (outgoing && outgoing.classList.contains('active')) {
+            outgoing.classList.add('section-leaving');
+            outgoing.classList.remove('active');
+            window.setTimeout(() => outgoing.classList.remove('section-leaving'), 280);
+        }
+        incoming.classList.add('active');
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab.dataset.section));
     });
+
+    // Deep link: #teaching / #research on load opens that tab directly (no transition)
+    const initialHash = window.location.hash.replace('#', '');
+    if (sections[initialHash]) {
+        switchTab(initialHash, { animate: false, updateHash: false });
+    }
 
     // Hero CTA: jump to the teaching tab
     const ctaMentorship = document.getElementById('cta-mentorship');

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="stylesheet" href="index_elite.css" />
     <link rel="stylesheet" href="portal.css" />
     <link rel="stylesheet" href="chatbot.css" />
@@ -22,6 +23,35 @@
     <meta name="twitter:title" content="Dr. Amol Thakre | Elite Scientist Portfolio" />
     <meta name="twitter:description" content="Research, teaching, and simulation profile of Amol Kumar Thakre." />
     <meta name="twitter:image" content="https://amolthakrein-glitch.github.io/research_teaching_webpage/assets/profile/amol_profile_enhanced.jpg" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Amol Kumar Thakre",
+        "alternateName": "Dr. Amol Thakre",
+        "url": "https://amolthakrein-glitch.github.io/research_teaching_webpage/index.html",
+        "image": "https://amolthakrein-glitch.github.io/research_teaching_webpage/assets/profile/amol_profile_enhanced.jpg",
+        "jobTitle": "Ph.D. Scientist & JEE/NEET Mentor",
+        "description": "Ph.D. scientist bridging molecular fluid dynamics and industrial-scale engineering, and elite mentor for JEE/NEET/Board exam coaching.",
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Twente"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Indian Institute of Science, Bangalore"
+            }
+        ],
+        "knowsAbout": [
+            "Fluid Dynamics",
+            "Computational Fluid Dynamics",
+            "Digital Twin Systems",
+            "JEE Preparation",
+            "NEET Preparation"
+        ]
+    }
+    </script>
 </head>
 <body class="elite-body">
 
@@ -42,12 +72,8 @@
         <div id="section-research" class="section-content active" role="tabpanel" aria-labelledby="tab-research">
             <header class="hero-elite">
                 <div class="flow-field" aria-hidden="true">
-                    <svg viewBox="0 0 560 400" preserveAspectRatio="xMidYMid meet">
-                        <path class="flow-line flow-line-1" d="M-20,60 C120,20 240,110 360,70 S560,30 620,70" />
-                        <path class="flow-line flow-line-2" d="M-20,140 C130,90 250,190 370,140 S570,90 620,140" />
-                        <path class="flow-line flow-line-3" d="M-20,220 C140,160 260,260 380,210 S580,150 620,210" />
-                        <path class="flow-line flow-line-4" d="M-20,300 C150,240 270,330 390,280 S590,220 620,280" />
-                    </svg>
+                    <canvas class="flow-canvas" id="hero-airfoil-canvas"></canvas>
+                    <span class="flow-caption">Joukowski airfoil &middot; potential flow &middot; Kutta condition</span>
                 </div>
                 <div class="hero-content">
                     <div class="hero-lockup hero-stage s1">
@@ -168,6 +194,13 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 <p>Enrolled students — access your course material</p>
                 <a href="portal-login.html" class="btn-outline--cyan">Course Material →</a>
+            </div>
+
+            <!-- ── Summer School entry ── -->
+            <div class="bento-item portal-banner-card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <p>Summer School 2026 — Vedic Math &amp; AI Mastery, 6-week intensive</p>
+                <a href="summer_school.html" class="btn-outline--cyan">Explore Program →</a>
             </div>
 
             <!-- ── Three Pillars of Research-Grade Learning ── -->
@@ -330,6 +363,7 @@
     </main>
 
     <script src="script.js"></script>
+    <script src="hero-airfoil.js?v=1" defer></script>
     <script src="chatbot.js?v=3"></script>
     </body>
 </html>
